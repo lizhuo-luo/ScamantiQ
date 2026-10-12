@@ -63,6 +63,8 @@ message ─► one LLM call: detect + identify + quote + explain  (JSON schema)
         ─► UI: highlighted evidence · tactic cards · advice · disclaimer
 ```
 
+![Every highlighted phrase is checked against the message before it is shown](docs/screenshots/workflow.jpg)
+
 1. **Detect and identify.** A pretrained LLM judges whether manipulation is present and labels the tactics from the fixed list. Detection, classification, evidence and explanation are produced in a single request to keep latency and cost low.
 2. **Ground.** For each tactic the model must quote the exact words that support it.
 3. **Verify.** Python checks that every quote is a verbatim substring of the message. Quotes that are not are rejected and the model is asked once to fix them. A tactic with no surviving evidence is dropped, and a message with no verified evidence is never flagged. Case, whitespace and curly-quote differences are tolerated when *locating* a quote, but the text shown to the user is always the exact source span.
