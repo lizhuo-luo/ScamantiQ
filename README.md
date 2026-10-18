@@ -74,6 +74,8 @@ No model is trained and no GPU is required; the LLM is a configuration choice.
 
 ## The five tactics
 
+![The five tactics, each named only when it can be quoted from the message](docs/screenshots/tactics.png)
+
 | Label | Tactic | What it looks like | Why it is in the taxonomy |
 |---|---|---|---|
 | `urgency` | Urgency | deadlines, countdowns, "act now" | Time pressure stops the reader from verifying. The "pressure you to act immediately" warning sign; scarcity in Cialdini; the *time* principle in Stajano and Wilson. |
