@@ -255,7 +255,7 @@ def clear_all():
 CSS = """
 :root { --sc-radius: 14px; }
 /* `overflow: clip` clips like `hidden` but does not become the scroll root, so the sticky input column works. */
-.gradio-container { max-width: 1400px !important; margin: 0 auto !important; overflow: clip !important; }
+.gradio-container { max-width: none !important; width: 100% !important; margin: 0 !important; padding: 0 clamp(12px, 2vw, 24px) !important; overflow: clip !important; }
 footer { opacity: .6; }
 
 /* header */
