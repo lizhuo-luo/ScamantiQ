@@ -254,7 +254,8 @@ def clear_all():
 
 CSS = """
 :root { --sc-radius: 14px; }
-.gradio-container { max-width: 1240px !important; margin: 0 auto !important; }
+/* `overflow: clip` clips like `hidden` but does not become the scroll root, so the sticky input column works. */
+.gradio-container { max-width: 1400px !important; margin: 0 auto !important; overflow: clip !important; }
 footer { opacity: .6; }
 
 /* header */
@@ -301,7 +302,7 @@ footer { opacity: .6; }
 .sc-mark { color: inherit; padding: 1px 3px 0; border-radius: 4px 4px 0 0; border-bottom: 2.5px solid; cursor: help; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 
 .sc-section-title { font-weight:700; font-size:.78em; text-transform:uppercase; letter-spacing:.08em; color: var(--body-text-color-subdued); margin: 2px 0 8px 2px; }
-.sc-cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap:12px; margin-bottom:14px; }
+.sc-cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:12px; margin-bottom:14px; }
 .sc-card { background: var(--block-background-fill); border:1px solid var(--border-color-primary); border-top: 4px solid; border-radius: var(--sc-radius);
   box-shadow: 0 1px 2px rgba(0,0,0,.04); display:flex; flex-direction:column; }
 .sc-card-body { padding: 12px 16px 14px; }
@@ -336,6 +337,12 @@ footer { opacity: .6; }
 
 .sc-disclaimer { font-size:.85em; color: var(--body-text-color-subdued); line-height:1.5; border-top:1px solid var(--border-color-primary); padding-top:12px; margin-top:8px; }
 
+/* desktop: keep the input column in view while scrolling a long result */
+@media (min-width: 901px) {
+  #sc-left { position: sticky; top: 12px; align-self: flex-start; gap: 10px; }
+  #sc-extras { gap: 6px; }
+}
+
 /* narrow screens: input, buttons, result, then examples and extras */
 @media (max-width: 900px) {
   .sc-status { display:none; }
@@ -364,12 +371,12 @@ def build_app(initial_message: str | None = None) -> gr.Blocks:
     with gr.Blocks(title="ScamantiQ") as demo:
         gr.HTML(header_html(status, ok))
         with gr.Row(equal_height=False, elem_id="sc-main"):
-            with gr.Column(scale=5, min_width=340, elem_id="sc-left"):
+            with gr.Column(scale=4, min_width=340, elem_id="sc-left"):
                 inp = gr.Textbox(
                     label="Message to analyse",
                     info="Paste a text message, email or chat message. English works best.",
                     placeholder="e.g. URGENT: your account will be suspended in 24 hours unless you verify now…",
-                    lines=9,
+                    lines=7,
                     max_lines=24,
                     autofocus=True,
                     value=init_text,
@@ -389,7 +396,7 @@ def build_app(initial_message: str | None = None) -> gr.Blocks:
                     gr.HTML(legend_html())
                     with gr.Accordion("How ScamantiQ works", open=False):
                         gr.HTML(how_it_works_html())
-            with gr.Column(scale=7, min_width=380, elem_id="sc-right"):
+            with gr.Column(scale=8, min_width=380, elem_id="sc-right"):
                 result_html = gr.HTML(init_html, elem_id="sc-result")
                 with gr.Accordion("Raw JSON result", open=False, elem_id="sc-raw"):
                     raw = gr.JSON(init_raw)
