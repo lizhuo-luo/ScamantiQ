@@ -143,7 +143,7 @@ def render_cards(result: AnalysisResult) -> str:
             f"<div class='sc-card' style='border-top-color:{info.color}'>"
             f"<div class='sc-card-body'>"
             f"<div class='sc-card-head'><span class='sc-dot' style='background:{info.color}'></span>"
-            f"<span class='sc-card-title' title='{_esc(info.definition)}'>{_esc(info.name)}</span>{conf}</div>"
+            f"<span class='sc-card-title' title='{_esc(info.name)}: {_esc(info.definition)}'>{_esc(info.name.split(' /')[0])}</span>{conf}</div>"
             f"<div class='sc-sub'>Evidence</div><ul class='sc-quotes'>{quotes}</ul>"
             f"<div class='sc-sub'>Why it matters</div><p class='sc-expl'>{_esc(t.explanation)}</p>"
             f"</div></div>"

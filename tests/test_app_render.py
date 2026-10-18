@@ -54,7 +54,7 @@ def test_marks_have_no_inline_tag_but_carry_tactic_name():
 def test_cards_omit_definition_text():
     out = app.render_cards(_result())
     assert "sc-def" not in out  # no visible definition block
-    assert "title='Pressures the reader to act immediately" in out  # definition only on hover
+    assert "title='Urgency: Pressures the reader to act immediately" in out  # full name and definition on hover
     assert "deadline &lt;script&gt;" in out  # explanation still shown, escaped
 
 
@@ -80,3 +80,9 @@ def test_build_app_with_initial_message(monkeypatch):
     assert demo is not None
     html, raw = app.analyse(app.EXAMPLES[0])
     assert raw["from_cache"] is True and "manipulation tactic" in html
+
+
+def test_card_titles_use_short_tactic_names():
+    out = app.render_cards(_result())
+    assert ">Isolation</span>" in out
+    assert ">Isolation / Secrecy</span>" not in out
