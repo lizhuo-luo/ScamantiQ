@@ -32,8 +32,30 @@ def test_render_result_contains_sections_and_escapes_html():
     assert out.count("<mark") == 2
     assert "Tactics in detail" in out
     assert "What you can do" in out
-    assert "90%" in out
     assert "model mock:m" in out and "1.2s" in out
+
+
+def test_confidence_shown_as_tier_not_percentage():
+    out = app.render_result(_result())
+    assert "90%" not in out
+    assert "confidence: high" in out
+    assert app.confidence_tier(0.9) == "high"
+    assert app.confidence_tier(0.5) == "medium"
+    assert app.confidence_tier(0.2) == "low"
+
+
+def test_marks_have_no_inline_tag_but_carry_tactic_name():
+    out = app.render_message(_result())
+    assert "sc-tag" not in out
+    assert out.count("<mark") == 2
+    assert "title=\"Urgency\"" in out or "title='Urgency'" in out
+
+
+def test_cards_omit_definition_text():
+    out = app.render_cards(_result())
+    assert "sc-def" not in out  # no visible definition block
+    assert "title='Pressures the reader to act immediately" in out  # definition only on hover
+    assert "deadline &lt;script&gt;" in out  # explanation still shown, escaped
 
 
 def test_render_benign_and_error():

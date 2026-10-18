@@ -76,8 +76,7 @@ def render_message(result: AnalysisResult) -> str:
         info = TACTIC_BY_LABEL[span.label]
         parts.append(
             f"<mark class='sc-mark' style='background:{_tint(info.color, '2e')};border-bottom-color:{info.color}' "
-            f"title='{_esc(info.name)}'>{_esc(msg[span.start : span.end])}"
-            f"<span class='sc-tag' style='background:{info.color}'>{_esc(info.name.split(' /')[0])}</span></mark>"
+            f"title='{_esc(info.name)}'>{_esc(msg[span.start : span.end])}</mark>"
         )
         pos = span.end
     if pos < len(msg):
@@ -113,6 +112,15 @@ def render_banner(result: AnalysisResult) -> str:
     )
 
 
+def confidence_tier(confidence: float) -> str:
+    """Bucket the model's self-reported confidence into a word; it is not a calibrated probability."""
+    if confidence >= 0.8:
+        return "high"
+    if confidence >= 0.5:
+        return "medium"
+    return "low"
+
+
 def render_cards(result: AnalysisResult) -> str:
     if result.error or not result.tactics:
         return ""
@@ -124,19 +132,18 @@ def render_cards(result: AnalysisResult) -> str:
             for q in t.evidence
         )
         if t.confidence is not None:
-            pct = int(round(t.confidence * 100))
+            tier = confidence_tier(t.confidence)
             conf = (
-                f"<div class='sc-conf' title='Model confidence {pct}%'><div class='sc-conf-bar'>"
-                f"<div style='width:{pct}%;background:{info.color}'></div></div><span>{pct}%</span></div>"
+                f"<span class='sc-conf sc-conf-{tier}' title='Self-reported by the model, not a calibrated probability'>"
+                f"confidence: {tier}</span>"
             )
         else:
             conf = ""
         cards.append(
-            f"<div class='sc-card'><div class='sc-card-strip' style='background:{info.color}'></div>"
+            f"<div class='sc-card' style='border-top-color:{info.color}'>"
             f"<div class='sc-card-body'>"
             f"<div class='sc-card-head'><span class='sc-dot' style='background:{info.color}'></span>"
-            f"<span class='sc-card-title'>{_esc(info.name)}</span>{conf}</div>"
-            f"<div class='sc-def'>{_esc(info.definition)}</div>"
+            f"<span class='sc-card-title' title='{_esc(info.definition)}'>{_esc(info.name)}</span>{conf}</div>"
             f"<div class='sc-sub'>Evidence</div><ul class='sc-quotes'>{quotes}</ul>"
             f"<div class='sc-sub'>Why it matters</div><p class='sc-expl'>{_esc(t.explanation)}</p>"
             f"</div></div>"
@@ -280,7 +287,7 @@ footer { opacity: .6; }
 
 .sc-banner { display:flex; gap:14px; align-items:flex-start; padding:16px 18px; border-radius: var(--sc-radius); border:1px solid transparent; margin-bottom:14px; }
 .sc-banner-icon { font-size: 26px; line-height:1; margin-top:2px; }
-.sc-banner-title { font-weight:800; font-size:1.15em; margin-bottom:4px; }
+.sc-banner-title { font-weight:700; font-size:1.15em; margin-bottom:4px; }
 .sc-banner-text { line-height:1.5; }
 .sc-banner-warn { background: rgba(249,115,22,.10); border-color: rgba(249,115,22,.35); }
 .sc-banner-ok { background: rgba(34,197,94,.10); border-color: rgba(34,197,94,.35); }
@@ -288,31 +295,31 @@ footer { opacity: .6; }
 .sc-chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
 .sc-chip { color:#fff; font-size:.75em; font-weight:700; padding:3px 10px; border-radius:999px; letter-spacing:.02em; }
 
-.sc-message { background: var(--block-background-fill); border:1px solid var(--border-color-primary); border-radius: var(--sc-radius); padding: 14px 18px 16px; margin-bottom:16px; }
+.sc-message { background: var(--block-background-fill); border:1px solid var(--border-color-primary); border-radius: var(--sc-radius); padding: 14px 18px 16px; margin-bottom:14px; }
 .sc-message-label { font-size:.72em; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color: var(--body-text-color-subdued); margin-bottom:8px; }
 .sc-message-body { font-size: 1.05em; line-height: 1.9; white-space: normal; word-break: break-word; }
-.sc-mark { color: inherit; padding: 2px 3px; border-radius: 4px; border-bottom: 2px solid; position: relative; }
-.sc-tag { color:#fff; font-size:.62em; font-weight:700; padding:1px 6px; border-radius:999px; margin-left:4px; vertical-align: 2px; letter-spacing:.02em; white-space:nowrap; }
+.sc-mark { color: inherit; padding: 1px 3px 0; border-radius: 4px 4px 0 0; border-bottom: 2.5px solid; cursor: help; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 
-.sc-section-title { font-weight:800; font-size:1.05em; margin: 4px 0 10px; }
-.sc-cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap:14px; margin-bottom:16px; }
-.sc-card { background: var(--block-background-fill); border:1px solid var(--border-color-primary); border-radius: var(--sc-radius); overflow:hidden;
+.sc-section-title { font-weight:700; font-size:.78em; text-transform:uppercase; letter-spacing:.08em; color: var(--body-text-color-subdued); margin: 2px 0 8px 2px; }
+.sc-cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap:12px; margin-bottom:14px; }
+.sc-card { background: var(--block-background-fill); border:1px solid var(--border-color-primary); border-top: 4px solid; border-radius: var(--sc-radius);
   box-shadow: 0 1px 2px rgba(0,0,0,.04); display:flex; flex-direction:column; }
-.sc-card-strip { height: 5px; }
 .sc-card-body { padding: 12px 16px 14px; }
-.sc-card-head { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
-.sc-card-title { font-weight:800; font-size:1.02em; }
-.sc-conf { margin-left:auto; display:inline-flex; align-items:center; gap:6px; font-size:.75em; color: var(--body-text-color-subdued); }
-.sc-conf-bar { width:54px; height:6px; border-radius:999px; background: rgba(127,127,127,.2); overflow:hidden; }
-.sc-conf-bar div { height:100%; border-radius:999px; }
-.sc-def { font-size:.86em; color: var(--body-text-color-subdued); line-height:1.45; margin-bottom:8px; }
-.sc-sub { font-size:.72em; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color: var(--body-text-color-subdued); margin-top:10px; margin-bottom:4px; }
+.sc-card-head { display:flex; align-items:center; gap:8px; margin-bottom:2px; flex-wrap:wrap; }
+.sc-card-title { font-weight:700; font-size:1.02em; cursor: help; }
+.sc-conf { margin-left:auto; font-size:.72em; font-weight:600; padding:2px 8px; border-radius:999px; white-space:nowrap; cursor: help;
+  color: var(--body-text-color-subdued); background: rgba(127,127,127,.12); }
+.sc-conf-high { color:#15803d; background: rgba(34,197,94,.14); }
+.sc-conf-medium { color:#b45309; background: rgba(245,158,11,.16); }
+.dark .sc-conf-high { color:#4ade80; }
+.dark .sc-conf-medium { color:#fbbf24; }
+.sc-sub { font-size:.7em; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color: var(--body-text-color-subdued); margin-top:10px; margin-bottom:4px; }
 .sc-quotes { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
-.sc-quote { display:inline-block; padding:3px 8px; border-radius:6px; border-left:3px solid; font-style: italic; line-height:1.45; }
-.sc-expl { margin:0; line-height:1.5; }
+.sc-quote { display:inline-block; padding:4px 10px; border-radius:6px; border-left:3px solid; font-style: italic; line-height:1.45; }
+.sc-expl { margin:0; line-height:1.55; }
 
-.sc-next { background: rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.3); border-radius: var(--sc-radius); padding: 12px 18px 12px; margin-bottom: 10px; }
-.sc-next-title { font-weight:800; margin-bottom:6px; }
+.sc-next { background: rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.3); border-radius: var(--sc-radius); padding: 14px 18px; margin-bottom: 10px; }
+.sc-next-title { font-weight:700; margin-bottom:6px; }
 .sc-next ul { margin: 0 0 0 18px; padding:0; line-height:1.55; }
 .sc-next li { margin: 2px 0; }
 .sc-meta { font-size:.78em; color: var(--body-text-color-subdued); padding: 2px 4px; }
@@ -329,7 +336,18 @@ footer { opacity: .6; }
 
 .sc-disclaimer { font-size:.85em; color: var(--body-text-color-subdued); line-height:1.5; border-top:1px solid var(--border-color-primary); padding-top:12px; margin-top:8px; }
 
-@media (max-width: 900px) { .sc-status { display:none; } }
+/* narrow screens: input, buttons, result, then examples and extras */
+@media (max-width: 900px) {
+  .sc-status { display:none; }
+  #sc-main { flex-direction: column; }
+  #sc-left, #sc-right { display: contents !important; }
+  #sc-input { order: 1; }
+  #sc-actions { order: 2; }
+  #sc-result { order: 3; min-height: 0; }
+  #sc-raw { order: 5; }
+  #sc-extras { order: 4; }
+  .sc-empty { min-height: 180px; padding: 32px 20px; }
+}
 """
 
 
@@ -345,8 +363,8 @@ def build_app(initial_message: str | None = None) -> gr.Blocks:
 
     with gr.Blocks(title="ScamantiQ") as demo:
         gr.HTML(header_html(status, ok))
-        with gr.Row(equal_height=False):
-            with gr.Column(scale=5, min_width=340):
+        with gr.Row(equal_height=False, elem_id="sc-main"):
+            with gr.Column(scale=5, min_width=340, elem_id="sc-left"):
                 inp = gr.Textbox(
                     label="Message to analyse",
                     info="Paste a text message, email or chat message. English works best.",
@@ -357,27 +375,30 @@ def build_app(initial_message: str | None = None) -> gr.Blocks:
                     value=init_text,
                     elem_id="sc-input",
                 )
-                with gr.Row():
+                with gr.Row(elem_id="sc-actions"):
                     btn = gr.Button("Analyse message", variant="primary", scale=3, elem_id="sc-analyse")
                     clear = gr.Button("Clear", variant="secondary", scale=1)
-                gr.Examples(
-                    examples=[[e] for e in EXAMPLES],
-                    example_labels=EXAMPLE_LABELS,
-                    inputs=[inp],
-                    label="Try an example",
-                    examples_per_page=8,
-                )
-                gr.HTML(legend_html())
-                with gr.Accordion("How ScamantiQ works", open=False):
-                    gr.HTML(how_it_works_html())
-            with gr.Column(scale=7, min_width=380):
+                with gr.Column(elem_id="sc-extras"):
+                    gr.Examples(
+                        examples=[[e] for e in EXAMPLES],
+                        example_labels=EXAMPLE_LABELS,
+                        inputs=[inp],
+                        label="Try an example",
+                        examples_per_page=8,
+                    )
+                    gr.HTML(legend_html())
+                    with gr.Accordion("How ScamantiQ works", open=False):
+                        gr.HTML(how_it_works_html())
+            with gr.Column(scale=7, min_width=380, elem_id="sc-right"):
                 result_html = gr.HTML(init_html, elem_id="sc-result")
-                with gr.Accordion("Raw JSON result", open=False):
+                with gr.Accordion("Raw JSON result", open=False, elem_id="sc-raw"):
                     raw = gr.JSON(init_raw)
         gr.HTML(f"<div class='sc-disclaimer'><strong>Please note:</strong> {_esc(DISCLAIMER)}</div>")
 
-        btn.click(analyse, inputs=[inp], outputs=[result_html, raw], api_name="analyse")
-        inp.submit(analyse, inputs=[inp], outputs=[result_html, raw])
+        # On narrow screens the result sits below the input; bring it into view once it is ready.
+        scroll_js = "() => { if (window.innerWidth < 900) document.getElementById('sc-result')?.scrollIntoView({behavior: 'smooth', block: 'start'}); }"
+        btn.click(analyse, inputs=[inp], outputs=[result_html, raw], api_name="analyse").then(None, js=scroll_js)
+        inp.submit(analyse, inputs=[inp], outputs=[result_html, raw]).then(None, js=scroll_js)
         clear.click(clear_all, outputs=[inp, result_html, raw])
     return demo
 
