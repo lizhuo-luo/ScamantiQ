@@ -11,14 +11,14 @@ ScamantiQ is a Gradio app that explains *how* a message tries to manipulate the 
 Work inside the `scamantiq` conda environment (`conda activate scamantiq`, or `pip install -r requirements.txt`).
 
 ```bash
-python -m pytest -q                                   # full suite, 45 tests, offline, ~6 s
+python -m pytest -q                                   # full suite, 49 tests, offline, ~5 s
 python -m pytest tests/test_validator.py -q           # one file
 python -m pytest tests/test_analyzer.py::test_analyze_retries_on_bad_evidence -q   # one test
 
 python app.py                                         # UI at http://127.0.0.1:7860 (default provider: local Ollama gemma4:12b)
 SCAMANTIQ_PROVIDER=mock python scripts/ui_preview.py 0 7862   # UI with example 0 pre-rendered, no backend needed
 
-python evaluate.py                                    # 90-message benchmark on the current provider
+python evaluate.py                                    # 150-message benchmark on the current provider
 python evaluate.py --provider sglang --no-cache --out results/eval_x.json
 python evaluate.py --category hard_benign --limit 5
 
@@ -52,7 +52,7 @@ Key invariants that several files rely on:
 
 ## Data and evaluation
 
-- `data/test_set.jsonl`: 90 hand-annotated messages, categories `familiar`, `paraphrased`, `subtle_scam`, `benign`, `hard_benign`. Each has `labels` and per-label `evidence` spans. `check_dataset` (run by `evaluate.py` and by `tests/test_evaluation.py`) requires unique ids, known labels, and every gold span to be a verbatim substring of its message. Two `subtle_scam` items (`ss01`, `ss14`) are intentionally labelled empty.
+- `data/test_set.jsonl`: 150 annotated messages (30 per category), categories `familiar`, `paraphrased`, `subtle_scam`, `benign`, `hard_benign`. Each has `labels` and per-label `evidence` spans. `check_dataset` (run by `evaluate.py` and by `tests/test_evaluation.py`) requires unique ids, known labels, and every gold span to be a verbatim substring of its message. Three `subtle_scam` items (`ss01`, `ss14`, `ss29`) are intentionally labelled empty.
 - `scamantiq/evaluation.py` computes detection accuracy/F1/FPR, macro/micro/per-label F1, grounding rate (on the model's *raw* quotes, before validation), token-level span F1, and mean attempts. `results/` holds committed reports for gemma4:12b (Ollama) and Qwen2.5-7B (SGLang); the README tables are derived from them, so update both together.
 
 ## UI notes

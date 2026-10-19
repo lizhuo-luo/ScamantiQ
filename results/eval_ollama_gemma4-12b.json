@@ -2,29 +2,29 @@
   "model": "ollama:gemma4:12b",
   "metrics": {
     "all": {
-      "n": 90.0,
-      "detection_accuracy": 0.9777777777777777,
-      "detection_f1": 0.9830508474576272,
-      "false_positive_rate": 0.0625,
-      "false_negative_rate": 0.0,
-      "macro_f1": 0.9433728970845505,
-      "micro_f1": 0.9392712550607287,
-      "macro_precision": 0.9313924794359577,
-      "macro_recall": 0.96218487394958,
-      "f1_urgency": 0.9577464788732394,
-      "f1_impersonation": 0.9041095890410958,
-      "f1_isolation": 0.9629629629629629,
-      "f1_reward": 0.9545454545454546,
-      "f1_threat": 0.9375,
+      "n": 150.0,
+      "detection_accuracy": 0.96,
+      "detection_f1": 0.9662921348314607,
+      "false_positive_rate": 0.07936507936507936,
+      "false_negative_rate": 0.011494252873563218,
+      "macro_f1": 0.9139722173661718,
+      "micro_f1": 0.9111111111111111,
+      "macro_precision": 0.8952698251315443,
+      "macro_recall": 0.9421175315912158,
+      "f1_urgency": 0.9215686274509803,
+      "f1_impersonation": 0.8761904761904762,
+      "f1_isolation": 0.918918918918919,
+      "f1_reward": 0.9552238805970149,
+      "f1_threat": 0.8979591836734694,
       "grounding_rate": 1.0,
       "verified_evidence_rate": 1.0,
-      "span_f1": 0.7861732187228827,
-      "n_quotes": 145.0,
+      "span_f1": 0.7578132032835098,
+      "n_quotes": 212.0,
       "errors": 0.0,
-      "mean_attempts": 1.011111111111111
+      "mean_attempts": 1.0
     },
     "benign": {
-      "n": 15.0,
+      "n": 30.0,
       "detection_accuracy": 1.0,
       "detection_f1": 0.0,
       "false_positive_rate": 0.0,
@@ -37,81 +37,81 @@
       "mean_attempts": 1.0
     },
     "familiar": {
-      "n": 25.0,
+      "n": 30.0,
       "detection_accuracy": 1.0,
       "detection_f1": 1.0,
       "false_positive_rate": 0.0,
       "false_negative_rate": 0.0,
-      "macro_f1": 0.9702206320810973,
-      "micro_f1": 0.96875,
-      "macro_precision": 0.9809090909090908,
-      "macro_recall": 0.9636363636363636,
-      "f1_urgency": 0.9767441860465116,
-      "f1_impersonation": 0.9743589743589743,
-      "f1_isolation": 1.0,
-      "f1_reward": 1.0,
-      "f1_threat": 0.9,
-      "grounding_rate": 1.0,
-      "verified_evidence_rate": 1.0,
-      "span_f1": 0.7925987738431893,
-      "n_quotes": 77.0,
-      "errors": 0.0,
-      "mean_attempts": 1.04
-    },
-    "hard_benign": {
-      "n": 15.0,
-      "detection_accuracy": 1.0,
-      "detection_f1": 0.0,
-      "false_positive_rate": 0.0,
-      "false_negative_rate": 0.0,
-      "grounding_rate": 1.0,
-      "verified_evidence_rate": 1.0,
-      "span_f1": 0.0,
-      "n_quotes": 0.0,
-      "errors": 0.0,
-      "mean_attempts": 1.0
-    },
-    "paraphrased": {
-      "n": 20.0,
-      "detection_accuracy": 1.0,
-      "detection_f1": 1.0,
-      "false_positive_rate": 0.0,
-      "false_negative_rate": 0.0,
-      "macro_f1": 0.9640211640211639,
-      "micro_f1": 0.9512195121951219,
-      "macro_precision": 0.9357142857142857,
+      "macro_f1": 0.9921447824412784,
+      "micro_f1": 0.9873417721518988,
+      "macro_precision": 0.9845925925925926,
       "macro_recall": 1.0,
-      "f1_urgency": 0.9629629629629629,
-      "f1_impersonation": 0.8571428571428571,
+      "f1_urgency": 0.9811320754716981,
+      "f1_impersonation": 0.9795918367346939,
       "f1_isolation": 1.0,
       "f1_reward": 1.0,
       "f1_threat": 1.0,
       "grounding_rate": 1.0,
       "verified_evidence_rate": 1.0,
-      "span_f1": 0.7361179875545383,
-      "n_quotes": 45.0,
+      "span_f1": 0.8226783860986273,
+      "n_quotes": 91.0,
+      "errors": 0.0,
+      "mean_attempts": 1.0
+    },
+    "hard_benign": {
+      "n": 30.0,
+      "detection_accuracy": 0.9333333333333333,
+      "detection_f1": 0.0,
+      "false_positive_rate": 0.06666666666666667,
+      "false_negative_rate": 0.0,
+      "grounding_rate": 1.0,
+      "verified_evidence_rate": 1.0,
+      "span_f1": 0.0,
+      "n_quotes": 4.0,
+      "errors": 0.0,
+      "mean_attempts": 1.0
+    },
+    "paraphrased": {
+      "n": 30.0,
+      "detection_accuracy": 1.0,
+      "detection_f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "macro_f1": 0.9311213517665131,
+      "micro_f1": 0.9291338582677166,
+      "macro_precision": 0.9243018419489009,
+      "macro_recall": 0.9454545454545455,
+      "f1_urgency": 0.9523809523809523,
+      "f1_impersonation": 0.9032258064516129,
+      "f1_isolation": 1.0,
+      "f1_reward": 1.0,
+      "f1_threat": 0.8,
+      "grounding_rate": 1.0,
+      "verified_evidence_rate": 1.0,
+      "span_f1": 0.6921880796978784,
+      "n_quotes": 71.0,
       "errors": 0.0,
       "mean_attempts": 1.0
     },
     "subtle_scam": {
-      "n": 15.0,
+      "n": 30.0,
       "detection_accuracy": 0.8666666666666667,
       "detection_f1": 0.9285714285714286,
       "false_positive_rate": 1.0,
-      "false_negative_rate": 0.0,
-      "macro_f1": 0.4671794871794872,
-      "micro_f1": 0.8108108108108109,
-      "macro_precision": 0.48863636363636365,
-      "macro_recall": 0.5,
-      "f1_urgency": 0.0,
-      "f1_impersonation": 0.7692307692307693,
-      "f1_isolation": 0.6666666666666666,
-      "f1_reward": 0.9,
+      "false_negative_rate": 0.037037037037037035,
+      "macro_f1": 0.5162732919254658,
+      "micro_f1": 0.7605633802816901,
+      "macro_precision": 0.46777777777777774,
+      "macro_recall": 0.6882352941176471,
+      "f1_urgency": 0.4,
+      "f1_impersonation": 0.6956521739130435,
+      "f1_isolation": 0.5714285714285714,
+      "f1_reward": 0.9142857142857143,
       "f1_threat": 0.0,
       "grounding_rate": 1.0,
       "verified_evidence_rate": 1.0,
-      "span_f1": 0.8824806242144951,
-      "n_quotes": 23.0,
+      "span_f1": 0.7258542807909276,
+      "n_quotes": 46.0,
       "errors": 0.0,
       "mean_attempts": 1.0
     }
@@ -144,14 +144,14 @@
       "result": {
         "message": "URGENT: Your HSBC account has been locked due to suspicious activity. Verify your identity within 2 hours at hsbc-secure-verify.com or your funds will be frozen permanently. Do not share this message with anyone.",
         "is_suspicious": true,
-        "summary": "This message uses a sense of extreme urgency and a threat of losing access to your money to pressure you into acting quickly without thinking.",
+        "summary": "This message uses a sense of extreme urgency and a threat of losing access to funds to pressure you into acting quickly without thinking.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
               "Verify your identity within 2 hours"
             ],
-            "explanation": "By setting a very short deadline, the message tries to make you panic and act quickly so you don't take time to check the facts.",
+            "explanation": "By setting a very short deadline, the message tries to make you panic and act quickly so you don't take time to verify the claim.",
             "confidence": 1.0
           },
           {
@@ -159,7 +159,7 @@
             "evidence": [
               "Your HSBC account"
             ],
-            "explanation": "The message pretends to be from a well-known bank to gain your trust and make the request seem official.",
+            "explanation": "The message pretends to be from a well-known financial institution to gain your trust and make the request seem official.",
             "confidence": 0.9
           },
           {
@@ -167,7 +167,7 @@
             "evidence": [
               "your funds will be frozen permanently"
             ],
-            "explanation": "This warns of a severe negative consequence (losing access to your money) to scare you into complying with their instructions.",
+            "explanation": "This warns of a severe negative consequence (losing access to your money) to pressure you into complying with their instructions.",
             "confidence": 0.9
           },
           {
@@ -175,8 +175,8 @@
             "evidence": [
               "Do not share this message with anyone."
             ],
-            "explanation": "This instruction tries to prevent you from asking friends, family, or bank staff for advice, keeping you from getting a second opinion.",
-            "confidence": 0.9
+            "explanation": "This instruction tries to prevent you from seeking advice from friends, family, or official bank staff who could warn you about the situation.",
+            "confidence": 1.0
           }
         ],
         "spans": [
@@ -209,7 +209,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -246,7 +246,7 @@
             "evidence": [
               "before midnight tonight"
             ],
-            "explanation": "By creating a very short deadline, the message tries to make you act quickly so you don't take time to verify the claim.",
+            "explanation": "By setting a very short deadline, the message tries to make you act quickly so you don't take time to verify the claim.",
             "confidence": 1.0
           }
         ],
@@ -268,7 +268,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -302,7 +302,7 @@
               "Hi Mum, it's me.",
               "I dropped my phone in the sink so this is my new number."
             ],
-            "explanation": "The message pretends to be a family member in a crisis to build trust and explain why they are contacting you from an unknown number.",
+            "explanation": "The message pretends to be a family member in a crisis to build immediate trust and bypass your natural suspicion.",
             "confidence": 0.9
           },
           {
@@ -310,7 +310,7 @@
             "evidence": [
               "I need to pay a bill today"
             ],
-            "explanation": "By creating a deadline of 'today', the message pressures you to act quickly without taking time to verify the request.",
+            "explanation": "By creating a deadline, the message tries to make you act quickly without taking the time to call or verify the situation.",
             "confidence": 0.8
           },
           {
@@ -318,7 +318,7 @@
             "evidence": [
               "Please don't tell Dad, he'll be angry about the phone."
             ],
-            "explanation": "This instruction discourages you from speaking to another family member who might notice the situation is unusual and advise you against sending money.",
+            "explanation": "This instruction tries to keep you from consulting another person who might notice the request is unusual.",
             "confidence": 0.9
           }
         ],
@@ -352,7 +352,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -392,9 +392,9 @@
           {
             "label": "urgency",
             "evidence": [
-              "immediately"
+              "Call 02 8000 1234 immediately"
             ],
-            "explanation": "This word is used to pressure you into acting quickly without taking time to think or verify the claim.",
+            "explanation": "The use of the word 'immediately' is designed to make you act quickly without taking time to verify the claim.",
             "confidence": 0.9
           },
           {
@@ -403,7 +403,7 @@
               "A warrant has been issued for your arrest",
               "avoid prosecution"
             ],
-            "explanation": "The message uses the threat of legal consequences and arrest to create fear and force compliance.",
+            "explanation": "The message uses the threat of legal consequences and arrest to create fear and pressure you into complying.",
             "confidence": 1.0
           }
         ],
@@ -422,8 +422,8 @@
           },
           {
             "label": "urgency",
-            "text": "immediately",
-            "start": 140,
+            "text": "Call 02 8000 1234 immediately",
+            "start": 122,
             "end": 151
           },
           {
@@ -437,7 +437,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -463,14 +463,14 @@
       "result": {
         "message": "Your parcel could not be delivered because of an unpaid customs fee of $2.99. Pay within 12 hours at royalmail-redelivery.net or the item will be returned to sender.",
         "is_suspicious": true,
-        "summary": "This message uses a fake delivery issue and a short deadline to pressure you into clicking a link and paying a small fee.",
+        "summary": "This message uses a sense of urgency and a fake delivery issue to pressure you into clicking a link and paying a small fee.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
               "Pay within 12 hours"
             ],
-            "explanation": "By creating a very short deadline, the message tries to make you act quickly without taking time to verify the claim.",
+            "explanation": "This creates a very short deadline to make you act quickly without taking time to verify the claim.",
             "confidence": 1.0
           },
           {
@@ -478,7 +478,7 @@
             "evidence": [
               "royalmail-redelivery.net"
             ],
-            "explanation": "The message uses the name of a well-known postal service to make the request seem like an official government or delivery notification.",
+            "explanation": "The message uses a link that mimics a known postal service to make the request appear like an official government or delivery notification.",
             "confidence": 0.9
           },
           {
@@ -486,7 +486,7 @@
             "evidence": [
               "the item will be returned to sender"
             ],
-            "explanation": "This warns of a negative consequence (losing your parcel) if you do not comply with the request immediately.",
+            "explanation": "This warns of a negative consequence (losing your package) if you do not comply with the request immediately.",
             "confidence": 0.8
           }
         ],
@@ -514,7 +514,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -540,16 +540,15 @@
       "result": {
         "message": "Netflix: We were unable to process your payment. Update your billing details within 24 hours to avoid suspension of your account: netflix-billing-update.com",
         "is_suspicious": true,
-        "summary": "The message uses a sense of urgency and pretends to be a well-known brand to pressure you into clicking a link and providing payment information.",
+        "summary": "This message uses a sense of urgency and pretends to be a well-known brand to pressure you into clicking a link and providing payment information.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
-              "within 24 hours",
-              "avoid suspension of your account"
+              "within 24 hours"
             ],
-            "explanation": "By setting a short deadline and threatening to stop your service, the message tries to make you act quickly without taking time to check if the request is real.",
-            "confidence": 1.0
+            "explanation": "By setting a short deadline, the message tries to make you act quickly without taking time to verify the claim.",
+            "confidence": 0.9
           },
           {
             "label": "impersonation",
@@ -557,7 +556,15 @@
               "Netflix:"
             ],
             "explanation": "The message uses the name of a well-known company to create a sense of legitimacy and trust.",
-            "confidence": 1.0
+            "confidence": 0.9
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "avoid suspension of your account"
+            ],
+            "explanation": "The message warns of a negative consequence (losing access to your account) to pressure you into complying with their request.",
+            "confidence": 0.8
           }
         ],
         "spans": [
@@ -574,7 +581,7 @@
             "end": 92
           },
           {
-            "label": "urgency",
+            "label": "threat",
             "text": "avoid suspension of your account",
             "start": 96,
             "end": 128
@@ -584,7 +591,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -610,14 +617,14 @@
       "result": {
         "message": "I am a Microsoft certified technician. We have detected a virus on your computer that is stealing your bank details. Call us now on 1-800-555-0199 before your data is lost forever.",
         "is_suspicious": true,
-        "summary": "This message uses a fake authority and a sense of panic to pressure you into calling a number immediately.",
+        "summary": "This message uses a sense of panic and a fake professional identity to pressure you into calling a number immediately.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
               "I am a Microsoft certified technician"
             ],
-            "explanation": "The sender claims to have a professional title from a well-known company to make their request seem official and trustworthy.",
+            "explanation": "The sender claims to have a professional role at a well-known company to make their request seem official and trustworthy.",
             "confidence": 0.9
           },
           {
@@ -626,7 +633,7 @@
               "Call us now",
               "before your data is lost forever"
             ],
-            "explanation": "The message uses a ticking clock and the threat of permanent loss to pressure you into acting quickly without stopping to think.",
+            "explanation": "These phrases create a sense of immediate crisis, trying to make you act quickly without taking time to think or verify the claim.",
             "confidence": 0.9
           },
           {
@@ -635,7 +642,7 @@
               "stealing your bank details",
               "before your data is lost forever"
             ],
-            "explanation": "The message uses the fear of financial theft and permanent data loss to create a sense of crisis.",
+            "explanation": "The message uses the fear of losing money or personal information to pressure you into complying with their instructions.",
             "confidence": 0.8
           }
         ],
@@ -675,7 +682,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -724,7 +731,7 @@
             "evidence": [
               "This matter is strictly confidential."
             ],
-            "explanation": "By demanding secrecy, the sender tries to prevent you from seeking advice from others who might spot the deception.",
+            "explanation": "By demanding secrecy, the sender tries to prevent you from seeking advice from others who might spot the red flags.",
             "confidence": 0.9
           }
         ],
@@ -752,7 +759,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -774,7 +781,7 @@
       "result": {
         "message": "I have recorded you through your webcam visiting adult websites. Pay $900 in Bitcoin to the address below within 48 hours or I will send the video to all your contacts.",
         "is_suspicious": true,
-        "summary": "This message uses a severe threat of public exposure and a strict deadline to pressure you into sending money immediately.",
+        "summary": "This message uses a severe threat of public exposure and a strict deadline to pressure you into making a payment immediately.",
         "tactics": [
           {
             "label": "urgency",
@@ -811,7 +818,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -833,22 +840,23 @@
       "result": {
         "message": "Your Apple ID has been used to purchase an iPhone 15 Pro for $1,299. If this was not you, cancel the order immediately at apple-id-support.net.",
         "is_suspicious": true,
-        "summary": "This message uses a fake high-value purchase to create panic and pressure you into clicking a link to 'cancel' it.",
+        "summary": "This message uses a high-value purchase notification to create panic and pressure you into clicking a link quickly.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
               "cancel the order immediately"
             ],
-            "explanation": "The word 'immediately' is designed to make you act quickly out of panic without taking time to verify the claim.",
+            "explanation": "The use of the word 'immediately' is designed to make you act quickly without taking time to verify the claim.",
             "confidence": 0.9
           },
           {
             "label": "impersonation",
             "evidence": [
-              "Your Apple ID"
+              "Your Apple ID",
+              "apple-id-support.net"
             ],
-            "explanation": "The message pretends to be from a trusted brand (Apple) to make the claim about your account seem official.",
+            "explanation": "The message mimics the branding of a well-known technology company to make the request seem like an official security alert.",
             "confidence": 0.8
           }
         ],
@@ -864,13 +872,19 @@
             "text": "cancel the order immediately",
             "start": 90,
             "end": 118
+          },
+          {
+            "label": "impersonation",
+            "text": "apple-id-support.net",
+            "start": 122,
+            "end": 142
           }
         ],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -893,22 +907,22 @@
       "result": {
         "message": "Guaranteed 30% monthly returns on our crypto trading platform. Zero risk. Our VIP slots close tonight, deposit a minimum of $250 to lock in your spot.",
         "is_suspicious": true,
-        "summary": "This message uses promises of high returns with no risk and a ticking clock to pressure you into making a deposit quickly.",
+        "summary": "This message uses promises of high returns with no risk and a ticking clock to pressure you into making a quick financial decision.",
         "tactics": [
           {
             "label": "reward",
             "evidence": [
               "Guaranteed 30% monthly returns",
-              "Zero risk."
+              "Zero risk"
             ],
-            "explanation": "By promising high profits with no risk, the message tries to make the offer seem irresistible and too good to pass up.",
+            "explanation": "By promising high profits with no possibility of loss, the message tries to make the offer seem irresistible and safe.",
             "confidence": 1.0
           },
           {
             "label": "urgency",
             "evidence": [
               "VIP slots close tonight",
-              "deposit a minimum of $250 to lock in your spot."
+              "deposit a minimum of $250 to lock in your spot"
             ],
             "explanation": "The mention of a deadline tonight is designed to make you act quickly without taking time to research the platform or the risks involved.",
             "confidence": 1.0
@@ -923,9 +937,9 @@
           },
           {
             "label": "reward",
-            "text": "Zero risk.",
+            "text": "Zero risk",
             "start": 63,
-            "end": 73
+            "end": 72
           },
           {
             "label": "urgency",
@@ -935,16 +949,16 @@
           },
           {
             "label": "urgency",
-            "text": "deposit a minimum of $250 to lock in your spot.",
+            "text": "deposit a minimum of $250 to lock in your spot",
             "start": 103,
-            "end": 150
+            "end": 149
           }
         ],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -971,14 +985,14 @@
       "result": {
         "message": "FINAL NOTICE from the Department for Work and Pensions. You owe an outstanding penalty of £450. Failure to pay today will result in bailiffs attending your property.",
         "is_suspicious": true,
-        "summary": "This message uses a sense of extreme urgency and a threat of legal action to pressure you into paying money immediately.",
+        "summary": "This message uses a high-pressure tactic by pretending to be a government agency and threatening immediate legal consequences to force a quick payment.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
               "Department for Work and Pensions"
             ],
-            "explanation": "The message claims to come from a government department to make the demand seem official and authoritative.",
+            "explanation": "The message claims to come from a government department to gain trust and make the demand seem official.",
             "confidence": 0.9
           },
           {
@@ -986,7 +1000,7 @@
             "evidence": [
               "Failure to pay today"
             ],
-            "explanation": "By demanding payment 'today', the message tries to stop you from taking time to think or verify the claim with the actual authorities.",
+            "explanation": "By setting a deadline of 'today', the message tries to make you act quickly without taking time to verify the claim.",
             "confidence": 0.9
           },
           {
@@ -994,7 +1008,7 @@
             "evidence": [
               "will result in bailiffs attending your property"
             ],
-            "explanation": "The message uses the threat of a serious consequence (bailiffs) to create fear and pressure you into complying immediately.",
+            "explanation": "The message uses the threat of physical enforcement and legal consequences to create fear and pressure you into complying.",
             "confidence": 0.9
           }
         ],
@@ -1022,7 +1036,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1044,7 +1058,7 @@
       "result": {
         "message": "Hi, this is Amazon Customer Service. A suspicious order of $1,850 was placed on your account. To cancel, press 1 or call back on this number. Do not contact your bank as the fraud department is handling it.",
         "is_suspicious": true,
-        "summary": "This message uses a fake sense of urgency and impersonates a well-known company to pressure you into acting quickly while discouraging you from seeking outside help.",
+        "summary": "This message uses a fake sense of urgency and impersonates a well-known company to create panic, while also trying to prevent you from seeking outside advice.",
         "tactics": [
           {
             "label": "impersonation",
@@ -1052,23 +1066,23 @@
               "this is Amazon Customer Service"
             ],
             "explanation": "The message claims to be from a well-known, trusted company to gain your trust and make the request seem official.",
-            "confidence": 0.9
+            "confidence": 1.0
           },
           {
             "label": "urgency",
             "evidence": [
-              "To cancel, press 1 or call back on this number."
+              "To cancel, press 1 or call back on this number"
             ],
-            "explanation": "By suggesting an immediate action to stop a large transaction, it pressures you to act quickly without taking time to verify the claim.",
-            "confidence": 0.8
+            "explanation": "By suggesting an immediate action to stop a large transaction, it pressures you to act quickly without taking time to think or verify the claim.",
+            "confidence": 0.9
           },
           {
             "label": "isolation",
             "evidence": [
-              "Do not contact your bank as the fraud department is handling it."
+              "Do not contact your bank"
             ],
-            "explanation": "This explicitly tells you to avoid contacting a trusted third party (your bank), which prevents you from getting independent advice or verification.",
-            "confidence": 0.9
+            "explanation": "This instruction tries to prevent you from speaking to a trusted third party who could verify the situation and warn you of the risk.",
+            "confidence": 1.0
           }
         ],
         "spans": [
@@ -1080,22 +1094,22 @@
           },
           {
             "label": "urgency",
-            "text": "To cancel, press 1 or call back on this number.",
+            "text": "To cancel, press 1 or call back on this number",
             "start": 94,
-            "end": 141
+            "end": 140
           },
           {
             "label": "isolation",
-            "text": "Do not contact your bank as the fraud department is handling it.",
+            "text": "Do not contact your bank",
             "start": 142,
-            "end": 206
+            "end": 166
           }
         ],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1121,22 +1135,14 @@
       "result": {
         "message": "You have 1 unclaimed tax refund of £386.40 from HMRC. Claim it now via the secure link before the claim window closes on Friday: hmrc-refund-claim.co",
         "is_suspicious": true,
-        "summary": "This message uses a fake government identity and a deadline to pressure you into clicking a link to claim a prize.",
+        "summary": "This message uses a promised financial gain and a fast-approaching deadline to pressure you into clicking a link.",
         "tactics": [
-          {
-            "label": "impersonation",
-            "evidence": [
-              "from HMRC"
-            ],
-            "explanation": "The message pretends to be from a government tax authority to gain your trust and make the request seem official.",
-            "confidence": 0.9
-          },
           {
             "label": "reward",
             "evidence": [
               "unclaimed tax refund of £386.40"
             ],
-            "explanation": "By offering a specific sum of money, the message tries to entice you into clicking the link.",
+            "explanation": "By promising a specific sum of money, the message tries to entice you into taking action based on a financial gain.",
             "confidence": 0.9
           },
           {
@@ -1144,8 +1150,16 @@
             "evidence": [
               "before the claim window closes on Friday"
             ],
-            "explanation": "The mention of a deadline is designed to make you act quickly without taking time to verify the link's safety.",
+            "explanation": "The mention of a specific deadline is designed to make you act quickly without taking time to verify the information.",
             "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "from HMRC"
+            ],
+            "explanation": "The message claims to be from a government tax authority to gain your trust and make the request seem official.",
+            "confidence": 0.8
           }
         ],
         "spans": [
@@ -1172,7 +1186,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1195,7 +1209,7 @@
       "result": {
         "message": "Hey, it's John from the IT department. We're rolling out a security update and I need your login password to complete it on your machine. Please send it over ASAP so I can finish before the deadline.",
         "is_suspicious": true,
-        "summary": "The message uses a fake identity and a sense of urgency to pressure you into giving away sensitive login information.",
+        "summary": "The message uses a fake identity and a sense of urgency to pressure you into sharing sensitive login credentials.",
         "tactics": [
           {
             "label": "impersonation",
@@ -1232,7 +1246,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1269,7 +1283,7 @@
             "evidence": [
               "within the next 6 hours"
             ],
-            "explanation": "By creating a short deadline, the message tries to make you act quickly without taking time to think or verify the claim.",
+            "explanation": "By setting a short deadline, the message tries to make you act quickly without taking time to think or verify the request.",
             "confidence": 0.9
           }
         ],
@@ -1291,7 +1305,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1314,23 +1328,23 @@
       "result": {
         "message": "Work from home and earn $5,000 per week with only 2 hours of work a day! No experience required. Limited positions, apply today and receive a $200 signing bonus.",
         "is_suspicious": true,
-        "summary": "This message uses the promise of high pay for very little work and a limited-time bonus to encourage you to act quickly without questioning the offer.",
+        "summary": "This message uses high-paying promises and a sense of scarcity to encourage you to act quickly without questioning the offer.",
         "tactics": [
           {
             "label": "reward",
             "evidence": [
               "earn $5,000 per week with only 2 hours of work a day!",
-              "receive a $200 signing bonus."
+              "receive a $200 signing bonus"
             ],
-            "explanation": "These phrases offer high financial rewards and easy work to make the offer seem irresistible and entice immediate engagement.",
-            "confidence": 0.95
+            "explanation": "The message promises a very high income for very little work, which is designed to make the offer seem irresistibly attractive.",
+            "confidence": 1.0
           },
           {
             "label": "urgency",
             "evidence": [
               "Limited positions, apply today"
             ],
-            "explanation": "By claiming there are limited spots and demanding action today, it pressures you to act quickly without taking time to verify the offer.",
+            "explanation": "By claiming there are limited spots and telling you to apply today, it pressures you to act immediately rather than taking time to research the opportunity.",
             "confidence": 0.9
           }
         ],
@@ -1349,16 +1363,16 @@
           },
           {
             "label": "reward",
-            "text": "receive a $200 signing bonus.",
+            "text": "receive a $200 signing bonus",
             "start": 132,
-            "end": 161
+            "end": 160
           }
         ],
         "rejected_quotes": [],
-        "attempts": 2,
+        "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1380,24 +1394,22 @@
       "result": {
         "message": "Babe, I know we have only been talking for two weeks but I feel we have a real connection. My daughter is in hospital and I cannot access my account from the oil rig. Could you send $600 for her treatment? Please keep this between us, I am embarrassed.",
         "is_suspicious": true,
-        "summary": "This message uses a personal connection and a high-pressure medical emergency to request money while asking you to keep the situation secret.",
+        "summary": "This message uses a personal connection and a medical emergency to create a sense of intimacy and urgency, while asking for money and requesting secrecy.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
-              "My daughter is in hospital",
-              "Could you send $600 for her treatment?"
+              "My daughter is in hospital"
             ],
-            "explanation": "By creating a medical emergency involving a child, the message tries to make you feel a sense of panic so you act quickly without questioning the request.",
+            "explanation": "By mentioning a medical emergency involving a child, the message tries to create a high-pressure situation that makes the reader want to act quickly without questioning the request.",
             "confidence": 0.9
           },
           {
             "label": "impersonation",
             "evidence": [
-              "Babe",
-              "I feel we have a real connection."
+              "Babe, I know we have only been talking for two weeks"
             ],
-            "explanation": "The message uses intimate language to pretend to be someone you have a personal relationship with, making the request seem more trustworthy.",
+            "explanation": "The message uses intimate language to pretend to be a romantic interest or a close friend to build trust quickly.",
             "confidence": 0.8
           },
           {
@@ -1405,34 +1417,22 @@
             "evidence": [
               "Please keep this between us, I am embarrassed."
             ],
-            "explanation": "Asking you to keep the matter secret prevents you from seeking outside advice or checking the story with others.",
+            "explanation": "This phrase discourages the reader from talking to others who might notice the inconsistency of the story or advise against sending money.",
             "confidence": 0.9
           }
         ],
         "spans": [
           {
             "label": "impersonation",
-            "text": "Babe",
+            "text": "Babe, I know we have only been talking for two weeks",
             "start": 0,
-            "end": 4
-          },
-          {
-            "label": "impersonation",
-            "text": "I feel we have a real connection.",
-            "start": 57,
-            "end": 90
+            "end": 52
           },
           {
             "label": "urgency",
             "text": "My daughter is in hospital",
             "start": 91,
             "end": 117
-          },
-          {
-            "label": "urgency",
-            "text": "Could you send $600 for her treatment?",
-            "start": 167,
-            "end": 205
           },
           {
             "label": "isolation",
@@ -1445,7 +1445,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1471,7 +1471,7 @@
       "result": {
         "message": "This is the Social Security Administration. Your social security number has been suspended because of suspicious activity. Call 1-888-555-0142 now or legal action will be taken against you.",
         "is_suspicious": true,
-        "summary": "This message uses a government identity and a threat of legal action to pressure you into calling a specific number immediately.",
+        "summary": "The message uses a government identity and a threat of legal action to pressure you into calling a specific number immediately.",
         "tactics": [
           {
             "label": "impersonation",
@@ -1494,7 +1494,7 @@
             "evidence": [
               "legal action will be taken against you"
             ],
-            "explanation": "The message uses the fear of legal consequences to pressure you into complying with their demands.",
+            "explanation": "The message uses the fear of legal consequences to pressure you into complying with their request.",
             "confidence": 1.0
           }
         ],
@@ -1522,7 +1522,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1548,15 +1548,14 @@
       "result": {
         "message": "Your PayPal account will be permanently limited. We noticed unusual login attempts. Confirm your identity now: paypa1-resolution-center.com",
         "is_suspicious": true,
-        "summary": "The message uses a sense of urgency and pretends to be a well-known company to pressure you into clicking a link.",
+        "summary": "This message uses a sense of urgency and a threat of account loss to pressure you into clicking a link to 'verify' your identity.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
-              "Your PayPal account will be permanently limited.",
-              "Confirm your identity now:"
+              "Confirm your identity now"
             ],
-            "explanation": "By claiming your account will be restricted and demanding immediate action, the message tries to make you act quickly without checking the link's safety.",
+            "explanation": "The use of the word 'now' creates a sense of immediate pressure, intended to make you act quickly without taking time to verify the request.",
             "confidence": 0.9
           },
           {
@@ -1564,8 +1563,16 @@
             "evidence": [
               "Your PayPal account"
             ],
-            "explanation": "The message pretends to be from PayPal, a trusted financial service, to make the request seem official and legitimate.",
-            "confidence": 0.85
+            "explanation": "The message claims to be from a well-known, trusted company (PayPal) to gain your trust and make the request seem official.",
+            "confidence": 0.8
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "will be permanently limited"
+            ],
+            "explanation": "The message warns of a negative consequence (losing access to your account) to scare you into complying with their instructions.",
+            "confidence": 0.8
           }
         ],
         "spans": [
@@ -1576,23 +1583,23 @@
             "end": 19
           },
           {
-            "label": "urgency",
-            "text": "Your PayPal account will be permanently limited.",
-            "start": 0,
-            "end": 48
+            "label": "threat",
+            "text": "will be permanently limited",
+            "start": 20,
+            "end": 47
           },
           {
             "label": "urgency",
-            "text": "Confirm your identity now:",
+            "text": "Confirm your identity now",
             "start": 84,
-            "end": 110
+            "end": 109
           }
         ],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1614,14 +1621,14 @@
       "result": {
         "message": "Hello, I am a recruiter with Tesla. We would like to offer you a remote data entry role paying $45 per hour. To process your onboarding, please purchase equipment through our approved vendor and we will reimburse you with your first paycheck.",
         "is_suspicious": true,
-        "summary": "This message uses a high-paying job offer to entice you into a situation where you are asked to pay for your own equipment upfront.",
+        "summary": "The message uses a high-paying job offer to entice you into a situation where you are asked to pay for your own equipment upfront.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
               "I am a recruiter with Tesla"
             ],
-            "explanation": "The sender claims to represent a well-known, high-authority brand to build trust and make the offer seem legitimate.",
+            "explanation": "The sender claims to represent a well-known, high-profile company to build trust and make the offer seem legitimate.",
             "confidence": 0.9
           },
           {
@@ -1651,7 +1658,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1678,7 +1685,7 @@
       "result": {
         "message": "Your Google account storage is full and your photos will be deleted in 24 hours. Upgrade now for only $0.99 at google-storage-renew.com.",
         "is_suspicious": true,
-        "summary": "This message uses a fake deadline and a threat of data loss to pressure you into clicking a link and paying money quickly.",
+        "summary": "This message uses a deadline and a threat of data loss to pressure you into making a quick payment on an unofficial website.",
         "tactics": [
           {
             "label": "urgency",
@@ -1701,7 +1708,7 @@
             "evidence": [
               "your photos will be deleted"
             ],
-            "explanation": "The message uses the fear of losing personal files to pressure you into taking immediate action.",
+            "explanation": "The message uses the fear of losing personal memories to pressure you into clicking a link and paying money.",
             "confidence": 0.9
           }
         ],
@@ -1729,7 +1736,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1752,8 +1759,7 @@
           {
             "label": "reward",
             "evidence": [
-              "You have been chosen to receive a free iPhone 16",
-              "Simply pay the $4.95 shipping fee"
+              "You have been chosen to receive a free iPhone 16"
             ],
             "explanation": "This offers a high-value item for free to create excitement and motivate you to engage with the sender.",
             "confidence": 0.9
@@ -1765,19 +1771,13 @@
             "text": "You have been chosen to receive a free iPhone 16",
             "start": 0,
             "end": 48
-          },
-          {
-            "label": "reward",
-            "text": "Simply pay the $4.95 shipping fee",
-            "start": 96,
-            "end": 129
           }
         ],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1804,7 +1804,7 @@
       "result": {
         "message": "This is your bank's fraud team. Someone is trying to empty your account right now. We need to move your money to a safe account immediately. Do not hang up and do not speak to branch staff, they may be involved.",
         "is_suspicious": true,
-        "summary": "This message uses a high-pressure scenario involving your bank's security to create panic and force you to bypass normal safety procedures.",
+        "summary": "This message uses a high-pressure scenario involving your finances to make you act quickly and stop you from seeking outside help.",
         "tactics": [
           {
             "label": "impersonation",
@@ -1818,9 +1818,9 @@
             "label": "urgency",
             "evidence": [
               "Someone is trying to empty your account right now.",
-              "immediately."
+              "move your money to a safe account immediately."
             ],
-            "explanation": "By claiming an active theft is happening 'right now,' the message tries to make you panic so you act quickly without taking time to think or verify the claims.",
+            "explanation": "By claiming an active theft is happening 'right now,' the message tries to create panic so you act quickly without taking time to think or verify the claims.",
             "confidence": 0.95
           },
           {
@@ -1828,7 +1828,7 @@
             "evidence": [
               "Do not hang up and do not speak to branch staff, they may be involved."
             ],
-            "explanation": "The message explicitly tells you to avoid talking to actual bank employees, attempting to cut you off from people who could verify the situation and warn you.",
+            "explanation": "The message explicitly tells you to avoid talking to others, specifically bank staff, to prevent you from getting a second opinion or being warned by a professional.",
             "confidence": 0.95
           }
         ],
@@ -1847,8 +1847,8 @@
           },
           {
             "label": "urgency",
-            "text": "immediately.",
-            "start": 128,
+            "text": "move your money to a safe account immediately.",
+            "start": 94,
             "end": 140
           },
           {
@@ -1862,7 +1862,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1903,7 +1903,7 @@
             "evidence": [
               "Your vehicle will be reported to the DMV and a fine of $250 applied"
             ],
-            "explanation": "This uses the threat of a significant fine and official government reporting to create fear and pressure you into complying.",
+            "explanation": "This uses the threat of a government penalty and legal consequences to create fear and pressure you into complying.",
             "confidence": 0.9
           },
           {
@@ -1911,7 +1911,7 @@
             "evidence": [
               "Unpaid toll detected"
             ],
-            "explanation": "The message mimics an official government or transportation authority to make the demand seem legitimate.",
+            "explanation": "The message mimics an official government or transportation authority to make the request seem like a legitimate legal notice.",
             "confidence": 0.8
           }
         ],
@@ -1939,7 +1939,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -1961,22 +1961,30 @@
       "result": {
         "message": "Quick heads up from the building management: we've had a few break-ins so we're asking tenants to confirm their door codes with us by text today. Reply with your code so we can update the system.",
         "is_suspicious": true,
-        "summary": "The message uses a local authority figure and a sense of urgency to pressure you into sharing sensitive security information.",
+        "summary": "The message uses a frightening scenario involving crime to pressure you into sharing sensitive security information quickly.",
         "tactics": [
-          {
-            "label": "impersonation",
-            "evidence": [
-              "from the building management"
-            ],
-            "explanation": "The message claims to come from a trusted authority figure (building management) to make the request for your private information seem official.",
-            "confidence": 0.9
-          },
           {
             "label": "urgency",
             "evidence": [
               "by text today"
             ],
-            "explanation": "By setting a deadline of 'today', the message pressures you to act quickly without taking time to verify the request with the management office directly.",
+            "explanation": "This creates a deadline that pressures you to act immediately without taking time to verify the request with management in person.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "from the building management"
+            ],
+            "explanation": "The sender claims to be an authority figure (building management) to make the request for your private security code seem like a standard procedure.",
+            "confidence": 0.8
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "we've had a few break-ins"
+            ],
+            "explanation": "By mentioning a crime like break-ins, the message uses fear to make you feel like your safety is at risk, making you more likely to comply with their request.",
             "confidence": 0.8
           }
         ],
@@ -1986,6 +1994,12 @@
             "text": "from the building management",
             "start": 15,
             "end": 43
+          },
+          {
+            "label": "threat",
+            "text": "we've had a few break-ins",
+            "start": 45,
+            "end": 70
           },
           {
             "label": "urgency",
@@ -1998,7 +2012,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2043,7 +2057,7 @@
             "evidence": [
               "Mate I'm in a bit of a jam"
             ],
-            "explanation": "The message adopts a casual, friendly tone to mimic a personal relationship and build trust.",
+            "explanation": "The message uses casual, familiar language to mimic a personal relationship and build trust.",
             "confidence": 0.7
           }
         ],
@@ -2071,7 +2085,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2093,14 +2107,14 @@
       "result": {
         "message": "We noticed you haven't collected the £120 loyalty bonus sitting in your account. Bonuses that aren't claimed within 48 hrs are released back into the pool.",
         "is_suspicious": true,
-        "summary": "The message uses a time limit and a promised reward to pressure you into acting quickly without checking the details.",
+        "summary": "The message uses a time-limited offer and a financial incentive to pressure you into acting quickly without verifying the source.",
         "tactics": [
           {
             "label": "reward",
             "evidence": [
               "£120 loyalty bonus"
             ],
-            "explanation": "This offers a specific financial benefit to entice you to engage with the message.",
+            "explanation": "This offers a specific monetary reward to entice the reader to engage with the message.",
             "confidence": 0.9
           },
           {
@@ -2108,7 +2122,7 @@
             "evidence": [
               "within 48 hrs"
             ],
-            "explanation": "By creating a very short deadline, the message tries to make you act quickly so you don't take time to think or verify the claim.",
+            "explanation": "By creating a very short deadline, the message pressures you to act immediately and prevents you from taking time to think or verify the claim.",
             "confidence": 0.9
           }
         ],
@@ -2130,7 +2144,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2156,7 +2170,7 @@
       "result": {
         "message": "Good afternoon. I'm calling from the court registry regarding a missed jury summons. Non-attendance carries a contempt charge. This can be resolved today by paying the administrative fee over the phone.",
         "is_suspicious": true,
-        "summary": "This message uses a legal authority and a threat of legal consequences to pressure you into making a payment immediately.",
+        "summary": "The message uses a legal authority and a threat of criminal charges to pressure you into making a payment immediately.",
         "tactics": [
           {
             "label": "impersonation",
@@ -2171,7 +2185,7 @@
             "evidence": [
               "Non-attendance carries a contempt charge."
             ],
-            "explanation": "This uses the threat of legal consequences or a criminal charge to create fear and pressure the reader into complying.",
+            "explanation": "This uses the threat of legal consequences or criminal charges to create fear and pressure the reader into complying.",
             "confidence": 0.9
           },
           {
@@ -2179,7 +2193,7 @@
             "evidence": [
               "This can be resolved today by paying the administrative fee over the phone."
             ],
-            "explanation": "By suggesting the issue can be 'resolved today' via a phone payment, it pressures you to act immediately without taking time to verify the claim.",
+            "explanation": "By suggesting the issue can be 'resolved today' via a phone payment, it pressures the reader to act immediately rather than taking time to verify the claim.",
             "confidence": 0.8
           }
         ],
@@ -2207,7 +2221,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2273,7 +2287,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2295,14 +2309,14 @@
       "result": {
         "message": "Your landlord asked me to pass this on: the rent account has changed. Pay this month's rent to the new sort code below. Don't bother him with questions, he's travelling.",
         "is_suspicious": true,
-        "summary": "The message uses a sense of authority and a request for secrecy to pressure you into changing your payment details without verification.",
+        "summary": "The message uses a sense of authority and a request for secrecy to discourage you from verifying the change in payment details.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
               "Your landlord asked me to pass this on"
             ],
-            "explanation": "The message claims to come from a trusted authority figure (the landlord) to make the request for new bank details seem legitimate.",
+            "explanation": "The message claims to come from a trusted authority figure (the landlord) to make the request for a new bank account seem legitimate.",
             "confidence": 0.9
           },
           {
@@ -2310,7 +2324,7 @@
             "evidence": [
               "Don't bother him with questions, he's travelling."
             ],
-            "explanation": "This phrase discourages you from seeking clarification or talking to the landlord directly, which prevents you from verifying the information with the actual owner.",
+            "explanation": "This phrase discourages you from contacting the landlord directly, preventing you from verifying the information with the actual owner.",
             "confidence": 0.9
           }
         ],
@@ -2332,7 +2346,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2354,23 +2368,24 @@
       "result": {
         "message": "A small group of early supporters is being let into the pre-sale at 60% below listing price. Allocation is first come first served and the wallet link expires in ninety minutes.",
         "is_suspicious": true,
-        "summary": "This message uses a sense of extreme time pressure and the promise of a special deal to push you into making a quick decision.",
+        "summary": "This message uses a combination of a high-value reward and a very short deadline to pressure you into making a quick decision.",
         "tactics": [
-          {
-            "label": "urgency",
-            "evidence": [
-              "the wallet link expires in ninety minutes"
-            ],
-            "explanation": "By setting a very short deadline, the message tries to make you panic and act quickly without taking time to research the offer.",
-            "confidence": 1.0
-          },
           {
             "label": "reward",
             "evidence": [
               "60% below listing price"
             ],
-            "explanation": "This highlights a significant financial gain to make the offer seem too good to pass up, encouraging you to engage quickly.",
+            "explanation": "This highlights a significant financial gain to make the offer seem highly attractive and worth acting on immediately.",
             "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "first come first served",
+              "expires in ninety minutes"
+            ],
+            "explanation": "By creating a ticking clock and a sense of limited availability, the message tries to make you act quickly without taking time to research the offer.",
+            "confidence": 1.0
           }
         ],
         "spans": [
@@ -2382,8 +2397,14 @@
           },
           {
             "label": "urgency",
-            "text": "the wallet link expires in ninety minutes",
-            "start": 135,
+            "text": "first come first served",
+            "start": 107,
+            "end": 130
+          },
+          {
+            "label": "urgency",
+            "text": "expires in ninety minutes",
+            "start": 151,
             "end": 176
           }
         ],
@@ -2391,7 +2412,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2428,7 +2449,7 @@
             "evidence": [
               "Dad"
             ],
-            "explanation": "The message pretends to be from a family member to build trust and exploit the emotional bond between parent and child.",
+            "explanation": "The message pretends to come from a family member to build trust and exploit the emotional bond between parent and child.",
             "confidence": 0.8
           }
         ],
@@ -2450,7 +2471,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2472,14 +2493,14 @@
       "result": {
         "message": "Our records show your energy supply contract lapsed. Without action in the next few hours the meter will be switched to the emergency tariff, roughly tripling your bill. Confirm your card details to keep your current rate.",
         "is_suspicious": true,
-        "summary": "This message uses a time-sensitive threat of much higher costs to pressure you into providing your credit card details immediately.",
+        "summary": "This message uses a sense of extreme time pressure and the threat of a much higher bill to pressure you into providing financial information quickly.",
         "tactics": [
           {
             "label": "urgency",
             "evidence": [
               "in the next few hours"
             ],
-            "explanation": "By creating a very short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
+            "explanation": "This creates a very short deadline, intended to make you act quickly without taking time to verify the claim or think clearly.",
             "confidence": 1.0
           },
           {
@@ -2487,7 +2508,7 @@
             "evidence": [
               "the meter will be switched to the emergency tariff, roughly tripling your bill."
             ],
-            "explanation": "This warns of a significant financial penalty to scare you into complying with their request immediately.",
+            "explanation": "This uses a significant financial penalty as a way to scare the reader into complying with the request immediately.",
             "confidence": 0.9
           }
         ],
@@ -2509,7 +2530,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2538,7 +2559,7 @@
             "evidence": [
               "A sum is waiting for the rightful heir and you appear to qualify."
             ],
-            "explanation": "This uses the promise of a financial windfall to entice the reader into responding to the message.",
+            "explanation": "This uses the promise of a financial gain to entice the reader into responding to the message.",
             "confidence": 0.9
           },
           {
@@ -2546,7 +2567,7 @@
             "evidence": [
               "Discretion is essential as other claimants are circling."
             ],
-            "explanation": "By insisting on secrecy, the message tries to discourage you from consulting friends or family who might point out the suspicious nature of the claim.",
+            "explanation": "By insisting on secrecy, the message discourages you from consulting friends or professionals who might spot the deception.",
             "confidence": 0.8
           }
         ],
@@ -2568,7 +2589,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2593,7 +2614,7 @@
             "evidence": [
               "The compliance desk at your brokerage"
             ],
-            "explanation": "By claiming to be a 'compliance desk' at a financial institution, the message tries to gain your trust by appearing to be an official authority.",
+            "explanation": "By claiming to be a 'compliance desk' at a financial institution, the message tries to build trust and authority to make the request seem official.",
             "confidence": 0.9
           }
         ],
@@ -2609,7 +2630,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2631,7 +2652,7 @@
       "result": {
         "message": "You've got a court-ordered debt of 1,240 against your name. The enforcement team visits on Thursday. If you'd rather avoid that, settle a reduced figure by bank transfer before then.",
         "is_suspicious": true,
-        "summary": "This message uses a legal threat and a fast deadline to pressure you into making a payment quickly without verifying the claim.",
+        "summary": "This message uses a legal threat and a fast deadline to pressure you into making a payment quickly.",
         "tactics": [
           {
             "label": "urgency",
@@ -2639,7 +2660,7 @@
               "The enforcement team visits on Thursday.",
               "before then"
             ],
-            "explanation": "By setting a specific deadline of 'Thursday', the message pressures you to act quickly and may stop you from taking time to verify the debt.",
+            "explanation": "By setting a specific deadline of 'Thursday', the message pressures you to act quickly without taking time to verify the claim.",
             "confidence": 0.9
           },
           {
@@ -2647,7 +2668,7 @@
             "evidence": [
               "court-ordered debt"
             ],
-            "explanation": "The message claims to be associated with a legal or official process to make the demand seem more authoritative and official.",
+            "explanation": "The message claims to be associated with a legal process or a court order to make the demand seem official and authoritative.",
             "confidence": 0.8
           },
           {
@@ -2655,7 +2676,7 @@
             "evidence": [
               "If you'd rather avoid that"
             ],
-            "explanation": "The message implies that a negative consequence (the enforcement team visit) will occur unless you comply with their demand for payment.",
+            "explanation": "The message implies that a negative consequence (the enforcement team visit) will occur unless you comply with their demand.",
             "confidence": 0.8
           }
         ],
@@ -2689,7 +2710,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2711,14 +2732,14 @@
       "result": {
         "message": "We've been watching your trading and you clearly have talent. Join our private mentorship circle and we'll match your first deposit two to one. Only three places left this round.",
         "is_suspicious": true,
-        "summary": "This message uses a combination of a high-value reward and a fake deadline to pressure you into making a deposit quickly.",
+        "summary": "This message uses a combination of a high-value reward and a ticking clock to pressure you into making a financial decision quickly.",
         "tactics": [
           {
             "label": "reward",
             "evidence": [
               "we'll match your first deposit two to one"
             ],
-            "explanation": "This offers a significant financial incentive to encourage you to put money into their platform.",
+            "explanation": "This offers a significant financial incentive to encourage you to deposit money into their platform.",
             "confidence": 0.9
           },
           {
@@ -2748,7 +2769,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2777,7 +2798,7 @@
             "evidence": [
               "it's Grandma's carer"
             ],
-            "explanation": "The sender is pretending to be a trusted person in your life (a caregiver) to build immediate trust and legitimacy.",
+            "explanation": "The sender is pretending to be a trusted person in your life (a caregiver) to establish a sense of legitimacy and trust.",
             "confidence": 0.9
           },
           {
@@ -2785,8 +2806,8 @@
             "evidence": [
               "There's no need to trouble your mother with this, she has enough on."
             ],
-            "explanation": "This phrase discourages you from talking to another family member, ensuring you don't get a second opinion or notice the inconsistency.",
-            "confidence": 0.8
+            "explanation": "This phrase discourages you from talking to another family member, which prevents you from getting a second opinion or verifying the request.",
+            "confidence": 0.85
           }
         ],
         "spans": [
@@ -2807,7 +2828,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2836,7 +2857,7 @@
             "evidence": [
               "before the weekend"
             ],
-            "explanation": "This creates a deadline to make you act quickly without taking time to verify the request or contact the clinic directly.",
+            "explanation": "This creates a deadline, pressuring you to act quickly without taking time to verify the request.",
             "confidence": 0.9
           },
           {
@@ -2866,7 +2887,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2904,7 +2925,7 @@
               "Nobody else at your company has access to this, so we'd ask you not to forward this email."
             ],
             "explanation": "By telling you not to share the information, the sender tries to prevent you from verifying the claim with colleagues or others who might spot a problem.",
-            "confidence": 0.8
+            "confidence": 0.85
           }
         ],
         "spans": [
@@ -2925,7 +2946,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -2954,7 +2975,7 @@
             "evidence": [
               "I'm the new treasurer of the parents' association"
             ],
-            "explanation": "The sender claims to hold an official role within a trusted community organization to make their request seem legitimate.",
+            "explanation": "The sender claims to hold an official role within a trusted community group to make their request seem legitimate.",
             "confidence": 0.9
           },
           {
@@ -2962,7 +2983,7 @@
             "evidence": [
               "Could you sort it tonight so I can close the books?"
             ],
-            "explanation": "By setting a deadline of 'tonight', the message pressures you to act quickly without taking time to verify the request.",
+            "explanation": "The message creates a deadline of 'tonight' to pressure you into acting quickly without taking time to verify the request.",
             "confidence": 0.8
           }
         ],
@@ -2984,7 +3005,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3005,37 +3026,23 @@
         "summary": "This message uses a frightening legal scenario and a demand for money to pressure you into acting quickly without thinking.",
         "tactics": [
           {
-            "label": "urgency",
-            "evidence": [
-              "while the case is open"
-            ],
-            "explanation": "This creates a sense of a ticking clock, suggesting that you must act immediately while the situation is ongoing.",
-            "confidence": 0.8
-          },
-          {
-            "label": "impersonation",
-            "evidence": [
-              "Investigators will treat you as a suspect"
-            ],
-            "explanation": "The message adopts the persona of law enforcement or legal authorities to make the request seem official and intimidating.",
-            "confidence": 0.9
-          },
-          {
             "label": "threat",
             "evidence": [
               "Investigators will treat you as a suspect unless you cooperate."
             ],
-            "explanation": "This uses the fear of criminal involvement and legal consequences to pressure you into complying with their demands.",
+            "explanation": "This creates a sense of fear by suggesting legal consequences or criminal involvement to pressure you into complying with their demands.",
             "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "Transfer your savings to the protected account we provide while the case is open."
+            ],
+            "explanation": "The instruction to move funds while a case is 'open' implies a time-sensitive situation where you must act immediately to avoid a negative outcome.",
+            "confidence": 0.8
           }
         ],
         "spans": [
-          {
-            "label": "impersonation",
-            "text": "Investigators will treat you as a suspect",
-            "start": 77,
-            "end": 118
-          },
           {
             "label": "threat",
             "text": "Investigators will treat you as a suspect unless you cooperate.",
@@ -3044,16 +3051,16 @@
           },
           {
             "label": "urgency",
-            "text": "while the case is open",
-            "start": 199,
-            "end": 221
+            "text": "Transfer your savings to the protected account we provide while the case is open.",
+            "start": 141,
+            "end": 222
           }
         ],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3082,7 +3089,7 @@
             "evidence": [
               "the slot for redelivery closes at noon"
             ],
-            "explanation": "By creating a specific, immediate deadline, the message tries to make you act quickly without taking time to verify the situation.",
+            "explanation": "By creating a specific, immediate deadline, the message pressures you to act quickly without taking time to verify the situation.",
             "confidence": 0.9
           },
           {
@@ -3112,7 +3119,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3134,14 +3141,14 @@
       "result": {
         "message": "This is Sergeant Lee, Metropolitan Police. We arrested a man with a cloned copy of your card. For the operation to work you must not contact your bank or anyone else about this. Withdraw the cash and hand it to our courier for fingerprinting.",
         "is_suspicious": true,
-        "summary": "The message uses a fake police identity and demands secrecy to pressure you into following instructions without seeking outside advice.",
+        "summary": "The message uses a fake police identity and instructions to keep the situation secret to pressure you into following their specific instructions.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
               "This is Sergeant Lee, Metropolitan Police."
             ],
-            "explanation": "The sender claims to be a law enforcement officer to gain your trust and make their request seem official.",
+            "explanation": "The sender claims to be a law enforcement officer to gain your trust and make their request seem like an official legal matter.",
             "confidence": 1.0
           },
           {
@@ -3149,7 +3156,7 @@
             "evidence": [
               "you must not contact your bank or anyone else about this."
             ],
-            "explanation": "This instruction is designed to stop you from talking to people who could warn you about the situation.",
+            "explanation": "By telling you not to speak to your bank or others, the sender is trying to prevent you from getting outside advice or verification.",
             "confidence": 1.0
           }
         ],
@@ -3171,7 +3178,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3190,7 +3197,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3209,7 +3216,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3228,7 +3235,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3240,14 +3247,14 @@
       "result": {
         "message": "Mum, landed safely in Lisbon. Hotel is lovely, will call you tomorrow after breakfast. Love you x",
         "is_suspicious": false,
-        "summary": "This message appears to be a personal communication with no signs of manipulation or pressure.",
+        "summary": "This message appears to be a personal update from a family member and contains no manipulative tactics.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3266,7 +3273,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3285,7 +3292,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3304,7 +3311,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3316,14 +3323,14 @@
       "result": {
         "message": "Hey! Are we still on for football Sunday? I can drive if you want, let me know by tomorrow so I can book the pitch.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard personal communication about making plans for a social event.",
+        "summary": "This message appears to be a standard personal communication about making plans for a sports game.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3335,14 +3342,14 @@
       "result": {
         "message": "Your electricity bill for September is £86.20 and will be collected by Direct Debit on 15 October. Log in to your account to view the statement.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard transactional notification regarding a utility bill and does not contain common manipulation tactics.",
+        "summary": "This message appears to be a standard transactional notification regarding a utility bill and does not contain clear signs of manipulation.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3361,7 +3368,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3373,14 +3380,14 @@
       "result": {
         "message": "School notice: Year 6 swimming lessons start next Monday. Please send swimwear and a towel in a named bag.",
         "is_suspicious": false,
-        "summary": "This is a standard informational message about school activities and does not contain any manipulative tactics.",
+        "summary": "This message appears to be a standard informational notice from a school and contains no manipulative tactics.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3392,14 +3399,14 @@
       "result": {
         "message": "Hi, this is Dr Patel's surgery. Your blood test results are back and are normal. No further action is needed.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard medical notification and does not contain any manipulative tactics.",
+        "summary": "This message appears to be a routine medical notification and does not contain any manipulative tactics.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3418,7 +3425,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3430,14 +3437,14 @@
       "result": {
         "message": "Library reminder: 'The Overstory' is due back on 20 October. You can renew online if nobody else has reserved it.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard, helpful notification regarding a library book and contains no manipulative tactics.",
+        "summary": "This message appears to be a standard, helpful notification regarding a library book return.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3456,7 +3463,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3475,7 +3482,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3487,14 +3494,14 @@
       "result": {
         "message": "Your one-time passcode is 731 904. Do not share this code with anyone, including bank staff. If you did not request it, call the number on the back of your card.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard automated security notification. It includes a warning against sharing codes, but it also provides a safe way to contact the bank directly.",
+        "summary": "This message appears to be a standard automated security notification. It includes a warning about sharing codes, but it also provides a safe way to contact the bank if the code was unexpected.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3513,7 +3520,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3525,14 +3532,14 @@
       "result": {
         "message": "Hi, this is Maria from the letting agency. Your tenancy renewal paperwork is due back by 31 October. No rush, but let me know if you have any questions about the terms.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard administrative notification without high-pressure tactics or manipulative language.",
+        "summary": "This message appears to be a standard administrative notification regarding a tenancy renewal with no high-pressure tactics.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3551,7 +3558,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3563,14 +3570,14 @@
       "result": {
         "message": "Your council tax instalment of £142 was not collected because the Direct Debit was declined. You can pay online, by phone, or wait for the next scheduled collection. See your account for details.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard notification regarding a payment issue and provides multiple options for how to proceed.",
+        "summary": "This message provides information about a failed payment and offers multiple ways to resolve it without using high-pressure tactics.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3589,7 +3596,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3608,7 +3615,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3627,7 +3634,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3639,14 +3646,14 @@
       "result": {
         "message": "Monzo: We've blocked a card payment of £89 at a merchant in Lagos that looked unusual. If this was you, you can approve it in the app. If not, freeze your card in the app.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard automated notification from a banking app regarding a specific transaction.",
+        "summary": "This message appears to be a standard transactional notification from a banking app. It provides clear instructions for the user to take action within their own official app.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3665,7 +3672,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3677,14 +3684,14 @@
       "result": {
         "message": "This is a message from the Metropolitan Police. Your report (ref 4521/0923) has been received. An officer may contact you within 10 working days. You can check progress online.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard administrative notification and does not contain high-pressure tactics or suspicious demands.",
+        "summary": "This message appears to be a standard informational update and does not contain high-pressure tactics or suspicious demands.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3696,14 +3703,14 @@
       "result": {
         "message": "Your Netflix payment didn't go through. Update your payment method in the app at your convenience to keep watching. We'll try again in a few days.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard notification without high-pressure tactics or suspicious demands.",
+        "summary": "This message appears to be a standard notification without high-pressure tactics or coercive language.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3715,14 +3722,14 @@
       "result": {
         "message": "Hi Dad, can you lend me £40 until payday on Friday? Rent came out early. I'll send it back as soon as I'm paid, promise.",
         "is_suspicious": false,
-        "summary": "This message appears to be a personal request between family members and does not contain common manipulation tactics.",
+        "summary": "This message appears to be a personal request for money between family members without any clear signs of manipulation or pressure.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3734,14 +3741,14 @@
       "result": {
         "message": "HMRC: You have a new message in your Personal Tax Account. Sign in through GOV.UK to read it. We will never include a link in a text message.",
         "is_suspicious": false,
-        "summary": "This message appears to be a standard notification. It actually includes a security warning advising the user not to click links, which is a common practice for official government communications.",
+        "summary": "This message appears to be a standard notification that directs the user to an official government portal rather than asking for immediate action or personal details via text.",
         "tactics": [],
         "spans": [],
         "rejected_quotes": [],
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3753,7 +3760,7 @@
       "result": {
         "message": "Hi, is this Rachel? Sorry, I think I have the wrong number. You seem nice though, how is your week going?",
         "is_suspicious": true,
-        "summary": "This message uses a friendly, casual approach to start a conversation with a stranger, often as a way to build rapport before a solicitation.",
+        "summary": "This message uses a friendly, casual tone to establish a connection after a fake mistake, which is a common way to start a conversation with a stranger.",
         "tactics": [
           {
             "label": "impersonation",
@@ -3776,7 +3783,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3794,18 +3801,32 @@
       "result": {
         "message": "Thanks for applying. The role is fully remote and the pay is $38 an hour. There is a short training period during which we will send you a cheque to buy a laptop from our supplier; you keep the balance as a welcome bonus.",
         "is_suspicious": true,
-        "summary": "The message uses a high-paying job offer and a 'bonus' to make a suspicious payment scheme seem like a benefit to the worker.",
+        "summary": "The message uses a high-paying job offer and a 'bonus' to encourage you to participate in a scheme involving a fake check.",
         "tactics": [
           {
             "label": "reward",
             "evidence": [
               "you keep the balance as a welcome bonus"
             ],
-            "explanation": "This offers a financial incentive to make the reader feel like they are gaining something extra, which can distract them from noticing the unusual request for a cheque.",
+            "explanation": "This offers a financial incentive to make the offer seem more attractive and encourage the reader to agree to the terms.",
             "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "The role is fully remote and the pay is $38 an hour."
+            ],
+            "explanation": "The message mimics a professional job offer to establish a sense of legitimacy and authority.",
+            "confidence": 0.8
           }
         ],
         "spans": [
+          {
+            "label": "impersonation",
+            "text": "The role is fully remote and the pay is $38 an hour.",
+            "start": 21,
+            "end": 73
+          },
           {
             "label": "reward",
             "text": "you keep the balance as a welcome bonus",
@@ -3817,7 +3838,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3835,14 +3856,14 @@
       "result": {
         "message": "I have been investing with a small fund for the past year and the results have been steady. I do not usually recommend things, but if you ever want to see my statements, I would be happy to share them. It has changed my life.",
         "is_suspicious": true,
-        "summary": "The message uses a personal success story and a subtle offer of 'proof' to build trust and entice you into a potential investment scheme.",
+        "summary": "The message uses a personal success story and a subtle offer of proof to build trust and entice you into a potential investment opportunity.",
         "tactics": [
           {
             "label": "reward",
             "evidence": [
               "It has changed my life."
             ],
-            "explanation": "This phrase uses a high-emotion success story to make the opportunity seem life-changing and highly desirable.",
+            "explanation": "This highlights a significant personal gain to make the opportunity seem highly attractive and life-changing.",
             "confidence": 0.8
           }
         ],
@@ -3858,7 +3879,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3876,7 +3897,7 @@
       "result": {
         "message": "Good morning. We are completing a routine review of your account and need to reconfirm a few details. There is no problem at this stage. Please reply with your full name, date of birth and the last four digits of your card so we can proceed.",
         "is_suspicious": true,
-        "summary": "The message uses a calm, official-sounding tone to request sensitive personal information under the guise of a routine check.",
+        "summary": "The message uses a professional tone to request sensitive personal information under the guise of a routine check.",
         "tactics": [
           {
             "label": "impersonation",
@@ -3899,7 +3920,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3917,15 +3938,14 @@
       "result": {
         "message": "Hi love, I know we have not met in person yet, but I think about you every day. My contract here ends soon and I want to visit. The agency needs a small deposit for the flight paperwork. Would you be able to help with that?",
         "is_suspicious": true,
-        "summary": "This message uses a romantic persona to build a sense of intimacy and then asks for money for a specific, urgent-sounding reason.",
+        "summary": "The message uses a romantic persona to build a sense of intimacy and then asks for money for a specific, urgent-sounding reason.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
-              "Hi love",
-              "I think about you every day"
+              "Hi love"
             ],
-            "explanation": "The message uses intimate language to create a false sense of a personal relationship or romantic connection with the reader.",
+            "explanation": "The message uses intimate language to pretend to be a romantic partner or someone the reader has a close personal connection with.",
             "confidence": 0.9
           },
           {
@@ -3945,12 +3965,6 @@
             "end": 7
           },
           {
-            "label": "impersonation",
-            "text": "I think about you every day",
-            "start": 51,
-            "end": 78
-          },
-          {
             "label": "reward",
             "text": "I want to visit",
             "start": 111,
@@ -3961,7 +3975,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -3979,7 +3993,7 @@
       "result": {
         "message": "You have been pre-approved for a personal loan of up to £15,000 at 3.1% APR regardless of credit history. To receive the funds, a one-time processing fee of £95 is payable in advance.",
         "is_suspicious": true,
-        "summary": "This message uses the promise of easy money and a high loan amount to entice you into paying a small upfront fee.",
+        "summary": "The message uses a high-value offer to entice you into paying a small upfront fee for a large loan.",
         "tactics": [
           {
             "label": "reward",
@@ -3987,7 +4001,7 @@
               "pre-approved for a personal loan of up to £15,000",
               "regardless of credit history"
             ],
-            "explanation": "By offering a large sum of money and suggesting it is easy to get regardless of your financial history, the message tries to make the offer seem irresistible.",
+            "explanation": "This offers a significant financial benefit and removes common barriers (like credit checks) to make the offer seem highly attractive and easy to obtain.",
             "confidence": 0.9
           }
         ],
@@ -4009,7 +4023,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4068,7 +4082,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4123,7 +4137,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4152,7 +4166,7 @@
             "evidence": [
               "Hi Grandad, it's Ollie."
             ],
-            "explanation": "The message pretends to be a family member to build immediate trust and lower your guard.",
+            "explanation": "The message pretends to be a family member to build immediate trust and lower the reader's defenses.",
             "confidence": 0.9
           },
           {
@@ -4160,7 +4174,7 @@
             "evidence": [
               "I'd prefer Mum didn't know yet."
             ],
-            "explanation": "By asking you to keep the situation a secret from other family members, it prevents you from seeking a second opinion or verifying the story.",
+            "explanation": "By asking the reader to keep the situation a secret from another family member, it discourages the reader from seeking a second opinion or outside help.",
             "confidence": 0.9
           }
         ],
@@ -4182,7 +4196,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4204,40 +4218,26 @@
       "result": {
         "message": "Dear homeowner, our records indicate you may be eligible for a government-backed insulation grant. Eligibility is limited to certain postcodes. A surveyor can visit this week to confirm; a refundable booking deposit secures the slot.",
         "is_suspicious": true,
-        "summary": "The message uses a government-backed offer to create a sense of opportunity while creating a sense of time pressure to get you to pay a deposit.",
+        "summary": "This message uses the authority of a government program and a limited timeframe to encourage you to pay a deposit quickly.",
         "tactics": [
           {
             "label": "impersonation",
             "evidence": [
               "government-backed insulation grant"
             ],
-            "explanation": "By mentioning a 'government-backed' program, the message tries to gain trust by associating the offer with an official authority.",
-            "confidence": 0.8
+            "explanation": "By claiming the offer is 'government-backed,' the message tries to build trust by associating the offer with an official authority.",
+            "confidence": 0.9
           },
           {
             "label": "urgency",
             "evidence": [
-              "A surveyor can visit this week"
+              "this week"
             ],
-            "explanation": "This creates a limited timeframe, encouraging the reader to act quickly to secure a spot before the week ends.",
+            "explanation": "Setting a specific, short timeframe pressures the reader to act quickly without taking time to research the offer or verify the source.",
             "confidence": 0.8
-          },
-          {
-            "label": "reward",
-            "evidence": [
-              "eligible for a government-backed insulation grant"
-            ],
-            "explanation": "The offer of a grant acts as an incentive to get the reader to engage with the service and provide a deposit.",
-            "confidence": 0.9
           }
         ],
         "spans": [
-          {
-            "label": "reward",
-            "text": "eligible for a government-backed insulation grant",
-            "start": 48,
-            "end": 97
-          },
           {
             "label": "impersonation",
             "text": "government-backed insulation grant",
@@ -4246,8 +4246,8 @@
           },
           {
             "label": "urgency",
-            "text": "A surveyor can visit this week",
-            "start": 144,
+            "text": "this week",
+            "start": 165,
             "end": 174
           }
         ],
@@ -4255,7 +4255,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4280,7 +4280,7 @@
             "evidence": [
               "offer a complimentary two-night stay"
             ],
-            "explanation": "This offers a high-value prize to make the offer seem attractive and encourage the reader to engage with the sender.",
+            "explanation": "This offers a high-value prize to motivate the reader to engage with the sender and provide payment details.",
             "confidence": 0.9
           }
         ],
@@ -4296,7 +4296,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4321,7 +4321,7 @@
             "evidence": [
               "you may be eligible to recover a previous loss"
             ],
-            "explanation": "This targets your emotions by offering a positive outcome (getting money back) to encourage you to engage with the sender.",
+            "explanation": "This targets the reader's desire to get money back, creating a positive incentive to engage with the sender.",
             "confidence": 0.9
           }
         ],
@@ -4337,7 +4337,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4378,7 +4378,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4390,20 +4390,20 @@
       "result": {
         "message": "I saw your post about the flat. I'm currently abroad for work so I can't do a viewing, but I'm happy to pay the deposit and first month today to secure it. Could you send your bank details?",
         "is_suspicious": true,
-        "summary": "The message uses a common tactic where a person claims to be unable to visit in person but offers to send money immediately to 'secure' a deal.",
+        "summary": "The message uses a common tactic of creating a sense of urgency to bypass standard procedures like in-person viewings.",
         "tactics": [
           {
-            "label": "reward",
+            "label": "urgency",
             "evidence": [
               "happy to pay the deposit and first month today to secure it"
             ],
-            "explanation": "By offering to pay immediately, the sender creates a sense of a 'guaranteed' win for the seller, which can entice the recipient to bypass normal safety checks.",
-            "confidence": 0.8
+            "explanation": "By offering to pay immediately to 'secure' the property, the sender pressures the recipient to skip standard verification steps and act quickly.",
+            "confidence": 0.85
           }
         ],
         "spans": [
           {
-            "label": "reward",
+            "label": "urgency",
             "text": "happy to pay the deposit and first month today to secure it",
             "start": 95,
             "end": 154
@@ -4413,7 +4413,7 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
         "error": null
       }
     },
@@ -4438,7 +4438,7 @@
             "evidence": [
               "you qualify for our loyalty cashback programme"
             ],
-            "explanation": "This offers a financial benefit to make the reader feel they are getting something for free, which can make them more likely to share personal details.",
+            "explanation": "This offers a financial benefit to make the reader feel they are gaining something for free, which can encourage them to share personal details.",
             "confidence": 0.9
           }
         ],
@@ -4454,7 +4454,2376 @@
         "attempts": 1,
         "provider": "ollama",
         "model": "gemma4:12b",
-        "from_cache": true,
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "f26",
+      "category": "familiar",
+      "gold": [
+        "impersonation",
+        "urgency",
+        "threat"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "FedEx:"
+        ],
+        "urgency": [
+          "within 24 hours"
+        ],
+        "threat": [
+          "the package will be returned"
+        ]
+      },
+      "result": {
+        "message": "FedEx: We attempted to deliver your package but the address is incomplete. Confirm your details within 24 hours at fedex-track-update.com or the package will be returned.",
+        "is_suspicious": true,
+        "summary": "This message uses a sense of urgency and a fake official identity to pressure you into clicking a link to 'fix' a delivery issue.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "FedEx"
+            ],
+            "explanation": "The message pretends to be from a well-known, trusted delivery company to make the request seem official and legitimate.",
+            "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "Confirm your details within 24 hours"
+            ],
+            "explanation": "By setting a short deadline, the message tries to make you act quickly without taking time to verify the claim.",
+            "confidence": 0.9
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "the package will be returned"
+            ],
+            "explanation": "This warns of a negative consequence (losing the package) if you do not follow the instructions immediately.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "FedEx",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "label": "urgency",
+            "text": "Confirm your details within 24 hours",
+            "start": 75,
+            "end": 111
+          },
+          {
+            "label": "threat",
+            "text": "the package will be returned",
+            "start": 141,
+            "end": 169
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "f27",
+      "category": "familiar",
+      "gold": [
+        "impersonation",
+        "threat",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "Your Facebook Page"
+        ],
+        "threat": [
+          "will be permanently deleted"
+        ],
+        "urgency": [
+          "in 24 hours",
+          "Appeal now"
+        ]
+      },
+      "result": {
+        "message": "Your Facebook Page has violated our community standards and will be permanently deleted in 24 hours. Appeal now at facebook-page-appeal.com to keep your account.",
+        "is_suspicious": true,
+        "summary": "This message uses a fake deadline and a threat of account loss to pressure you into clicking a link quickly.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "will be permanently deleted in 24 hours"
+            ],
+            "explanation": "By creating a very short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
+            "confidence": 1.0
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Your Facebook Page",
+              "Appeal now at facebook-page-appeal.com"
+            ],
+            "explanation": "The message pretends to be from a well-known platform (Facebook) to gain your trust and direct you to a look-alike website.",
+            "confidence": 0.9
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "will be permanently deleted",
+              "to keep your account"
+            ],
+            "explanation": "The message uses the fear of losing your account or content to pressure you into following their instructions.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Your Facebook Page",
+            "start": 0,
+            "end": 18
+          },
+          {
+            "label": "threat",
+            "text": "will be permanently deleted",
+            "start": 60,
+            "end": 87
+          },
+          {
+            "label": "urgency",
+            "text": "will be permanently deleted in 24 hours",
+            "start": 60,
+            "end": 99
+          },
+          {
+            "label": "impersonation",
+            "text": "Appeal now at facebook-page-appeal.com",
+            "start": 101,
+            "end": 139
+          },
+          {
+            "label": "threat",
+            "text": "to keep your account",
+            "start": 140,
+            "end": 160
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "f28",
+      "category": "familiar",
+      "gold": [
+        "impersonation",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "Wells Fargo:"
+        ],
+        "urgency": [
+          "call 1-844-555-0170 immediately"
+        ]
+      },
+      "result": {
+        "message": "Wells Fargo: A Zelle payment of $750 to JASON M is pending on your account. If you did not authorize this, call 1-844-555-0170 immediately to cancel it.",
+        "is_suspicious": true,
+        "summary": "This message uses a sense of urgency and impersonates a well-known bank to pressure you into calling a specific number quickly.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "call 1-844-555-0170 immediately to cancel it"
+            ],
+            "explanation": "The word 'immediately' creates a sense of panic, aiming to make you act quickly without taking time to verify the claim.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Wells Fargo"
+            ],
+            "explanation": "The message claims to be from a major financial institution to gain your trust and make the request seem official.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Wells Fargo",
+            "start": 0,
+            "end": 11
+          },
+          {
+            "label": "urgency",
+            "text": "call 1-844-555-0170 immediately to cancel it",
+            "start": 107,
+            "end": 151
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "f29",
+      "category": "familiar",
+      "gold": [
+        "impersonation",
+        "threat",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "Energy Australia:"
+        ],
+        "threat": [
+          "Your electricity will be disconnected"
+        ],
+        "urgency": [
+          "today at 5pm",
+          "Pay now"
+        ]
+      },
+      "result": {
+        "message": "Energy Australia: Your electricity will be disconnected today at 5pm due to an unpaid bill of $212.40. Pay now using the link to avoid disconnection: energyaus-pay.net",
+        "is_suspicious": true,
+        "summary": "This message uses a high-pressure deadline and pretends to be a utility company to pressure you into making a payment immediately.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "disconnected today at 5pm"
+            ],
+            "explanation": "By creating a very short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
+            "confidence": 1.0
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Energy Australia"
+            ],
+            "explanation": "The message claims to be from a known utility company to gain your trust and make the request seem official.",
+            "confidence": 0.9
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "Your electricity will be disconnected"
+            ],
+            "explanation": "The message uses the threat of losing an essential service to pressure you into complying with their demand.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Energy Australia",
+            "start": 0,
+            "end": 16
+          },
+          {
+            "label": "threat",
+            "text": "Your electricity will be disconnected",
+            "start": 18,
+            "end": 55
+          },
+          {
+            "label": "urgency",
+            "text": "disconnected today at 5pm",
+            "start": 43,
+            "end": 68
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "f30",
+      "category": "familiar",
+      "gold": [
+        "impersonation",
+        "reward",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "this is Costco"
+        ],
+        "reward": [
+          "$500 shopping voucher"
+        ],
+        "urgency": [
+          "Only 20 vouchers remain",
+          "claim yours now"
+        ]
+      },
+      "result": {
+        "message": "Hey, this is Costco! You've been randomly selected for a $500 shopping voucher as part of our 50th anniversary. Only 20 vouchers remain, claim yours now: costco-rewards-claim.com",
+        "is_suspicious": true,
+        "summary": "This message uses a fake prize and a limited supply to pressure you into clicking a link quickly.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "this is Costco!"
+            ],
+            "explanation": "The message claims to be from a well-known, trusted brand to make the offer seem official.",
+            "confidence": 0.9
+          },
+          {
+            "label": "reward",
+            "evidence": [
+              "selected for a $500 shopping voucher"
+            ],
+            "explanation": "It offers a significant financial reward to entice you to engage with the message.",
+            "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "Only 20 vouchers remain, claim yours now"
+            ],
+            "explanation": "By claiming there is a very limited supply, it pressures you to act immediately without taking time to verify the claim.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "this is Costco!",
+            "start": 5,
+            "end": 20
+          },
+          {
+            "label": "reward",
+            "text": "selected for a $500 shopping voucher",
+            "start": 42,
+            "end": 78
+          },
+          {
+            "label": "urgency",
+            "text": "Only 20 vouchers remain, claim yours now",
+            "start": 112,
+            "end": 152
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p21",
+      "category": "paraphrased",
+      "gold": [
+        "reward",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "pays well above market"
+        ],
+        "urgency": [
+          "by end of play"
+        ]
+      },
+      "result": {
+        "message": "Saw your profile and you're exactly the kind of analyst our client needs. The role pays well above market and interviews are being skipped for referred candidates. They're finalising the shortlist by end of play, so send over your passport scan and I'll put you forward.",
+        "is_suspicious": true,
+        "summary": "This message uses a high-paying job offer and a fast deadline to pressure you into sharing sensitive personal documents quickly.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "The role pays well above market"
+            ],
+            "explanation": "This highlights a significant financial benefit to make the opportunity seem highly desirable and worth the risk of sharing information.",
+            "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "They're finalising the shortlist by end of play"
+            ],
+            "explanation": "By creating a deadline for the 'end of play,' the message pressures you to act immediately without taking time to verify the offer.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "The role pays well above market",
+            "start": 74,
+            "end": 105
+          },
+          {
+            "label": "urgency",
+            "text": "They're finalising the shortlist by end of play",
+            "start": 164,
+            "end": 211
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p22",
+      "category": "paraphrased",
+      "gold": [
+        "impersonation",
+        "threat",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "speak with the case officer"
+        ],
+        "threat": [
+          "your status may be cancelled",
+          "forwarded to enforcement"
+        ],
+        "urgency": [
+          "Return this call today"
+        ]
+      },
+      "result": {
+        "message": "This is a message regarding your visa file. Discrepancies were found in your application and your status may be cancelled. Return this call today to speak with the case officer before the file is forwarded to enforcement.",
+        "is_suspicious": true,
+        "summary": "The message uses a sense of urgency and a threat of legal consequences to pressure you into taking immediate action regarding a government-related matter.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "Return this call today"
+            ],
+            "explanation": "This creates a deadline that pressures you to act immediately without taking time to verify the information.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "regarding your visa file",
+              "speak with the case officer"
+            ],
+            "explanation": "The message mimics the authority of a government immigration office to make the request seem official and legitimate.",
+            "confidence": 0.8
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "your status may be cancelled",
+              "before the file is forwarded to enforcement"
+            ],
+            "explanation": "The message uses the fear of losing legal status or facing law enforcement to pressure you into complying with their request.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "regarding your visa file",
+            "start": 18,
+            "end": 42
+          },
+          {
+            "label": "threat",
+            "text": "your status may be cancelled",
+            "start": 93,
+            "end": 121
+          },
+          {
+            "label": "urgency",
+            "text": "Return this call today",
+            "start": 123,
+            "end": 145
+          },
+          {
+            "label": "impersonation",
+            "text": "speak with the case officer",
+            "start": 149,
+            "end": 176
+          },
+          {
+            "label": "threat",
+            "text": "before the file is forwarded to enforcement",
+            "start": 177,
+            "end": 220
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p23",
+      "category": "paraphrased",
+      "gold": [
+        "urgency"
+      ],
+      "gold_evidence": {
+        "urgency": [
+          "closes at midnight"
+        ]
+      },
+      "result": {
+        "message": "Following last night's floods we're collecting for families who lost everything. The relief account closes at midnight so donations can be released first thing. Transfer what you can to the account below, no amount too small.",
+        "is_suspicious": true,
+        "summary": "The message uses a sense of time pressure and a charitable cause to encourage immediate action.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "The relief account closes at midnight so donations can be released first thing."
+            ],
+            "explanation": "This creates a deadline to pressure the reader into making a quick decision without taking time to verify the legitimacy of the account.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "urgency",
+            "text": "The relief account closes at midnight so donations can be released first thing.",
+            "start": 81,
+            "end": 160
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p24",
+      "category": "paraphrased",
+      "gold": [
+        "isolation",
+        "threat"
+      ],
+      "gold_evidence": {
+        "isolation": [
+          "do not close it or message anyone else"
+        ],
+        "threat": [
+          "your assets could be drained"
+        ]
+      },
+      "result": {
+        "message": "A support agent will walk you through securing your wallet. For your safety, keep this chat window open and do not close it or message anyone else until the process is finished, otherwise your assets could be drained.",
+        "is_suspicious": true,
+        "summary": "The message uses fear of loss and instructions to keep you isolated from others to pressure you into following their specific instructions.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "otherwise your assets could be drained"
+            ],
+            "explanation": "This creates a sense of immediate danger to your funds, aiming to make you act quickly out of fear rather than taking time to verify the situation.",
+            "confidence": 0.9
+          },
+          {
+            "label": "isolation",
+            "evidence": [
+              "do not close it or message anyone else until the process is finished"
+            ],
+            "explanation": "This instructs you to cut off communication with others, preventing you from seeking outside advice or a second opinion while the 'process' is happening.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "isolation",
+            "text": "do not close it or message anyone else until the process is finished",
+            "start": 108,
+            "end": 176
+          },
+          {
+            "label": "urgency",
+            "text": "otherwise your assets could be drained",
+            "start": 178,
+            "end": 216
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p25",
+      "category": "paraphrased",
+      "gold": [
+        "impersonation",
+        "urgency",
+        "isolation"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "Nan, don't be cross"
+        ],
+        "urgency": [
+          "before the hearing tomorrow"
+        ],
+        "isolation": [
+          "Please don't ring Mum"
+        ]
+      },
+      "result": {
+        "message": "Nan, don't be cross. I had a prang in a mate's car and the solicitor says it stays off the record if the damages are paid before the hearing tomorrow. Can you do a transfer? Please don't ring Mum, she'll only worry.",
+        "is_suspicious": true,
+        "summary": "This message uses a personal relationship and a legal deadline to pressure you into making a quick payment while asking you to keep it a secret.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "before the hearing tomorrow"
+            ],
+            "explanation": "This creates a very short deadline, pressuring you to act quickly without taking time to think or verify the situation.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Nan, don't be cross."
+            ],
+            "explanation": "The message pretends to be from someone you know personally (a family member or friend) to build trust and lower your guard.",
+            "confidence": 0.8
+          },
+          {
+            "label": "isolation",
+            "evidence": [
+              "Please don't ring Mum, she'll only worry."
+            ],
+            "explanation": "This discourages you from contacting another person who might be able to provide a second opinion or notice the inconsistency.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Nan, don't be cross.",
+            "start": 0,
+            "end": 20
+          },
+          {
+            "label": "urgency",
+            "text": "before the hearing tomorrow",
+            "start": 122,
+            "end": 149
+          },
+          {
+            "label": "isolation",
+            "text": "Please don't ring Mum, she'll only worry.",
+            "start": 174,
+            "end": 215
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p26",
+      "category": "paraphrased",
+      "gold": [
+        "reward",
+        "isolation"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "we'll take the profit out before the announcement"
+        ],
+        "isolation": [
+          "don't post about it anywhere"
+        ]
+      },
+      "result": {
+        "message": "Honestly I only told you because you're different. My uncle works at the exchange and gets the listing dates early. Put in what you're comfortable with and we'll take the profit out before the announcement. Just don't post about it anywhere.",
+        "is_suspicious": true,
+        "summary": "This message uses a sense of exclusive insider knowledge and a request for secrecy to encourage you to act on a 'guaranteed' profit.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "we'll take the profit out before the announcement"
+            ],
+            "explanation": "This promises a financial gain based on 'insider' information, which is a common way to entice people into making a quick investment.",
+            "confidence": 0.9
+          },
+          {
+            "label": "isolation",
+            "evidence": [
+              "Just don't post about it anywhere."
+            ],
+            "explanation": "By asking you to keep the information secret, the sender tries to prevent you from seeking outside advice or second opinions from others.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "My uncle works at the exchange"
+            ],
+            "explanation": "The sender claims a personal connection to a trusted authority (the exchange) to make the 'insider' information seem more credible.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "My uncle works at the exchange",
+            "start": 51,
+            "end": 81
+          },
+          {
+            "label": "reward",
+            "text": "we'll take the profit out before the announcement",
+            "start": 156,
+            "end": 205
+          },
+          {
+            "label": "isolation",
+            "text": "Just don't post about it anywhere.",
+            "start": 207,
+            "end": 241
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p27",
+      "category": "paraphrased",
+      "gold": [
+        "threat",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "threat": [
+          "permanent disconnection",
+          "reconnection costs 180"
+        ],
+        "urgency": [
+          "Book a free migration slot now"
+        ]
+      },
+      "result": {
+        "message": "Your fibre line is scheduled for permanent disconnection as part of the copper switch-off. Engineers finish in your street on Wednesday, after which reconnection costs 180. Book a free migration slot now by confirming your account password.",
+        "is_suspicious": true,
+        "summary": "This message uses a sense of urgency and a threat of service loss to pressure you into providing sensitive login information.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "scheduled for permanent disconnection",
+              "Book a free migration slot now"
+            ],
+            "explanation": "The message creates a deadline and a sense of immediate loss to pressure you into acting quickly without checking the facts.",
+            "confidence": 0.9
+          },
+          {
+            "label": "threat",
+            "evidence": [
+              "scheduled for permanent disconnection"
+            ],
+            "explanation": "By mentioning a permanent loss of service, the message tries to make you feel anxious enough to comply with their request.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "urgency",
+            "text": "scheduled for permanent disconnection",
+            "start": 19,
+            "end": 56
+          },
+          {
+            "label": "threat",
+            "text": "scheduled for permanent disconnection",
+            "start": 19,
+            "end": 56
+          },
+          {
+            "label": "urgency",
+            "text": "Book a free migration slot now",
+            "start": 173,
+            "end": 203
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p28",
+      "category": "paraphrased",
+      "gold": [
+        "reward",
+        "impersonation"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "The prize sits in escrow"
+        ],
+        "impersonation": [
+          "licensed claims agent acting for the lottery board"
+        ]
+      },
+      "result": {
+        "message": "The draw office has been trying to reach the holder of ticket ending 4471 for three weeks. The prize sits in escrow and is released once identity is verified. We are a licensed claims agent acting for the lottery board.",
+        "is_suspicious": true,
+        "summary": "The message uses a large prize as a hook and claims to represent an official organization to build trust.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "The prize sits in escrow and is released once identity is verified."
+            ],
+            "explanation": "This promises a significant financial gain to motivate the reader to engage with the sender and provide personal information.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "We are a licensed claims agent acting for the lottery board."
+            ],
+            "explanation": "The sender claims to be an official representative of a formal organization to make the request seem legitimate and authoritative.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "The prize sits in escrow and is released once identity is verified.",
+            "start": 91,
+            "end": 158
+          },
+          {
+            "label": "impersonation",
+            "text": "We are a licensed claims agent acting for the lottery board.",
+            "start": 159,
+            "end": 219
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p29",
+      "category": "paraphrased",
+      "gold": [
+        "impersonation",
+        "threat",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "our network team"
+        ],
+        "threat": [
+          "the line will be cut off at the exchange"
+        ],
+        "urgency": [
+          "this afternoon"
+        ]
+      },
+      "result": {
+        "message": "Your router has been flagged by our network team for sending malicious traffic. We can clean it remotely but the line will be cut off at the exchange this afternoon if we don't. Install the remote tool from the link and we'll start.",
+        "is_suspicious": true,
+        "summary": "The message uses a sense of immediate danger and a deadline to pressure you into installing software quickly.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "the line will be cut off at the exchange this afternoon if we don't."
+            ],
+            "explanation": "By setting a deadline of 'this afternoon,' the message tries to make you panic and act quickly without taking time to verify the claim.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "our network team"
+            ],
+            "explanation": "The message claims to come from a technical authority (a 'network team') to make the request for a remote tool seem like a legitimate service request.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "our network team",
+            "start": 32,
+            "end": 48
+          },
+          {
+            "label": "urgency",
+            "text": "the line will be cut off at the exchange this afternoon if we don't.",
+            "start": 109,
+            "end": 177
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "p30",
+      "category": "paraphrased",
+      "gold": [
+        "impersonation",
+        "threat",
+        "urgency"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "Thanks, Mrs Hale"
+        ],
+        "threat": [
+          "the company will cancel the booking"
+        ],
+        "urgency": [
+          "at 4pm"
+        ]
+      },
+      "result": {
+        "message": "Parents, the coach trip balance is overdue and the company will cancel the booking at 4pm. The school office can't take card today so please pay me directly on the number below and I'll pass it on. Thanks, Mrs Hale",
+        "is_suspicious": true,
+        "summary": "The message uses a deadline to pressure parents into making a payment to a personal number rather than through official school channels.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "the company will cancel the booking at 4pm"
+            ],
+            "explanation": "This creates a strict deadline to pressure the reader into making a quick decision without taking time to verify the request.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Mrs Hale"
+            ],
+            "explanation": "The message adopts the persona of a school official to build trust and make the request seem like a legitimate administrative task.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "urgency",
+            "text": "the company will cancel the booking at 4pm",
+            "start": 47,
+            "end": 89
+          },
+          {
+            "label": "impersonation",
+            "text": "Mrs Hale",
+            "start": 206,
+            "end": 214
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss16",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "no agency fees"
+        ]
+      },
+      "result": {
+        "message": "The flat is still available. I'm the owner and I manage it myself, so no agency fees. I'm overseas at the moment but I can post the keys once the holding deposit arrives. Happy to answer any questions.",
+        "is_suspicious": true,
+        "summary": "The message uses a common 'remote landlord' persona to create a situation where you are asked to send money before seeing the property.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "I'm the owner and I manage it myself"
+            ],
+            "explanation": "By claiming to be the owner directly, the sender tries to build trust and bypass the standard protections of a professional agency.",
+            "confidence": 0.8
+          },
+          {
+            "label": "reward",
+            "evidence": [
+              "no agency fees"
+            ],
+            "explanation": "This offers a financial incentive to choose this specific deal over others, making the offer seem more attractive.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "I'm the owner and I manage it myself",
+            "start": 29,
+            "end": 65
+          },
+          {
+            "label": "reward",
+            "text": "no agency fees",
+            "start": 70,
+            "end": 84
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss17",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "refundable once she arrives safely"
+        ]
+      },
+      "result": {
+        "message": "Thank you for your interest in our puppies. Bella is ready to go to her new home. We only ask for the shipping crate fee upfront, which is refundable once she arrives safely. She has been waiting for the right family.",
+        "is_suspicious": true,
+        "summary": "The message uses an emotional appeal and a request for upfront payment to create a sense of obligation.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "Bella is ready to go to her new home.",
+              "She has been waiting for the right family.",
+              "We only ask for the shipping crate fee upfront"
+            ],
+            "explanation": "By framing the puppy as a 'reward' for the 'right family,' the message uses emotional appeal to make the reader feel special and more likely to overlook the request for upfront payment.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "Bella is ready to go to her new home.",
+            "start": 44,
+            "end": 81
+          },
+          {
+            "label": "reward",
+            "text": "We only ask for the shipping crate fee upfront",
+            "start": 82,
+            "end": 128
+          },
+          {
+            "label": "reward",
+            "text": "She has been waiting for the right family.",
+            "start": 175,
+            "end": 217
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss18",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "most are unaware they are owed anything"
+        ]
+      },
+      "result": {
+        "message": "We handle rebate claims for people who have paid tax on PPI payouts and most are unaware they are owed anything. There is no fee unless we recover money for you. To check your eligibility we just need your National Insurance number and a signature.",
+        "is_suspicious": true,
+        "summary": "The message uses a 'too good to be true' offer to entice you into providing sensitive personal information.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "most are unaware they are owed anything"
+            ],
+            "explanation": "This suggests there is 'hidden' money waiting for the user, creating an incentive to engage with the sender.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "We handle rebate claims"
+            ],
+            "explanation": "The sender claims to provide a professional financial service to establish a sense of legitimacy and authority.",
+            "confidence": 0.7
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "We handle rebate claims",
+            "start": 0,
+            "end": 23
+          },
+          {
+            "label": "reward",
+            "text": "most are unaware they are owed anything",
+            "start": 72,
+            "end": 111
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss19",
+      "category": "subtle_scam",
+      "gold": [
+        "impersonation"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "I'm calling from the security team"
+        ]
+      },
+      "result": {
+        "message": "Hello, I'm calling from the security team. Nothing to worry about, we are just updating our records after the system migration. Could you confirm the long number on the front of your card and the expiry date so I can match the file?",
+        "is_suspicious": true,
+        "summary": "The message uses a professional-sounding persona to request sensitive financial information under the guise of a routine update.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "I'm calling from the security team"
+            ],
+            "explanation": "By claiming to be from a 'security team,' the sender tries to build trust and authority to make their request for private data seem official.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "I'm calling from the security team",
+            "start": 7,
+            "end": 41
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss20",
+      "category": "subtle_scam",
+      "gold": [
+        "isolation"
+      ],
+      "gold_evidence": {
+        "isolation": [
+          "I would rather keep us private"
+        ]
+      },
+      "result": {
+        "message": "I told my sister about you and she thinks I am moving too fast, but she does not understand what we have. I would rather keep us private until you can meet my family properly. Is that alright with you?",
+        "is_suspicious": true,
+        "summary": "The message uses a personal narrative to suggest keeping the relationship a secret from others.",
+        "tactics": [
+          {
+            "label": "isolation",
+            "evidence": [
+              "I would rather keep us private until you can meet my family properly."
+            ],
+            "explanation": "This phrase encourages the recipient to keep the interaction private and limit communication with others, which can make it harder for the person to get outside perspectives.",
+            "confidence": 0.85
+          }
+        ],
+        "spans": [
+          {
+            "label": "isolation",
+            "text": "I would rather keep us private until you can meet my family properly.",
+            "start": 106,
+            "end": 175
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss21",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "Each completed batch pays commission straight into your wallet"
+        ]
+      },
+      "result": {
+        "message": "Welcome to the team! Your first task set is live. Each completed batch pays commission straight into your wallet, and most new members upgrade to the premium tier in their first week to unlock the higher-paying tasks.",
+        "is_suspicious": true,
+        "summary": "The message uses the promise of easy money and quick advancement to encourage you to engage with a new platform.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "Each completed batch pays commission straight into your wallet",
+              "upgrade to the premium tier in their first week to unlock the higher-paying tasks"
+            ],
+            "explanation": "This highlights financial rewards and 'premium' status to make the opportunity seem lucrative and motivating.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "Each completed batch pays commission straight into your wallet",
+            "start": 50,
+            "end": 112
+          },
+          {
+            "label": "reward",
+            "text": "upgrade to the premium tier in their first week to unlock the higher-paying tasks",
+            "start": 135,
+            "end": 216
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss22",
+      "category": "subtle_scam",
+      "gold": [
+        "impersonation"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "Regards, Accounts Payable"
+        ]
+      },
+      "result": {
+        "message": "Please note our remittance details have changed with immediate effect following a change of bank. Updated details are attached. Kindly use these for the outstanding invoice and all future payments. Regards, Accounts Payable",
+        "is_suspicious": true,
+        "summary": "The message uses a professional persona and a sense of immediacy to request that you change where you send money.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Regards, Accounts Payable"
+            ],
+            "explanation": "The message adopts the persona of a corporate department to create a sense of legitimacy and authority.",
+            "confidence": 0.8
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "with immediate effect"
+            ],
+            "explanation": "This phrase pressures the reader to act quickly on the new instructions without taking time to verify the change.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "urgency",
+            "text": "with immediate effect",
+            "start": 48,
+            "end": 69
+          },
+          {
+            "label": "impersonation",
+            "text": "Regards, Accounts Payable",
+            "start": 198,
+            "end": 223
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss23",
+      "category": "subtle_scam",
+      "gold": [
+        "threat"
+      ],
+      "gold_evidence": {
+        "threat": [
+          "Fines are issued by the council for unpaid stays"
+        ]
+      },
+      "result": {
+        "message": "Parking payment: the machine on this street is out of order. Scan the code on the sign or use the link below to pay by card. Fines are issued by the council for unpaid stays.",
+        "is_suspicious": false,
+        "summary": "This message provides information about a broken machine and offers an alternative payment method, without using high-pressure tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss24",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "receives a 50 voucher as a thank you"
+        ]
+      },
+      "result": {
+        "message": "We'd love your feedback on your recent visit. The survey takes two minutes and everyone who completes it receives a 50 voucher as a thank you. A card is needed on file to activate the voucher.",
+        "is_suspicious": true,
+        "summary": "The message uses a small reward to encourage you to provide your payment information.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "everyone who completes it receives a 50 voucher as a thank you"
+            ],
+            "explanation": "This offers a financial incentive to motivate the reader to engage with the survey and provide their details.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "everyone who completes it receives a 50 voucher as a thank you",
+            "start": 79,
+            "end": 141
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss25",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "giving away samples to new followers"
+        ]
+      },
+      "result": {
+        "message": "Sorry, wrong number! But since we're here, I run a small boutique and we're giving away samples to new followers this month. Could I send you one?",
+        "is_suspicious": true,
+        "summary": "The message uses a 'wrong number' hook to start a conversation and offers a free gift to build a relationship with you.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "we're giving away samples to new followers this month. Could I send you one?"
+            ],
+            "explanation": "This offers a free gift or incentive to encourage you to engage with the sender and potentially share your contact information.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "we're giving away samples to new followers this month. Could I send you one?",
+            "start": 70,
+            "end": 146
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss26",
+      "category": "subtle_scam",
+      "gold": [
+        "urgency"
+      ],
+      "gold_evidence": {
+        "urgency": [
+          "within the refund window"
+        ]
+      },
+      "result": {
+        "message": "Your antivirus licence renewed successfully for 349.99. No action is needed. If you did not intend to renew, our refund desk can reverse the charge; call the number below within the refund window.",
+        "is_suspicious": true,
+        "summary": "This message uses a high-cost transaction to create a sense of alarm and pressure you to call a specific number quickly.",
+        "tactics": [
+          {
+            "label": "urgency",
+            "evidence": [
+              "call the number below within the refund window"
+            ],
+            "explanation": "By mentioning a specific 'window' for a refund, it pressures you to act quickly before you have time to think or verify the charge with your bank.",
+            "confidence": 0.9
+          },
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Your antivirus licence"
+            ],
+            "explanation": "The message pretends to be from a trusted security provider to make the unexpected charge seem like a legitimate service issue.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Your antivirus licence",
+            "start": 0,
+            "end": 22
+          },
+          {
+            "label": "urgency",
+            "text": "call the number below within the refund window",
+            "start": 149,
+            "end": 195
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss27",
+      "category": "subtle_scam",
+      "gold": [
+        "isolation",
+        "reward"
+      ],
+      "gold_evidence": {
+        "isolation": [
+          "we prefer to arrange it directly with guests"
+        ],
+        "reward": [
+          "skip the platform fees"
+        ]
+      },
+      "result": {
+        "message": "The villa is available for your dates. Booking sites take a big cut, so we prefer to arrange it directly with guests. If you send the deposit by bank transfer we can skip the platform fees and keep the price as quoted.",
+        "is_suspicious": true,
+        "summary": "The message encourages you to bypass a secure platform and pay the host directly, which removes your protection from the booking site.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "we can skip the platform fees and keep the price as quoted"
+            ],
+            "explanation": "This frames the request as a way for you to save money, making the offer of a direct payment more appealing.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "we can skip the platform fees and keep the price as quoted",
+            "start": 159,
+            "end": 217
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss28",
+      "category": "subtle_scam",
+      "gold": [
+        "impersonation"
+      ],
+      "gold_evidence": {
+        "impersonation": [
+          "it's the pharmacy"
+        ]
+      },
+      "result": {
+        "message": "Hi, it's the pharmacy. Your repeat prescription is ready. We've moved to a new app for collections, so please install it from the link and sign in with your NHS login to confirm you want it delivered.",
+        "is_suspicious": true,
+        "summary": "The message uses a trusted healthcare context to encourage you to download an app and provide sensitive login credentials.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "it's the pharmacy",
+              "NHS login"
+            ],
+            "explanation": "The message claims to be from a medical provider and references a national health service to build trust and make the request seem official.",
+            "confidence": 0.9
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "it's the pharmacy",
+            "start": 4,
+            "end": 21
+          },
+          {
+            "label": "impersonation",
+            "text": "NHS login",
+            "start": 157,
+            "end": 166
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss29",
+      "category": "subtle_scam",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "I'm not here to sell anything. I just help people understand where their money is sitting. If you send a screenshot of your current holdings I can tell you honestly whether you are being charged too much.",
+        "is_suspicious": true,
+        "summary": "The message uses a friendly, helpful tone to build trust while asking for sensitive financial information.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "I just help people understand where their money is sitting.",
+              "I can tell you honestly whether you are being charged too much."
+            ],
+            "explanation": "The message offers a helpful service and potential savings to entice the user to share their private financial data.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "I just help people understand where their money is sitting.",
+            "start": 31,
+            "end": 90
+          },
+          {
+            "label": "reward",
+            "text": "I can tell you honestly whether you are being charged too much.",
+            "start": 141,
+            "end": 204
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "ss30",
+      "category": "subtle_scam",
+      "gold": [
+        "reward"
+      ],
+      "gold_evidence": {
+        "reward": [
+          "your name has been entered into our patrons' draw"
+        ]
+      },
+      "result": {
+        "message": "Thank you for supporting us last year. Because of your generosity, your name has been entered into our patrons' draw. Winners are notified by this number, so please keep it saved. To confirm your entry, reply with your postcode and date of birth.",
+        "is_suspicious": true,
+        "summary": "The message uses a reward to encourage you to share personal information, while also asking you to keep the communication private to a specific channel.",
+        "tactics": [
+          {
+            "label": "reward",
+            "evidence": [
+              "your name has been entered into our patrons' draw."
+            ],
+            "explanation": "This uses the promise of a prize or winning to motivate the reader to engage with the message and provide information.",
+            "confidence": 0.9
+          },
+          {
+            "label": "isolation",
+            "evidence": [
+              "Winners are notified by this number, so please keep it saved."
+            ],
+            "explanation": "By instructing you to only use a specific number and keep it saved, it encourages you to stay within their controlled channel rather than seeking outside verification.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "reward",
+            "text": "your name has been entered into our patrons' draw.",
+            "start": 67,
+            "end": 117
+          },
+          {
+            "label": "isolation",
+            "text": "Winners are notified by this number, so please keep it saved.",
+            "start": 118,
+            "end": 179
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b16",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Running low on milk and bread, can you pick some up on the way home? Also the bins go out tonight.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a routine personal request and does not contain any manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b17",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Your Grab is arriving now. Look for a white Toyota Vios, plate SKV 2231 R. Driver: Ahmad.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification providing logistical details for a ride-hailing service.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b18",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Hi Priya, the slides for Thursday's client review are in the shared drive. Let me know if you want to change the order of the sections.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard professional communication with no signs of manipulation or pressure.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b19",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Weather alert: Yellow warning for wind in your area from 06:00 to 18:00 tomorrow. Secure loose objects and allow extra time for travel.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard public service announcement regarding weather conditions and does not contain manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b20",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Just finished the book you lent me. Totally didn't see the ending coming! Coffee next week to discuss?",
+        "is_suspicious": false,
+        "summary": "This message appears to be a friendly, personal interaction with no signs of manipulation or pressure.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b21",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Your Spotify Premium subscription renews on 3 November for $11.99. Manage your plan in account settings.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification regarding a subscription renewal and does not contain manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b22",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Coach Dan here. Training cancelled tonight because the pitch is waterlogged. Back to normal on Thursday.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a routine logistical update about a sports practice and contains no manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b23",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Good news, the vet says Biscuit's blood work is all normal. Keep up the same food and we'll see him for his booster in March.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a routine update from a veterinary clinic regarding a pet's health and follow-up care.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b24",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Thanks for your order from Little Bakery! Your sourdough will be ready for pickup Saturday from 9am. Bring a bag if you can.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification regarding a bakery order and contains no manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b25",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Hey, got two spare tickets for the gig on the 22nd if you and Jo want them. Face value, no rush to decide.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a casual, personal offer between friends and does not contain any manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b26",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Air New Zealand: Check-in is open for flight NZ5 to Los Angeles. Your gate will be shown 90 minutes before departure.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification regarding a flight check-in process.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b27",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Hi all, the book club pick for November is 'Small Things Like These'. We meet at Hannah's on the 28th, 7:30pm.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard social invitation for a book club and contains no manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b28",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "City of Toronto: Your recycling collection day is changing to Wednesday from 1 November. Please put bins out by 7am. More info on the city website.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard public service announcement with no clear signs of manipulation or pressure.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b29",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Can't make yoga tomorrow, my back's playing up. Save me a spot for next week?",
+        "is_suspicious": false,
+        "summary": "This message appears to be a personal communication about a yoga class and does not contain any manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "b30",
+      "category": "benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Grandpa, I passed my driving test!! First try! Mum's taking me for lunch to celebrate, call you tonight.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a personal update from a family member and contains no manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb16",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Chase: We declined a $1,240.00 purchase at BestBuy.com because it didn't match your usual spending. If this was you, reply YES and try again. If not, reply NO and we'll cancel your card.",
+        "is_suspicious": true,
+        "summary": "The message uses a sense of urgency and impersonates a well-known bank to pressure you into making a quick decision about your account security.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Chase"
+            ],
+            "explanation": "The message claims to be from a major financial institution to gain your trust and make the request seem official.",
+            "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "If not, reply NO and we'll cancel your card."
+            ],
+            "explanation": "By suggesting your card will be cancelled immediately unless you act, it pressures you to respond quickly without verifying the message's source.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Chase",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "label": "urgency",
+            "text": "If not, reply NO and we'll cancel your card.",
+            "start": 142,
+            "end": 186
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb17",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "USPS: Your package is at the Oak Street post office and will be held for 15 days before being returned to sender. Bring ID to collect it. No fee is due.",
+        "is_suspicious": false,
+        "summary": "This message provides information about a package and a deadline, but it does not use high-pressure tactics or suspicious requests.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb18",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "ATO: Your 2025 tax return has been processed. A refund of $412.00 will be paid into your nominated bank account within 5 business days. No action is required.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard notification regarding a tax refund and does not contain high-pressure tactics or demands for immediate action.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb19",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Final reminder: your car insurance renewal is due on 31 October. If you do nothing, your policy will auto-renew at the quoted price. You can change or cancel in your online account.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard administrative notification regarding a service renewal and does not contain high-pressure manipulation tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb20",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Hi, it's Lena from Dr Osei's office. We need to reschedule your appointment on Monday as the doctor is unwell. Please call us on 03 9123 4567 when convenient.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard administrative notification regarding a medical appointment and does not contain high-pressure manipulation tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb21",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Your Gmail password was changed just now from a new device in Manchester. If this was you, no action is needed. If not, secure your account at myaccount.google.com.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard automated security notification. It provides a clear action for the user to take if they suspect an issue, without using high-pressure tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb22",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Reminder from the IRS: the deadline to file your extended 2025 return is 15 October. File through your tax software or IRS.gov. The IRS does not request payment by gift card.",
+        "is_suspicious": false,
+        "summary": "This message provides standard information about a tax deadline and includes a helpful warning about common payment methods.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb23",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "PayPal: You received $35.00 from Jordan Lee for 'concert tickets'. The money is in your balance. View the transaction in the app.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification and does not contain clear signs of manipulation or pressure.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb24",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Hi, it's your neighbour at number 12. Your front door was open when I walked past at lunchtime, I pushed it closed but you might want to check nothing's wrong.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a neighborly notification about a physical situation and does not contain clear patterns of manipulation or pressure.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb25",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Payment reminder: your Zipcar membership fee of £6 is overdue. Please update your card in the app to keep your membership active. No late fee applies this month.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification regarding a membership fee and does not contain high-pressure manipulation tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb26",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Microsoft: Your security code is 548 221. Use it to sign in. If you did not request a code, someone may have your password; change it at account.microsoft.com.",
+        "is_suspicious": true,
+        "summary": "This message uses the name of a well-known technology company to create a sense of concern regarding your account security.",
+        "tactics": [
+          {
+            "label": "impersonation",
+            "evidence": [
+              "Microsoft"
+            ],
+            "explanation": "The message uses the name of a major global brand to make the communication appear official and trustworthy.",
+            "confidence": 0.9
+          },
+          {
+            "label": "urgency",
+            "evidence": [
+              "someone may have your password; change it at account.microsoft.com"
+            ],
+            "explanation": "By suggesting that your account is currently compromised, it pressures you to act quickly to secure your information.",
+            "confidence": 0.8
+          }
+        ],
+        "spans": [
+          {
+            "label": "impersonation",
+            "text": "Microsoft",
+            "start": 0,
+            "end": 9
+          },
+          {
+            "label": "urgency",
+            "text": "someone may have your password; change it at account.microsoft.com",
+            "start": 92,
+            "end": 158
+          }
+        ],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb27",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Hi Gran, it's Ella on Mum's phone, mine's out of battery. Still okay for me to come round Sunday? I'll bring the photos from the holiday.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a normal personal communication between family members with no signs of manipulation.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb28",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Airtel: We've noticed higher than usual data use on your number. If you've been roaming, charges may apply on your next bill. Check your usage in the Airtel Thanks app.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard service notification regarding data usage and does not contain high-pressure manipulation tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb29",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Your Ticketmaster refund of $186.50 for the cancelled show has been issued to your original payment method. Allow up to 10 days for it to appear.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard transactional notification regarding a refund and does not contain clear manipulative tactics.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
+        "error": null
+      }
+    },
+    {
+      "id": "hb30",
+      "category": "hard_benign",
+      "gold": [],
+      "gold_evidence": {},
+      "result": {
+        "message": "Court Service reminder: you are summoned for jury service on 3 November at Leeds Combined Court. Report to the jury assembly area at 9:00am. Expenses can be claimed online.",
+        "is_suspicious": false,
+        "summary": "This message appears to be a standard administrative notification regarding jury duty and does not contain clear signs of manipulation.",
+        "tactics": [],
+        "spans": [],
+        "rejected_quotes": [],
+        "attempts": 1,
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "from_cache": false,
         "error": null
       }
     }

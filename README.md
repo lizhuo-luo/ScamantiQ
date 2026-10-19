@@ -142,15 +142,15 @@ python scripts/build_demo_cache.py --all
 
 ### Test set
 
-`data/test_set.jsonl` contains 90 hand-written messages, each annotated with gold tactic labels and gold evidence spans.
+`data/test_set.jsonl` contains 150 messages, 30 per category, each annotated with gold tactic labels and gold evidence spans. The first 90 were written by the project team; the remaining 60 were drafted with an LLM assistant to balance the categories and then reviewed and annotated by hand.
 
 | Category | n | Purpose |
 |---|---|---|
-| `familiar` | 25 | Classic scam templates: bank lock-out, prize, tax warrant, parcel fee… |
-| `paraphrased` | 20 | Scams with unseen wording and different scenarios, to measure generalisation |
-| `subtle_scam` | 15 | Low-cue scams: wrong-number openers, slow-burn investment and romance grooming, politely worded advance-fee offers. Two (`ss01`, `ss14`) contain no taxonomy tactic in the text and are labelled empty on purpose. |
-| `benign` | 15 | Ordinary personal, commercial and institutional messages |
-| `hard_benign` | 15 | Legitimate messages that *look* like scams: real fraud alerts, OTP warnings, payment reminders with deadlines, a genuine "lost my phone" text |
+| `familiar` | 30 | Classic scam templates: bank lock-out, prize, tax warrant, parcel fee, courier redelivery, utility disconnection… |
+| `paraphrased` | 30 | Scams with unseen wording and different scenarios, to measure generalisation |
+| `subtle_scam` | 30 | Low-cue scams: wrong-number openers, slow-burn investment and romance grooming, politely worded advance-fee offers, task and pet scams, invoice redirection. Three (`ss01`, `ss14`, `ss29`) contain no taxonomy tactic in the text and are labelled empty on purpose. |
+| `benign` | 30 | Ordinary personal, commercial and institutional messages |
+| `hard_benign` | 30 | Legitimate messages that *look* like scams: real fraud alerts, OTP warnings, payment reminders with deadlines, genuine refunds and jury summons, a real "lost my phone" text |
 
 ### Metrics
 
@@ -172,33 +172,35 @@ python evaluate.py --category hard_benign                 # one subset only
 
 ### Baseline results: `gemma4:12b` via Ollama
 
+150 messages, run with `--no-cache` so every answer comes from the model.
+
 | Category | n | Detection acc. | Macro F1 | Micro F1 | Grounding | Span F1 |
 |---|---|---|---|---|---|---|
-| all | 90 | 0.978 | 0.943 | 0.939 | 1.000 | 0.786 |
-| familiar | 25 | 1.000 | 0.970 | 0.969 | 1.000 | 0.793 |
-| paraphrased | 20 | 1.000 | 0.964 | 0.951 | 1.000 | 0.736 |
-| subtle_scam | 15 | 0.867 | 0.467 | 0.811 | 1.000 | 0.882 |
-| benign | 15 | 1.000 | – | – | 1.000 | – |
-| hard_benign | 15 | 1.000 | – | – | 1.000 | – |
+| all | 150 | 0.960 | 0.914 | 0.911 | 1.000 | 0.758 |
+| familiar | 30 | 1.000 | 0.992 | 0.987 | 1.000 | 0.823 |
+| paraphrased | 30 | 1.000 | 0.931 | 0.929 | 1.000 | 0.692 |
+| subtle_scam | 30 | 0.867 | 0.516 | 0.761 | 1.000 | 0.726 |
+| benign | 30 | 1.000 | – | – | 1.000 | – |
+| hard_benign | 30 | 0.933 | – | – | 1.000 | – |
 
-Per-label F1: urgency 0.958 · impersonation 0.904 · isolation 0.963 · reward 0.955 · threat 0.938. Mean attempts 1.01; about 4 s per message on one GPU.
+Per-label F1: urgency 0.922 · impersonation 0.876 · isolation 0.919 · reward 0.955 · threat 0.898. Mean attempts 1.00; about 1.4 s per message on one H200 once the model is loaded.
 
 ### Second model: `Qwen/Qwen2.5-7B-Instruct` via SGLang
 
-Same pipeline, same prompt, different model and server. Full report in `results/eval_sglang_qwen2.5-7b.txt`.
+Same pipeline, same prompt, different model and server. Full report in `results/eval_sglang_qwen2.5-7b.txt`. The Qwen run predates the dataset expansion and covers the original 90 messages, so the gemma4 row below is from the same 90-message set for a like-for-like comparison.
 
 | Model / server | Detection acc. | Macro F1 | Micro F1 | Grounding | Span F1 | Time per message |
 |---|---|---|---|---|---|---|
-| gemma4:12b, Ollama | 0.978 | 0.943 | 0.939 | 1.000 | 0.786 | ~4 s |
-| Qwen2.5-7B-Instruct, SGLang | 0.800 | 0.528 | 0.540 | 1.000 | 0.212 | ~0.5 s |
+| gemma4:12b, Ollama (90 msgs) | 0.978 | 0.943 | 0.939 | 1.000 | 0.786 | ~4 s |
+| Qwen2.5-7B-Instruct, SGLang (90 msgs) | 0.800 | 0.528 | 0.540 | 1.000 | 0.212 | ~0.5 s |
 
 The 7B model is eight times faster but misses many tactics (per-label F1 for impersonation is 0.11) and quotes long sentences rather than the key phrase, which drags span F1 down. Grounding stays at 1.0 on both because the schema-constrained decoding and the validator are model-independent. The take-away for the project is that the pipeline is portable across servers and the model choice, not the infrastructure, drives quality.
 
-**Reading the numbers.** All 30 legitimate messages, including the scam-lookalikes in `hard_benign`, were left unflagged, and every quote the model produced was verbatim. The weak spot is `subtle_scam`: the model flags the two deliberately empty-labelled messages (wrong-number opener as impersonation, overpaying tenant as reward) and reads the romance groomer as impersonation + reward rather than isolation. Those readings are defensible, which is the kind of annotation disagreement a small benchmark cannot settle. Per-message predictions are in `results/eval_ollama_gemma4-12b.json`.
+**Reading the numbers.** Every quote the model produced was verbatim and no retry was needed. All 30 `benign` messages were left unflagged, but two of the 30 `hard_benign` ones were not: a genuine Chase card-decline text and a genuine Microsoft sign-in code were read as impersonation plus urgency, with the brand name itself quoted as the impersonation evidence. That is the most useful finding of the expanded set: a bare brand name is not evidence of impersonation, and the prompt or validator should be tightened for it. The weak spot remains `subtle_scam`: the model flags all three deliberately empty-labelled messages, misses the parking-fine notice entirely, and often adds `impersonation` to messages whose gold label is only `reward`. Several of those readings are defensible, which is the kind of annotation disagreement a small benchmark cannot settle. Per-message predictions are in `results/eval_ollama_gemma4-12b.json`.
 
 ## Limitations
 
-- **Small prototype benchmark.** 90 messages written by the project team are enough to compare configurations and catch regressions, not to make claims about real-world performance. Messages are English, UK/US-centric and short. There is no inter-annotator agreement study; gold labels reflect the team's reading.
+- **Small prototype benchmark.** 150 messages are enough to compare configurations and catch regressions, not to make claims about real-world performance. Messages are English and short; most are UK/US/AU-centric with a few from Canada, Singapore, India and New Zealand. 60 of them were drafted with an LLM assistant, which may favour phrasing that language models find easy. There is no inter-annotator agreement study; gold labels reflect the team's reading.
 - **The taxonomy is not exhaustive.** Flattery, reciprocity, social proof and deception without pressure have no label. Some scams, such as the wrong-number opener, contain no tactic in the message text and will correctly produce "no strong tactic detected" even though the follow-up conversation would be a scam.
 - **Tactics are not verdicts.** Legitimate fraud alerts, OTP messages and payment reminders share wording with scams. ScamantiQ only sees wording; it knows nothing about the sender, the link destination or the recipient's real account.
 - **LLM dependence.** Labels, explanations and confidence scores come from a general-purpose model and vary between models and runs. The validator guarantees that quoted evidence is real; it does not guarantee that the label or explanation is right.
@@ -220,7 +222,7 @@ scamantiq/
   config.py                  settings and provider presets
   cache.py                   offline demo cache
   evaluation.py              metrics (scikit-learn)
-data/test_set.jsonl          90 annotated messages in 5 categories
+data/test_set.jsonl          150 annotated messages, 30 per category
 data/demo_cache.json         cached results for all known messages
 results/                     evaluation reports
 docs/screenshots/            README screenshots
