@@ -28,7 +28,9 @@ Rules:
 3. Only include a tactic when there is a concrete phrase in the message that supports it. If no phrase supports a tactic, leave it out.
 4. If the message is an ordinary, benign message with no manipulation, set "is_suspicious" to false and return an empty "tactics" list, with a short summary saying no strong manipulation tactic was found.
 5. Explanations are for non-experts: describe what the phrase is trying to make the reader feel or do. Avoid jargon and avoid absolute claims such as "this is definitely a scam".
-6. Return valid JSON only, no markdown fences, no commentary."""
+6. Impersonation means a borrowed identity is used to get the reader to do something: send a payment, share login details, a code, card or account numbers, reply with personal information, call a number given in the message, install a tool, or open a link that is not the organisation's official site. When that is the case, quote the identity claim itself as the evidence, for example "Netflix:", "This is your bank's fraud team", "Hi Mum, it's me". A message that merely names its sender and asks for none of these things is not impersonation: a one-time code with no link, a fraud alert that only asks for a YES/NO reply, or a notice that points to the official app or to the number on the back of the reader's card.
+7. Standard security advice is NOT isolation. Telling the reader not to share a one-time code or password with anyone, including bank staff, protects the reader and must not be labelled isolation. Isolation is when the sender discourages the reader from checking the sender's own request with family, friends, their bank or the police, or from contacting the organisation directly.
+8. Return valid JSON only, no markdown fences, no commentary."""
 
 
 def taxonomy_block() -> str:

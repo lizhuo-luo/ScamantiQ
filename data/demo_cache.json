@@ -9,7 +9,7 @@
         "evidence": [
           "Verify your identity within 2 hours"
         ],
-        "explanation": "By setting a very short deadline, the message tries to make you panic and act quickly so you don't take time to verify the claim.",
+        "explanation": "By setting a very short deadline, the message tries to make you panic and act quickly so you don't take time to check the facts.",
         "confidence": 1.0
       },
       {
@@ -17,7 +17,7 @@
         "evidence": [
           "Your HSBC account"
         ],
-        "explanation": "The message pretends to be from a well-known financial institution to gain your trust and make the request seem official.",
+        "explanation": "The message claims to be from a well-known bank to gain your trust and make the request seem official.",
         "confidence": 0.9
       },
       {
@@ -25,7 +25,7 @@
         "evidence": [
           "your funds will be frozen permanently"
         ],
-        "explanation": "This warns of a severe negative consequence (losing access to your money) to pressure you into complying with their instructions.",
+        "explanation": "This warns of a severe negative consequence to pressure you into following the instructions provided.",
         "confidence": 0.9
       },
       {
@@ -33,8 +33,8 @@
         "evidence": [
           "Do not share this message with anyone."
         ],
-        "explanation": "This instruction tries to prevent you from seeking advice from friends, family, or official bank staff who could warn you about the situation.",
-        "confidence": 1.0
+        "explanation": "This instruction tries to prevent you from seeking advice or verification from friends, family, or official bank staff.",
+        "confidence": 0.9
       }
     ],
     "spans": [
@@ -72,12 +72,12 @@
   "Congratulations! You have been selected as our lucky winner of a $1,000 Walmart gift card. Reply YES to claim your prize before midnight tonight.": {
     "message": "Congratulations! You have been selected as our lucky winner of a $1,000 Walmart gift card. Reply YES to claim your prize before midnight tonight.",
     "is_suspicious": true,
-    "summary": "This message uses a fake prize and a strict deadline to pressure you into acting quickly without thinking.",
+    "summary": "This message uses a fake prize and a strict deadline to pressure you into responding quickly without thinking.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
-          "You have been selected as our lucky winner of a $1,000 Walmart gift card."
+          "winner of a $1,000 Walmart gift card"
         ],
         "explanation": "This offers a high-value prize to create excitement and motivate you to engage with the sender.",
         "confidence": 1.0
@@ -94,9 +94,9 @@
     "spans": [
       {
         "label": "reward",
-        "text": "You have been selected as our lucky winner of a $1,000 Walmart gift card.",
-        "start": 17,
-        "end": 90
+        "text": "winner of a $1,000 Walmart gift card",
+        "start": 53,
+        "end": 89
       },
       {
         "label": "urgency",
@@ -114,15 +114,14 @@
   "Hi Mum, it's me. I dropped my phone in the sink so this is my new number. I need to pay a bill today but my banking app is locked on the old phone, could you transfer £850 to this account? Please don't tell Dad, he'll be angry about the phone.": {
     "message": "Hi Mum, it's me. I dropped my phone in the sink so this is my new number. I need to pay a bill today but my banking app is locked on the old phone, could you transfer £850 to this account? Please don't tell Dad, he'll be angry about the phone.",
     "is_suspicious": true,
-    "summary": "This message uses a fake identity and a sense of secrecy to pressure you into sending money quickly.",
+    "summary": "This message uses a fake family identity and a request for secrecy to pressure you into sending money quickly.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
-          "Hi Mum, it's me.",
-          "I dropped my phone in the sink so this is my new number."
+          "Hi Mum, it's me."
         ],
-        "explanation": "The message pretends to be a family member in a crisis to build immediate trust and bypass your natural suspicion.",
+        "explanation": "The message pretends to be a family member to build trust and make the request for money seem like a personal favor.",
         "confidence": 0.9
       },
       {
@@ -130,7 +129,7 @@
         "evidence": [
           "I need to pay a bill today"
         ],
-        "explanation": "By creating a deadline, the message tries to make you act quickly without taking the time to call or verify the situation.",
+        "explanation": "By setting a deadline of 'today', the message tries to make you act quickly without taking time to think or verify the situation.",
         "confidence": 0.8
       },
       {
@@ -138,7 +137,7 @@
         "evidence": [
           "Please don't tell Dad, he'll be angry about the phone."
         ],
-        "explanation": "This instruction tries to keep you from consulting another person who might notice the request is unusual.",
+        "explanation": "This discourages you from speaking to another family member who might notice the situation is unusual or suspicious.",
         "confidence": 0.9
       }
     ],
@@ -148,12 +147,6 @@
         "text": "Hi Mum, it's me.",
         "start": 0,
         "end": 16
-      },
-      {
-        "label": "impersonation",
-        "text": "I dropped my phone in the sink so this is my new number.",
-        "start": 17,
-        "end": 73
       },
       {
         "label": "urgency",
@@ -177,22 +170,22 @@
   "This is Officer Daniels from the Australian Taxation Office. A warrant has been issued for your arrest due to unpaid tax. Call 02 8000 1234 immediately to settle the amount and avoid prosecution.": {
     "message": "This is Officer Daniels from the Australian Taxation Office. A warrant has been issued for your arrest due to unpaid tax. Call 02 8000 1234 immediately to settle the amount and avoid prosecution.",
     "is_suspicious": true,
-    "summary": "This message uses a position of authority and a threat of arrest to pressure you into taking immediate action.",
+    "summary": "This message uses a fake government identity and a threat of arrest to pressure you into taking immediate action.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "Officer Daniels from the Australian Taxation Office"
         ],
-        "explanation": "The message claims to come from a government authority to make the request seem official and legitimate.",
+        "explanation": "The message claims to come from a government authority to make the request seem official and intimidating.",
         "confidence": 1.0
       },
       {
         "label": "urgency",
         "evidence": [
-          "Call 02 8000 1234 immediately"
+          "immediately"
         ],
-        "explanation": "The use of the word 'immediately' is designed to make you act quickly without taking time to verify the claim.",
+        "explanation": "The use of 'immediately' is designed to make you act quickly without taking time to think or verify the claim.",
         "confidence": 0.9
       },
       {
@@ -220,8 +213,8 @@
       },
       {
         "label": "urgency",
-        "text": "Call 02 8000 1234 immediately",
-        "start": 122,
+        "text": "immediately",
+        "start": 140,
         "end": 151
       },
       {
@@ -240,14 +233,14 @@
   "Your parcel could not be delivered because of an unpaid customs fee of $2.99. Pay within 12 hours at royalmail-redelivery.net or the item will be returned to sender.": {
     "message": "Your parcel could not be delivered because of an unpaid customs fee of $2.99. Pay within 12 hours at royalmail-redelivery.net or the item will be returned to sender.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and a fake delivery issue to pressure you into clicking a link and paying a small fee.",
+    "summary": "This message uses a fake delivery issue and a short deadline to pressure you into clicking a link and paying a small fee.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "Pay within 12 hours"
         ],
-        "explanation": "This creates a very short deadline to make you act quickly without taking time to verify the claim.",
+        "explanation": "By creating a very short deadline, the message tries to make you act quickly without taking time to verify the claim.",
         "confidence": 1.0
       },
       {
@@ -255,7 +248,7 @@
         "evidence": [
           "royalmail-redelivery.net"
         ],
-        "explanation": "The message uses a link that mimics a known postal service to make the request appear like an official government or delivery notification.",
+        "explanation": "The message uses a link that mimics a known brand (Royal Mail) to make the request appear like an official delivery notification.",
         "confidence": 0.9
       },
       {
@@ -263,7 +256,7 @@
         "evidence": [
           "the item will be returned to sender"
         ],
-        "explanation": "This warns of a negative consequence (losing your package) if you do not comply with the request immediately.",
+        "explanation": "This warns of a negative consequence (losing your parcel) if you do not comply with the request immediately.",
         "confidence": 0.8
       }
     ],
@@ -293,35 +286,19 @@
     "model": "gemma4:12b",
     "error": null
   },
-  "Hi Sam, running about 10 minutes late, can you grab me a flat white? Thanks!": {
-    "message": "Hi Sam, running about 10 minutes late, can you grab me a flat white? Thanks!",
-    "is_suspicious": false,
-    "summary": "This message appears to be a casual, personal request between acquaintances and contains no manipulative tactics.",
-    "tactics": [],
-    "spans": [],
-    "rejected_quotes": [],
-    "attempts": 1,
-    "provider": "ollama",
-    "model": "gemma4:12b",
-    "error": null
-  },
-  "Reminder: your dentist appointment is on Tuesday 14 Oct at 9:30am. Reply C to confirm or call us on 020 7946 0000 to reschedule.": {
-    "message": "Reminder: your dentist appointment is on Tuesday 14 Oct at 9:30am. Reply C to confirm or call us on 020 7946 0000 to reschedule.",
-    "is_suspicious": false,
-    "summary": "This message appears to be a standard appointment reminder and does not contain any manipulative tactics.",
-    "tactics": [],
-    "spans": [],
-    "rejected_quotes": [],
-    "attempts": 1,
-    "provider": "ollama",
-    "model": "gemma4:12b",
-    "error": null
-  },
   "Netflix: We were unable to process your payment. Update your billing details within 24 hours to avoid suspension of your account: netflix-billing-update.com": {
     "message": "Netflix: We were unable to process your payment. Update your billing details within 24 hours to avoid suspension of your account: netflix-billing-update.com",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and pretends to be a well-known brand to pressure you into clicking a link and providing payment information.",
+    "summary": "The message uses a sense of urgency and a fake brand identity to pressure you into clicking a link to 'fix' a payment issue.",
     "tactics": [
+      {
+        "label": "impersonation",
+        "evidence": [
+          "Netflix:"
+        ],
+        "explanation": "The message claims to be from a well-known company to make the request for your billing details seem official.",
+        "confidence": 0.9
+      },
       {
         "label": "urgency",
         "evidence": [
@@ -331,19 +308,11 @@
         "confidence": 0.9
       },
       {
-        "label": "impersonation",
-        "evidence": [
-          "Netflix:"
-        ],
-        "explanation": "The message uses the name of a well-known company to create a sense of legitimacy and trust.",
-        "confidence": 0.9
-      },
-      {
         "label": "threat",
         "evidence": [
           "avoid suspension of your account"
         ],
-        "explanation": "The message warns of a negative consequence (losing access to your account) to pressure you into complying with their request.",
+        "explanation": "The message warns of a negative consequence (losing access to your account) if you do not follow the instructions immediately.",
         "confidence": 0.8
       }
     ],
@@ -376,14 +345,14 @@
   "I am a Microsoft certified technician. We have detected a virus on your computer that is stealing your bank details. Call us now on 1-800-555-0199 before your data is lost forever.": {
     "message": "I am a Microsoft certified technician. We have detected a virus on your computer that is stealing your bank details. Call us now on 1-800-555-0199 before your data is lost forever.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of panic and a fake professional identity to pressure you into calling a number immediately.",
+    "summary": "This message uses a fake professional identity and a sense of immediate danger to pressure you into calling a specific number.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
-          "I am a Microsoft certified technician"
+          "Microsoft certified technician"
         ],
-        "explanation": "The sender claims to have a professional role at a well-known company to make their request seem official and trustworthy.",
+        "explanation": "The sender claims to have a professional certification from a well-known company to make their request seem official and trustworthy.",
         "confidence": 0.9
       },
       {
@@ -392,7 +361,7 @@
           "Call us now",
           "before your data is lost forever"
         ],
-        "explanation": "These phrases create a sense of immediate crisis, trying to make you act quickly without taking time to think or verify the claim.",
+        "explanation": "The message uses a ticking clock and the threat of permanent loss to pressure you into acting immediately without stopping to think.",
         "confidence": 0.9
       },
       {
@@ -401,15 +370,15 @@
           "stealing your bank details",
           "before your data is lost forever"
         ],
-        "explanation": "The message uses the fear of losing money or personal information to pressure you into complying with their instructions.",
+        "explanation": "The message warns of a serious consequence (loss of bank details and data) to create fear and motivate you to comply with their instructions.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "I am a Microsoft certified technician",
-        "start": 0,
+        "text": "Microsoft certified technician",
+        "start": 7,
         "end": 37
       },
       {
@@ -446,7 +415,7 @@
   "Dear friend, I am Barrister James Okoro. My late client left $8.5 million with no next of kin. If you agree to act as beneficiary you will receive 40% of the funds. This matter is strictly confidential.": {
     "message": "Dear friend, I am Barrister James Okoro. My late client left $8.5 million with no next of kin. If you agree to act as beneficiary you will receive 40% of the funds. This matter is strictly confidential.",
     "is_suspicious": true,
-    "summary": "This message uses a large financial reward and a fake professional identity to entice you into a secret arrangement.",
+    "summary": "This message uses a fake professional identity and a large financial reward to entice you into a secret arrangement.",
     "tactics": [
       {
         "label": "impersonation",
@@ -469,8 +438,8 @@
         "evidence": [
           "This matter is strictly confidential."
         ],
-        "explanation": "By demanding secrecy, the sender tries to prevent you from seeking advice from others who might spot the red flags.",
-        "confidence": 0.9
+        "explanation": "By demanding secrecy, the sender tries to prevent you from discussing the situation with others who might warn you.",
+        "confidence": 0.8
       }
     ],
     "spans": [
@@ -509,13 +478,13 @@
         "evidence": [
           "within 48 hours"
         ],
-        "explanation": "This creates a ticking clock to make you feel panicked and rushed, making it harder for you to stop and think clearly about the situation.",
+        "explanation": "This creates a ticking clock to pressure you into acting quickly without taking time to verify the claims.",
         "confidence": 1.0
       },
       {
         "label": "threat",
         "evidence": [
-          "I will send the video to all your contacts"
+          "I will send the video to all your contacts."
         ],
         "explanation": "This uses the threat of social humiliation and reputational damage to coerce you into complying with their demands.",
         "confidence": 1.0
@@ -530,9 +499,9 @@
       },
       {
         "label": "threat",
-        "text": "I will send the video to all your contacts",
+        "text": "I will send the video to all your contacts.",
         "start": 125,
-        "end": 167
+        "end": 168
       }
     ],
     "rejected_quotes": [],
@@ -544,23 +513,22 @@
   "Your Apple ID has been used to purchase an iPhone 15 Pro for $1,299. If this was not you, cancel the order immediately at apple-id-support.net.": {
     "message": "Your Apple ID has been used to purchase an iPhone 15 Pro for $1,299. If this was not you, cancel the order immediately at apple-id-support.net.",
     "is_suspicious": true,
-    "summary": "This message uses a high-value purchase notification to create panic and pressure you into clicking a link quickly.",
+    "summary": "This message uses a fake high-value purchase to create panic and pressure you into clicking a link quickly.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "cancel the order immediately"
         ],
-        "explanation": "The use of the word 'immediately' is designed to make you act quickly without taking time to verify the claim.",
+        "explanation": "The use of the word 'immediately' is designed to make you act quickly without taking time to think or verify the claim.",
         "confidence": 0.9
       },
       {
         "label": "impersonation",
         "evidence": [
-          "Your Apple ID",
-          "apple-id-support.net"
+          "Your Apple ID"
         ],
-        "explanation": "The message mimics the branding of a well-known technology company to make the request seem like an official security alert.",
+        "explanation": "The message claims to be from a trusted brand (Apple) to make the request for your attention seem official.",
         "confidence": 0.8
       }
     ],
@@ -576,12 +544,6 @@
         "text": "cancel the order immediately",
         "start": 90,
         "end": 118
-      },
-      {
-        "label": "impersonation",
-        "text": "apple-id-support.net",
-        "start": 122,
-        "end": 142
       }
     ],
     "rejected_quotes": [],
@@ -593,7 +555,7 @@
   "Guaranteed 30% monthly returns on our crypto trading platform. Zero risk. Our VIP slots close tonight, deposit a minimum of $250 to lock in your spot.": {
     "message": "Guaranteed 30% monthly returns on our crypto trading platform. Zero risk. Our VIP slots close tonight, deposit a minimum of $250 to lock in your spot.",
     "is_suspicious": true,
-    "summary": "This message uses promises of high returns with no risk and a ticking clock to pressure you into making a quick financial decision.",
+    "summary": "This message uses promises of high returns and a ticking clock to pressure you into making a financial commitment quickly.",
     "tactics": [
       {
         "label": "reward",
@@ -601,8 +563,8 @@
           "Guaranteed 30% monthly returns",
           "Zero risk"
         ],
-        "explanation": "By promising high profits with no possibility of loss, the message tries to make the offer seem irresistible and safe.",
-        "confidence": 1.0
+        "explanation": "These phrases promise high profits with no risk to make the offer seem incredibly attractive and irresistible.",
+        "confidence": 0.9
       },
       {
         "label": "urgency",
@@ -610,8 +572,8 @@
           "VIP slots close tonight",
           "deposit a minimum of $250 to lock in your spot"
         ],
-        "explanation": "The mention of a deadline tonight is designed to make you act quickly without taking time to research the platform or the risks involved.",
-        "confidence": 1.0
+        "explanation": "By creating a deadline of 'tonight', the message tries to make you act quickly without taking time to research the offer.",
+        "confidence": 0.9
       }
     ],
     "spans": [
@@ -649,14 +611,14 @@
   "FINAL NOTICE from the Department for Work and Pensions. You owe an outstanding penalty of £450. Failure to pay today will result in bailiffs attending your property.": {
     "message": "FINAL NOTICE from the Department for Work and Pensions. You owe an outstanding penalty of £450. Failure to pay today will result in bailiffs attending your property.",
     "is_suspicious": true,
-    "summary": "This message uses a high-pressure tactic by pretending to be a government agency and threatening immediate legal consequences to force a quick payment.",
+    "summary": "This message uses a threatening tone and a sense of extreme urgency to pressure you into making a payment immediately.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "Department for Work and Pensions"
         ],
-        "explanation": "The message claims to come from a government department to gain trust and make the demand seem official.",
+        "explanation": "The message claims to come from a government department to make the demand seem official and authoritative.",
         "confidence": 0.9
       },
       {
@@ -664,7 +626,7 @@
         "evidence": [
           "Failure to pay today"
         ],
-        "explanation": "By setting a deadline of 'today', the message tries to make you act quickly without taking time to verify the claim.",
+        "explanation": "By demanding payment 'today', the message tries to force you to act quickly without taking time to verify the claim.",
         "confidence": 0.9
       },
       {
@@ -672,7 +634,7 @@
         "evidence": [
           "will result in bailiffs attending your property"
         ],
-        "explanation": "The message uses the threat of physical enforcement and legal consequences to create fear and pressure you into complying.",
+        "explanation": "The message uses the threat of legal action and physical consequences to create fear and pressure you into complying.",
         "confidence": 0.9
       }
     ],
@@ -705,31 +667,31 @@
   "Hi, this is Amazon Customer Service. A suspicious order of $1,850 was placed on your account. To cancel, press 1 or call back on this number. Do not contact your bank as the fraud department is handling it.": {
     "message": "Hi, this is Amazon Customer Service. A suspicious order of $1,850 was placed on your account. To cancel, press 1 or call back on this number. Do not contact your bank as the fraud department is handling it.",
     "is_suspicious": true,
-    "summary": "This message uses a fake sense of urgency and impersonates a well-known company to create panic, while also trying to prevent you from seeking outside advice.",
+    "summary": "The message uses a fake identity and a sense of urgency to pressure you into acting quickly while discouraging you from seeking outside help.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "this is Amazon Customer Service"
         ],
-        "explanation": "The message claims to be from a well-known, trusted company to gain your trust and make the request seem official.",
-        "confidence": 1.0
+        "explanation": "The message claims to be from a well-known company to gain your trust and make the request seem official.",
+        "confidence": 0.9
       },
       {
         "label": "urgency",
         "evidence": [
           "To cancel, press 1 or call back on this number"
         ],
-        "explanation": "By suggesting an immediate action to stop a large transaction, it pressures you to act quickly without taking time to think or verify the claim.",
-        "confidence": 0.9
+        "explanation": "By presenting a large, fake charge, the message tries to make you act immediately without taking time to verify the claim.",
+        "confidence": 0.8
       },
       {
         "label": "isolation",
         "evidence": [
-          "Do not contact your bank"
+          "Do not contact your bank as the fraud department is handling it."
         ],
-        "explanation": "This instruction tries to prevent you from speaking to a trusted third party who could verify the situation and warn you of the risk.",
-        "confidence": 1.0
+        "explanation": "This instruction specifically tells you to avoid contacting your bank, which prevents you from getting independent advice from a trusted source.",
+        "confidence": 0.9
       }
     ],
     "spans": [
@@ -747,9 +709,9 @@
       },
       {
         "label": "isolation",
-        "text": "Do not contact your bank",
+        "text": "Do not contact your bank as the fraud department is handling it.",
         "start": 142,
-        "end": 166
+        "end": 206
       }
     ],
     "rejected_quotes": [],
@@ -761,14 +723,22 @@
   "You have 1 unclaimed tax refund of £386.40 from HMRC. Claim it now via the secure link before the claim window closes on Friday: hmrc-refund-claim.co": {
     "message": "You have 1 unclaimed tax refund of £386.40 from HMRC. Claim it now via the secure link before the claim window closes on Friday: hmrc-refund-claim.co",
     "is_suspicious": true,
-    "summary": "This message uses a promised financial gain and a fast-approaching deadline to pressure you into clicking a link.",
+    "summary": "This message uses a fake government identity and a deadline to pressure you into clicking a link to claim a prize.",
     "tactics": [
+      {
+        "label": "impersonation",
+        "evidence": [
+          "from HMRC"
+        ],
+        "explanation": "The message claims to be from a government tax authority to make the request seem official and trustworthy.",
+        "confidence": 0.9
+      },
       {
         "label": "reward",
         "evidence": [
           "unclaimed tax refund of £386.40"
         ],
-        "explanation": "By promising a specific sum of money, the message tries to entice you into taking action based on a financial gain.",
+        "explanation": "The promise of a specific sum of money is used to entice the reader to engage with the message.",
         "confidence": 0.9
       },
       {
@@ -776,16 +746,8 @@
         "evidence": [
           "before the claim window closes on Friday"
         ],
-        "explanation": "The mention of a specific deadline is designed to make you act quickly without taking time to verify the information.",
+        "explanation": "Setting a specific deadline creates a sense of pressure, making the reader feel they must act quickly without checking the link's safety.",
         "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "from HMRC"
-        ],
-        "explanation": "The message claims to be from a government tax authority to gain your trust and make the request seem official.",
-        "confidence": 0.8
       }
     ],
     "spans": [
@@ -817,22 +779,22 @@
   "Hey, it's John from the IT department. We're rolling out a security update and I need your login password to complete it on your machine. Please send it over ASAP so I can finish before the deadline.": {
     "message": "Hey, it's John from the IT department. We're rolling out a security update and I need your login password to complete it on your machine. Please send it over ASAP so I can finish before the deadline.",
     "is_suspicious": true,
-    "summary": "The message uses a fake identity and a sense of urgency to pressure you into sharing sensitive login credentials.",
+    "summary": "The message uses a fake authority figure and a sense of urgency to pressure you into sharing sensitive login credentials.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "it's John from the IT department"
         ],
-        "explanation": "The sender is pretending to be a member of a trusted internal department to make their request seem official and legitimate.",
+        "explanation": "The sender is pretending to be a member of a trusted internal team to make the request for your password seem like a routine procedure.",
         "confidence": 0.9
       },
       {
         "label": "urgency",
         "evidence": [
-          "Please send it over ASAP so I can finish before the deadline."
+          "ASAP so I can finish before the deadline"
         ],
-        "explanation": "The use of 'ASAP' and a 'deadline' is designed to make you act quickly without taking the time to question why they need your password.",
+        "explanation": "The use of 'ASAP' and a 'deadline' is designed to make you act quickly without taking the time to question why a password is being requested.",
         "confidence": 0.9
       }
     ],
@@ -845,9 +807,9 @@
       },
       {
         "label": "urgency",
-        "text": "Please send it over ASAP so I can finish before the deadline.",
-        "start": 138,
-        "end": 199
+        "text": "ASAP so I can finish before the deadline",
+        "start": 158,
+        "end": 198
       }
     ],
     "rejected_quotes": [],
@@ -859,14 +821,14 @@
   "Dear valued customer, your Chase debit card has been temporarily disabled. Confirm your card number and PIN at chase-verify-card.com to restore access within the next 6 hours.": {
     "message": "Dear valued customer, your Chase debit card has been temporarily disabled. Confirm your card number and PIN at chase-verify-card.com to restore access within the next 6 hours.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and pretends to be a well-known bank to pressure you into providing sensitive information.",
+    "summary": "This message uses a sense of urgency and a fake identity to pressure you into providing sensitive banking details on a suspicious website.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "your Chase debit card"
         ],
-        "explanation": "The message pretends to be from a major financial institution to gain your trust and make the request seem official.",
+        "explanation": "The message claims to be from a well-known financial institution to make the request for your private information seem official.",
         "confidence": 0.9
       },
       {
@@ -953,42 +915,42 @@
     "summary": "This message uses a personal connection and a medical emergency to create a sense of intimacy and urgency, while asking for money and requesting secrecy.",
     "tactics": [
       {
-        "label": "urgency",
-        "evidence": [
-          "My daughter is in hospital"
-        ],
-        "explanation": "By mentioning a medical emergency involving a child, the message tries to create a high-pressure situation that makes the reader want to act quickly without questioning the request.",
-        "confidence": 0.9
-      },
-      {
         "label": "impersonation",
         "evidence": [
-          "Babe, I know we have only been talking for two weeks"
+          "Babe"
         ],
-        "explanation": "The message uses intimate language to pretend to be a romantic interest or a close friend to build trust quickly.",
-        "confidence": 0.8
+        "explanation": "The message uses an intimate pet name to pretend to be someone the reader knows and trusts personally.",
+        "confidence": 0.9
       },
       {
         "label": "isolation",
         "evidence": [
           "Please keep this between us, I am embarrassed."
         ],
-        "explanation": "This phrase discourages the reader from talking to others who might notice the inconsistency of the story or advise against sending money.",
+        "explanation": "This phrase discourages the reader from talking to others about the situation, which prevents them from seeking outside advice or verification.",
         "confidence": 0.9
+      },
+      {
+        "label": "reward",
+        "evidence": [
+          "I feel we have a real connection."
+        ],
+        "explanation": "The message uses the promise of a romantic connection to build trust and make the reader more likely to comply with the request.",
+        "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Babe, I know we have only been talking for two weeks",
+        "text": "Babe",
         "start": 0,
-        "end": 52
+        "end": 4
       },
       {
-        "label": "urgency",
-        "text": "My daughter is in hospital",
-        "start": 91,
-        "end": 117
+        "label": "reward",
+        "text": "I feel we have a real connection.",
+        "start": 57,
+        "end": 90
       },
       {
         "label": "isolation",
@@ -1029,7 +991,7 @@
         "evidence": [
           "legal action will be taken against you"
         ],
-        "explanation": "The message uses the fear of legal consequences to pressure you into complying with their request.",
+        "explanation": "The message uses the threat of legal consequences to create fear and pressure you into complying with their request.",
         "confidence": 1.0
       }
     ],
@@ -1062,14 +1024,15 @@
   "Your PayPal account will be permanently limited. We noticed unusual login attempts. Confirm your identity now: paypa1-resolution-center.com": {
     "message": "Your PayPal account will be permanently limited. We noticed unusual login attempts. Confirm your identity now: paypa1-resolution-center.com",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and a threat of account loss to pressure you into clicking a link to 'verify' your identity.",
+    "summary": "The message uses a sense of urgency and a fake official identity to pressure you into clicking a link to 'fix' a problem.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
+          "Your PayPal account will be permanently limited.",
           "Confirm your identity now"
         ],
-        "explanation": "The use of the word 'now' creates a sense of immediate pressure, intended to make you act quickly without taking time to verify the request.",
+        "explanation": "By claiming your account will be restricted and demanding immediate action, the message tries to make you act quickly without taking time to verify the claim.",
         "confidence": 0.9
       },
       {
@@ -1077,15 +1040,7 @@
         "evidence": [
           "Your PayPal account"
         ],
-        "explanation": "The message claims to be from a well-known, trusted company (PayPal) to gain your trust and make the request seem official.",
-        "confidence": 0.8
-      },
-      {
-        "label": "threat",
-        "evidence": [
-          "will be permanently limited"
-        ],
-        "explanation": "The message warns of a negative consequence (losing access to your account) to scare you into complying with their instructions.",
+        "explanation": "The message pretends to be from a well-known company (PayPal) to gain your trust and make the request seem official.",
         "confidence": 0.8
       }
     ],
@@ -1097,10 +1052,10 @@
         "end": 19
       },
       {
-        "label": "threat",
-        "text": "will be permanently limited",
-        "start": 20,
-        "end": 47
+        "label": "urgency",
+        "text": "Your PayPal account will be permanently limited.",
+        "start": 0,
+        "end": 48
       },
       {
         "label": "urgency",
@@ -1125,16 +1080,16 @@
         "evidence": [
           "I am a recruiter with Tesla"
         ],
-        "explanation": "The sender claims to represent a well-known, high-profile company to build trust and make the offer seem legitimate.",
+        "explanation": "The sender is claiming to represent a well-known global brand to make the job offer seem more official and trustworthy.",
         "confidence": 0.9
       },
       {
         "label": "reward",
         "evidence": [
-          "remote data entry role paying $45 per hour"
+          "paying $45 per hour"
         ],
-        "explanation": "The message offers a high hourly wage for a simple task to create a strong incentive for the reader to engage.",
-        "confidence": 0.9
+        "explanation": "The message highlights a high hourly wage to make the offer more appealing and encourage you to engage with the recruiter.",
+        "confidence": 0.8
       }
     ],
     "spans": [
@@ -1146,8 +1101,8 @@
       },
       {
         "label": "reward",
-        "text": "remote data entry role paying $45 per hour",
-        "start": 65,
+        "text": "paying $45 per hour",
+        "start": 88,
         "end": 107
       }
     ],
@@ -1160,7 +1115,7 @@
   "Your Google account storage is full and your photos will be deleted in 24 hours. Upgrade now for only $0.99 at google-storage-renew.com.": {
     "message": "Your Google account storage is full and your photos will be deleted in 24 hours. Upgrade now for only $0.99 at google-storage-renew.com.",
     "is_suspicious": true,
-    "summary": "This message uses a deadline and a threat of data loss to pressure you into making a quick payment on an unofficial website.",
+    "summary": "This message uses a deadline and a threat of data loss to pressure you into clicking a link and making a payment.",
     "tactics": [
       {
         "label": "urgency",
@@ -1173,9 +1128,9 @@
       {
         "label": "impersonation",
         "evidence": [
-          "Your Google account storage"
+          "Your Google account"
         ],
-        "explanation": "The message pretends to be from a well-known company (Google) to gain your trust and make the request seem official.",
+        "explanation": "The message claims to be from a well-known company (Google) to make the request for payment seem official.",
         "confidence": 0.9
       },
       {
@@ -1183,16 +1138,16 @@
         "evidence": [
           "your photos will be deleted"
         ],
-        "explanation": "The message uses the fear of losing personal memories to pressure you into clicking a link and paying money.",
+        "explanation": "The message warns of a permanent loss of personal data to pressure you into complying with their request.",
         "confidence": 0.9
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Your Google account storage",
+        "text": "Your Google account",
         "start": 0,
-        "end": 27
+        "end": 19
       },
       {
         "label": "threat",
@@ -1221,9 +1176,10 @@
       {
         "label": "reward",
         "evidence": [
-          "You have been chosen to receive a free iPhone 16"
+          "You have been chosen to receive a free iPhone 16",
+          "customer appreciation giveaway"
         ],
-        "explanation": "This offers a high-value item for free to create excitement and motivate you to engage with the sender.",
+        "explanation": "This offers a high-value item for free to create excitement and motivate the reader to engage with the offer.",
         "confidence": 0.9
       }
     ],
@@ -1233,6 +1189,12 @@
         "text": "You have been chosen to receive a free iPhone 16",
         "start": 0,
         "end": 48
+      },
+      {
+        "label": "reward",
+        "text": "customer appreciation giveaway",
+        "start": 64,
+        "end": 94
       }
     ],
     "rejected_quotes": [],
@@ -1244,15 +1206,15 @@
   "This is your bank's fraud team. Someone is trying to empty your account right now. We need to move your money to a safe account immediately. Do not hang up and do not speak to branch staff, they may be involved.": {
     "message": "This is your bank's fraud team. Someone is trying to empty your account right now. We need to move your money to a safe account immediately. Do not hang up and do not speak to branch staff, they may be involved.",
     "is_suspicious": true,
-    "summary": "This message uses a high-pressure scenario involving your finances to make you act quickly and stop you from seeking outside help.",
+    "summary": "This message uses a sense of panic and a fake authority to pressure you into making a quick decision while cutting off your ability to seek help.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "This is your bank's fraud team."
         ],
-        "explanation": "The message claims to come from a trusted authority (a bank's security department) to gain your trust and make the request seem official.",
-        "confidence": 0.9
+        "explanation": "The message claims to come from a trusted financial institution to make the request seem official and authoritative.",
+        "confidence": 1.0
       },
       {
         "label": "urgency",
@@ -1260,16 +1222,16 @@
           "Someone is trying to empty your account right now.",
           "move your money to a safe account immediately."
         ],
-        "explanation": "By claiming an active theft is happening 'right now,' the message tries to create panic so you act quickly without taking time to think or verify the claims.",
-        "confidence": 0.95
+        "explanation": "By claiming an active theft is happening 'right now,' the message tries to make you panic and act quickly without taking time to think.",
+        "confidence": 1.0
       },
       {
         "label": "isolation",
         "evidence": [
           "Do not hang up and do not speak to branch staff, they may be involved."
         ],
-        "explanation": "The message explicitly tells you to avoid talking to others, specifically bank staff, to prevent you from getting a second opinion or being warned by a professional.",
-        "confidence": 0.95
+        "explanation": "The message explicitly tells you not to contact official staff or others, attempting to prevent you from getting a second opinion or verifying the claim.",
+        "confidence": 1.0
       }
     ],
     "spans": [
@@ -1307,14 +1269,14 @@
   "WARNING: Unpaid toll detected. Your vehicle will be reported to the DMV and a fine of $250 applied unless the $6.99 balance is cleared by end of day: tollpay-ezpass.info": {
     "message": "WARNING: Unpaid toll detected. Your vehicle will be reported to the DMV and a fine of $250 applied unless the $6.99 balance is cleared by end of day: tollpay-ezpass.info",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and a threat of legal consequences to pressure you into making a quick payment.",
+    "summary": "This message uses a sense of urgency and a threat of legal consequences to pressure you into making a payment quickly.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "unless the $6.99 balance is cleared by end of day"
         ],
-        "explanation": "By setting a very short deadline (end of day), the message tries to make you act quickly without taking time to verify the claim.",
+        "explanation": "This creates a strict deadline to make you act quickly without taking time to verify the claim.",
         "confidence": 0.9
       },
       {
@@ -1322,25 +1284,11 @@
         "evidence": [
           "Your vehicle will be reported to the DMV and a fine of $250 applied"
         ],
-        "explanation": "This uses the threat of a government penalty and legal consequences to create fear and pressure you into complying.",
+        "explanation": "This uses the threat of legal action and financial penalties to pressure you into complying with the request.",
         "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "Unpaid toll detected"
-        ],
-        "explanation": "The message mimics an official government or transportation authority to make the request seem like a legitimate legal notice.",
-        "confidence": 0.8
       }
     ],
     "spans": [
-      {
-        "label": "impersonation",
-        "text": "Unpaid toll detected",
-        "start": 9,
-        "end": 29
-      },
       {
         "label": "threat",
         "text": "Your vehicle will be reported to the DMV and a fine of $250 applied",
@@ -1363,45 +1311,31 @@
   "Quick heads up from the building management: we've had a few break-ins so we're asking tenants to confirm their door codes with us by text today. Reply with your code so we can update the system.": {
     "message": "Quick heads up from the building management: we've had a few break-ins so we're asking tenants to confirm their door codes with us by text today. Reply with your code so we can update the system.",
     "is_suspicious": true,
-    "summary": "The message uses a frightening scenario involving crime to pressure you into sharing sensitive security information quickly.",
+    "summary": "The message uses a local authority figure and a sense of urgency to pressure you into sharing a security code.",
     "tactics": [
+      {
+        "label": "impersonation",
+        "evidence": [
+          "building management"
+        ],
+        "explanation": "The message claims to come from a trusted authority figure (building management) to make the request for a security code seem legitimate.",
+        "confidence": 0.9
+      },
       {
         "label": "urgency",
         "evidence": [
           "by text today"
         ],
-        "explanation": "This creates a deadline that pressures you to act immediately without taking time to verify the request with management in person.",
-        "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "from the building management"
-        ],
-        "explanation": "The sender claims to be an authority figure (building management) to make the request for your private security code seem like a standard procedure.",
-        "confidence": 0.8
-      },
-      {
-        "label": "threat",
-        "evidence": [
-          "we've had a few break-ins"
-        ],
-        "explanation": "By mentioning a crime like break-ins, the message uses fear to make you feel like your safety is at risk, making you more likely to comply with their request.",
+        "explanation": "By setting a deadline of 'today', the message pressures you to act quickly without taking time to verify the request with the office in person.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "from the building management",
-        "start": 15,
+        "text": "building management",
+        "start": 24,
         "end": 43
-      },
-      {
-        "label": "threat",
-        "text": "we've had a few break-ins",
-        "start": 45,
-        "end": 70
       },
       {
         "label": "urgency",
@@ -1419,40 +1353,26 @@
   "Mate I'm in a bit of a jam, car got towed and they only take payment at the pound before 5. Can you lend me 300 till Friday? Don't mention it to Priya, she thinks I've sorted my finances.": {
     "message": "Mate I'm in a bit of a jam, car got towed and they only take payment at the pound before 5. Can you lend me 300 till Friday? Don't mention it to Priya, she thinks I've sorted my finances.",
     "is_suspicious": true,
-    "summary": "This message uses a personal connection and a time-sensitive problem to pressure you into sending money quickly while asking you to keep it a secret.",
+    "summary": "The message uses a personal connection and a time-sensitive situation to pressure you into sending money quickly while asking you to keep it a secret.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "they only take payment at the pound before 5"
         ],
-        "explanation": "This creates a deadline that pressures you to act immediately without taking time to think or verify the situation.",
+        "explanation": "This creates a deadline that pressures you to act immediately without taking time to think or verify the request.",
         "confidence": 0.9
       },
       {
         "label": "isolation",
         "evidence": [
-          "Don't mention it to Priya, she thinks I've sorted my finances."
+          "Don't mention it to Priya"
         ],
-        "explanation": "By asking you to hide the situation from someone else, the sender is trying to prevent you from seeking outside advice or verification.",
+        "explanation": "This discourages you from discussing the situation with someone else who might be able to provide a different perspective or verify the story.",
         "confidence": 0.8
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "Mate I'm in a bit of a jam"
-        ],
-        "explanation": "The message uses casual, familiar language to mimic a personal relationship and build trust.",
-        "confidence": 0.7
       }
     ],
     "spans": [
-      {
-        "label": "impersonation",
-        "text": "Mate I'm in a bit of a jam",
-        "start": 0,
-        "end": 26
-      },
       {
         "label": "urgency",
         "text": "they only take payment at the pound before 5",
@@ -1461,9 +1381,9 @@
       },
       {
         "label": "isolation",
-        "text": "Don't mention it to Priya, she thinks I've sorted my finances.",
+        "text": "Don't mention it to Priya",
         "start": 125,
-        "end": 187
+        "end": 150
       }
     ],
     "rejected_quotes": [],
@@ -1475,14 +1395,14 @@
   "We noticed you haven't collected the £120 loyalty bonus sitting in your account. Bonuses that aren't claimed within 48 hrs are released back into the pool.": {
     "message": "We noticed you haven't collected the £120 loyalty bonus sitting in your account. Bonuses that aren't claimed within 48 hrs are released back into the pool.",
     "is_suspicious": true,
-    "summary": "The message uses a time-limited offer and a financial incentive to pressure you into acting quickly without verifying the source.",
+    "summary": "The message uses a time-limited offer and a financial reward to pressure you into acting quickly without verifying the source.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "£120 loyalty bonus"
         ],
-        "explanation": "This offers a specific monetary reward to entice the reader to engage with the message.",
+        "explanation": "This offers a specific financial benefit to entice the reader to engage with the message.",
         "confidence": 0.9
       },
       {
@@ -1490,7 +1410,7 @@
         "evidence": [
           "within 48 hrs"
         ],
-        "explanation": "By creating a very short deadline, the message pressures you to act immediately and prevents you from taking time to think or verify the claim.",
+        "explanation": "This creates a short deadline to make the reader feel they must act immediately or lose out on the reward.",
         "confidence": 0.9
       }
     ],
@@ -1517,14 +1437,14 @@
   "Good afternoon. I'm calling from the court registry regarding a missed jury summons. Non-attendance carries a contempt charge. This can be resolved today by paying the administrative fee over the phone.": {
     "message": "Good afternoon. I'm calling from the court registry regarding a missed jury summons. Non-attendance carries a contempt charge. This can be resolved today by paying the administrative fee over the phone.",
     "is_suspicious": true,
-    "summary": "The message uses a legal authority and a threat of criminal charges to pressure you into making a payment immediately.",
+    "summary": "The message uses a legal authority and a threat of legal consequences to pressure you into making a payment immediately.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "I'm calling from the court registry"
         ],
-        "explanation": "The sender claims to be from a government or legal body to make the request seem official and authoritative.",
+        "explanation": "The sender claims to be from a government or legal authority to make their request seem official and authoritative.",
         "confidence": 0.9
       },
       {
@@ -1532,7 +1452,7 @@
         "evidence": [
           "Non-attendance carries a contempt charge."
         ],
-        "explanation": "This uses the threat of legal consequences or criminal charges to create fear and pressure the reader into complying.",
+        "explanation": "This uses the threat of legal consequences or a criminal charge to create fear and pressure the reader into complying.",
         "confidence": 0.9
       },
       {
@@ -1540,7 +1460,7 @@
         "evidence": [
           "This can be resolved today by paying the administrative fee over the phone."
         ],
-        "explanation": "By suggesting the issue can be 'resolved today' via a phone payment, it pressures the reader to act immediately rather than taking time to verify the claim.",
+        "explanation": "The message creates a sense of immediate pressure by suggesting the problem can only be fixed today, discouraging you from taking time to verify the claim.",
         "confidence": 0.8
       }
     ],
@@ -1573,24 +1493,24 @@
   "I've got your browsing history and a few screenshots your wife would find very interesting. 0.05 BTC to the wallet below and this goes away. You have until Sunday.": {
     "message": "I've got your browsing history and a few screenshots your wife would find very interesting. 0.05 BTC to the wallet below and this goes away. You have until Sunday.",
     "is_suspicious": true,
-    "summary": "This message uses personal threats and a deadline to pressure you into sending money quickly.",
+    "summary": "This message uses a combination of personal threats and a deadline to pressure you into making a payment.",
     "tactics": [
       {
         "label": "threat",
         "evidence": [
           "I've got your browsing history and a few screenshots your wife would find very interesting.",
-          "and this goes away."
+          "this goes away."
         ],
         "explanation": "The message uses the threat of exposing private information or causing social embarrassment to pressure you into complying with their demands.",
-        "confidence": 1.0
+        "confidence": 0.9
       },
       {
         "label": "urgency",
         "evidence": [
           "You have until Sunday."
         ],
-        "explanation": "By setting a specific deadline, the message tries to make you feel rushed so you act quickly without taking time to think or verify the claims.",
-        "confidence": 1.0
+        "explanation": "By setting a specific deadline, the message tries to create a sense of pressure so you act quickly without taking time to think or seek help.",
+        "confidence": 0.9
       }
     ],
     "spans": [
@@ -1602,8 +1522,8 @@
       },
       {
         "label": "threat",
-        "text": "and this goes away.",
-        "start": 121,
+        "text": "this goes away.",
+        "start": 125,
         "end": 140
       },
       {
@@ -1622,32 +1542,18 @@
   "Your landlord asked me to pass this on: the rent account has changed. Pay this month's rent to the new sort code below. Don't bother him with questions, he's travelling.": {
     "message": "Your landlord asked me to pass this on: the rent account has changed. Pay this month's rent to the new sort code below. Don't bother him with questions, he's travelling.",
     "is_suspicious": true,
-    "summary": "The message uses a sense of authority and a request for secrecy to discourage you from verifying the change in payment details.",
+    "summary": "The message uses a sense of secrecy and a third-party intermediary to pressure you into changing payment details without verification.",
     "tactics": [
-      {
-        "label": "impersonation",
-        "evidence": [
-          "Your landlord asked me to pass this on"
-        ],
-        "explanation": "The message claims to come from a trusted authority figure (the landlord) to make the request for a new bank account seem legitimate.",
-        "confidence": 0.9
-      },
       {
         "label": "isolation",
         "evidence": [
           "Don't bother him with questions, he's travelling."
         ],
-        "explanation": "This phrase discourages you from contacting the landlord directly, preventing you from verifying the information with the actual owner.",
+        "explanation": "This phrase discourages you from contacting the landlord directly to verify the information, creating a barrier to confirmation.",
         "confidence": 0.9
       }
     ],
     "spans": [
-      {
-        "label": "impersonation",
-        "text": "Your landlord asked me to pass this on",
-        "start": 0,
-        "end": 38
-      },
       {
         "label": "isolation",
         "text": "Don't bother him with questions, he's travelling.",
@@ -1664,14 +1570,14 @@
   "A small group of early supporters is being let into the pre-sale at 60% below listing price. Allocation is first come first served and the wallet link expires in ninety minutes.": {
     "message": "A small group of early supporters is being let into the pre-sale at 60% below listing price. Allocation is first come first served and the wallet link expires in ninety minutes.",
     "is_suspicious": true,
-    "summary": "This message uses a combination of a high-value reward and a very short deadline to pressure you into making a quick decision.",
+    "summary": "This message uses a sense of extreme time pressure and the promise of a special deal to encourage you to act quickly without thinking.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "60% below listing price"
         ],
-        "explanation": "This highlights a significant financial gain to make the offer seem highly attractive and worth acting on immediately.",
+        "explanation": "This highlights a significant financial benefit to make the offer seem highly attractive and worth acting on immediately.",
         "confidence": 0.9
       },
       {
@@ -1680,7 +1586,7 @@
           "first come first served",
           "expires in ninety minutes"
         ],
-        "explanation": "By creating a ticking clock and a sense of limited availability, the message tries to make you act quickly without taking time to research the offer.",
+        "explanation": "By creating a ticking clock and a limited supply, the message pressures you to make a fast decision before you have time to research the offer.",
         "confidence": 1.0
       }
     ],
@@ -1713,31 +1619,31 @@
   "Dad, my roommate got into an accident and I'm at the hospital with no wallet. The pharmacy needs 400 before they release her meds. Can you Venmo @helpnowx? I'll explain later, please just hurry.": {
     "message": "Dad, my roommate got into an accident and I'm at the hospital with no wallet. The pharmacy needs 400 before they release her meds. Can you Venmo @helpnowx? I'll explain later, please just hurry.",
     "is_suspicious": true,
-    "summary": "This message uses a high-pressure medical emergency and a personal relationship to create a sense of panic and urgency.",
+    "summary": "This message uses a high-pressure situation involving a family member and a medical emergency to prompt a quick payment.",
     "tactics": [
+      {
+        "label": "impersonation",
+        "evidence": [
+          "Dad,"
+        ],
+        "explanation": "The message pretends to be from a family member to build trust and create a sense of personal obligation.",
+        "confidence": 0.9
+      },
       {
         "label": "urgency",
         "evidence": [
           "please just hurry."
         ],
-        "explanation": "The request demands immediate action, aiming to make the reader act quickly without taking time to verify the situation.",
+        "explanation": "The request for speed is designed to make the reader act quickly without taking time to verify the situation or the identity of the sender.",
         "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "Dad"
-        ],
-        "explanation": "The message pretends to come from a family member to build trust and exploit the emotional bond between parent and child.",
-        "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Dad",
+        "text": "Dad,",
         "start": 0,
-        "end": 3
+        "end": 4
       },
       {
         "label": "urgency",
@@ -1755,14 +1661,14 @@
   "Our records show your energy supply contract lapsed. Without action in the next few hours the meter will be switched to the emergency tariff, roughly tripling your bill. Confirm your card details to keep your current rate.": {
     "message": "Our records show your energy supply contract lapsed. Without action in the next few hours the meter will be switched to the emergency tariff, roughly tripling your bill. Confirm your card details to keep your current rate.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of extreme time pressure and the threat of a much higher bill to pressure you into providing financial information quickly.",
+    "summary": "This message uses a time-sensitive threat of much higher costs to pressure you into providing your credit card information immediately.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "in the next few hours"
         ],
-        "explanation": "This creates a very short deadline, intended to make you act quickly without taking time to verify the claim or think clearly.",
+        "explanation": "This creates a very short deadline to make you feel panicked and act quickly without taking time to verify the claim.",
         "confidence": 1.0
       },
       {
@@ -1770,7 +1676,7 @@
         "evidence": [
           "the meter will be switched to the emergency tariff, roughly tripling your bill."
         ],
-        "explanation": "This uses a significant financial penalty as a way to scare the reader into complying with the request immediately.",
+        "explanation": "This warns of a significant financial penalty to pressure you into complying with the request to 'save' money.",
         "confidence": 0.9
       }
     ],
@@ -1804,7 +1710,7 @@
         "evidence": [
           "A sum is waiting for the rightful heir and you appear to qualify."
         ],
-        "explanation": "This uses the promise of a financial gain to entice the reader into responding to the message.",
+        "explanation": "This uses the promise of a financial gain to motivate you to respond to the sender.",
         "confidence": 0.9
       },
       {
@@ -1812,7 +1718,7 @@
         "evidence": [
           "Discretion is essential as other claimants are circling."
         ],
-        "explanation": "By insisting on secrecy, the message discourages you from consulting friends or professionals who might spot the deception.",
+        "explanation": "By claiming that others are 'circling,' the message pressures you to keep the interaction private and not seek outside advice.",
         "confidence": 0.8
       }
     ],
@@ -1839,14 +1745,14 @@
   "The compliance desk at your brokerage flagged a transfer. To release the hold we just need you to read back the six-digit code we are about to send. This line is recorded for your protection.": {
     "message": "The compliance desk at your brokerage flagged a transfer. To release the hold we just need you to read back the six-digit code we are about to send. This line is recorded for your protection.",
     "is_suspicious": true,
-    "summary": "The message uses a professional-sounding authority to pressure you into sharing a security code, which is often used to bypass account security.",
+    "summary": "The message uses a professional-sounding authority to pressure you into sharing a security code, which is a common way to gain unauthorized access to accounts.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "The compliance desk at your brokerage"
         ],
-        "explanation": "By claiming to be a 'compliance desk' at a financial institution, the message tries to build trust and authority to make the request seem official.",
+        "explanation": "The message claims to come from a specific department of a financial institution to make the request for a security code seem like a standard procedure.",
         "confidence": 0.9
       }
     ],
@@ -1867,7 +1773,7 @@
   "You've got a court-ordered debt of 1,240 against your name. The enforcement team visits on Thursday. If you'd rather avoid that, settle a reduced figure by bank transfer before then.": {
     "message": "You've got a court-ordered debt of 1,240 against your name. The enforcement team visits on Thursday. If you'd rather avoid that, settle a reduced figure by bank transfer before then.",
     "is_suspicious": true,
-    "summary": "This message uses a legal threat and a fast deadline to pressure you into making a payment quickly.",
+    "summary": "This message uses a legal threat and a deadline to pressure you into making a payment quickly.",
     "tactics": [
       {
         "label": "urgency",
@@ -1879,25 +1785,18 @@
         "confidence": 0.9
       },
       {
-        "label": "impersonation",
-        "evidence": [
-          "court-ordered debt"
-        ],
-        "explanation": "The message claims to be associated with a legal process or a court order to make the demand seem official and authoritative.",
-        "confidence": 0.8
-      },
-      {
         "label": "threat",
         "evidence": [
-          "If you'd rather avoid that"
+          "court-ordered debt",
+          "enforcement team visits"
         ],
-        "explanation": "The message implies that a negative consequence (the enforcement team visit) will occur unless you comply with their demand.",
-        "confidence": 0.8
+        "explanation": "The message uses the threat of legal action and physical enforcement to create fear and pressure you into paying.",
+        "confidence": 0.9
       }
     ],
     "spans": [
       {
-        "label": "impersonation",
+        "label": "threat",
         "text": "court-ordered debt",
         "start": 13,
         "end": 31
@@ -1910,9 +1809,9 @@
       },
       {
         "label": "threat",
-        "text": "If you'd rather avoid that",
-        "start": 101,
-        "end": 127
+        "text": "enforcement team visits",
+        "start": 64,
+        "end": 87
       },
       {
         "label": "urgency",
@@ -1930,12 +1829,12 @@
   "We've been watching your trading and you clearly have talent. Join our private mentorship circle and we'll match your first deposit two to one. Only three places left this round.": {
     "message": "We've been watching your trading and you clearly have talent. Join our private mentorship circle and we'll match your first deposit two to one. Only three places left this round.",
     "is_suspicious": true,
-    "summary": "This message uses a combination of a high-value reward and a ticking clock to pressure you into making a financial decision quickly.",
+    "summary": "This message uses a combination of a high-value reward and a fake deadline to pressure you into making a deposit quickly.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
-          "we'll match your first deposit two to one"
+          "we'll match your first deposit two to one."
         ],
         "explanation": "This offers a significant financial incentive to encourage you to deposit money into their platform.",
         "confidence": 0.9
@@ -1945,16 +1844,16 @@
         "evidence": [
           "Only three places left this round."
         ],
-        "explanation": "By claiming there are very few spots left, the message tries to make you act quickly without taking time to research the offer.",
+        "explanation": "This creates a sense of scarcity and a deadline, aiming to make you act quickly without taking time to research the offer.",
         "confidence": 0.9
       }
     ],
     "spans": [
       {
         "label": "reward",
-        "text": "we'll match your first deposit two to one",
+        "text": "we'll match your first deposit two to one.",
         "start": 101,
-        "end": 142
+        "end": 143
       },
       {
         "label": "urgency",
@@ -1972,14 +1871,14 @@
   "Hi it's Grandma's carer. She's fine but the agency changed its billing. Please pay this week's hours to the account below. There's no need to trouble your mother with this, she has enough on.": {
     "message": "Hi it's Grandma's carer. She's fine but the agency changed its billing. Please pay this week's hours to the account below. There's no need to trouble your mother with this, she has enough on.",
     "is_suspicious": true,
-    "summary": "The message uses a trusted persona and a request for secrecy to pressure you into making a payment quickly without consulting others.",
+    "summary": "The message uses a trusted persona and a request for secrecy to pressure you into making a payment quickly.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
-          "it's Grandma's carer"
+          "Hi it's Grandma's carer."
         ],
-        "explanation": "The sender is pretending to be a trusted person in your life (a caregiver) to establish a sense of legitimacy and trust.",
+        "explanation": "The sender is pretending to be a person in a position of trust (a caregiver) to make the request for money seem legitimate.",
         "confidence": 0.9
       },
       {
@@ -1987,16 +1886,16 @@
         "evidence": [
           "There's no need to trouble your mother with this, she has enough on."
         ],
-        "explanation": "This phrase discourages you from talking to another family member, which prevents you from getting a second opinion or verifying the request.",
-        "confidence": 0.85
+        "explanation": "This phrase discourages you from speaking to another family member, potentially to prevent them from spotting the unusual request.",
+        "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "it's Grandma's carer",
-        "start": 3,
-        "end": 23
+        "text": "Hi it's Grandma's carer.",
+        "start": 0,
+        "end": 24
       },
       {
         "label": "isolation",
@@ -2014,14 +1913,14 @@
   "Reminder from the clinic: your prescription renewal was declined by the pharmacy system. Pay the outstanding 18.50 through the link so we can release it before the weekend.": {
     "message": "Reminder from the clinic: your prescription renewal was declined by the pharmacy system. Pay the outstanding 18.50 through the link so we can release it before the weekend.",
     "is_suspicious": true,
-    "summary": "The message uses a sense of time pressure and a professional persona to encourage you to make a payment quickly.",
+    "summary": "The message uses a sense of time pressure and a professional persona to encourage you to click a link and make a payment.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "before the weekend"
         ],
-        "explanation": "This creates a deadline, pressuring you to act quickly without taking time to verify the request.",
+        "explanation": "This creates a deadline to make you act quickly without taking time to verify the request with the clinic directly.",
         "confidence": 0.9
       },
       {
@@ -2029,7 +1928,7 @@
         "evidence": [
           "Reminder from the clinic"
         ],
-        "explanation": "The message claims to come from a medical facility to build trust and make the request for payment seem official.",
+        "explanation": "The message claims to come from a medical facility to gain your trust and make the request for payment seem official.",
         "confidence": 0.8
       }
     ],
@@ -2056,14 +1955,14 @@
   "Because you were one of the first thousand users, the team has set aside a personal cashback of 350 for you. Nobody else at your company has access to this, so we'd ask you not to forward this email.": {
     "message": "Because you were one of the first thousand users, the team has set aside a personal cashback of 350 for you. Nobody else at your company has access to this, so we'd ask you not to forward this email.",
     "is_suspicious": true,
-    "summary": "The message uses a reward to entice you and a request for secrecy to prevent you from seeking outside advice.",
+    "summary": "The message uses a reward and a sense of exclusivity to encourage you to engage with the offer while discouraging you from sharing it with others.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "the team has set aside a personal cashback of 350 for you"
         ],
-        "explanation": "This offers a financial benefit to motivate you to engage with the sender.",
+        "explanation": "This offers a financial benefit to entice the reader into taking an action or engaging with the sender.",
         "confidence": 0.9
       },
       {
@@ -2071,8 +1970,8 @@
         "evidence": [
           "Nobody else at your company has access to this, so we'd ask you not to forward this email."
         ],
-        "explanation": "By telling you not to share the information, the sender tries to prevent you from verifying the claim with colleagues or others who might spot a problem.",
-        "confidence": 0.85
+        "explanation": "By telling you not to share the information with colleagues, the sender tries to prevent you from seeking a second opinion or verifying the claim with others.",
+        "confidence": 0.8
       }
     ],
     "spans": [
@@ -2105,7 +2004,7 @@
         "evidence": [
           "I'm the new treasurer of the parents' association"
         ],
-        "explanation": "The sender claims to hold an official role within a trusted community group to make their request seem legitimate.",
+        "explanation": "The sender is claiming a specific role of authority within a community group to make the request for money seem legitimate.",
         "confidence": 0.9
       },
       {
@@ -2113,7 +2012,7 @@
         "evidence": [
           "Could you sort it tonight so I can close the books?"
         ],
-        "explanation": "The message creates a deadline of 'tonight' to pressure you into acting quickly without taking time to verify the request.",
+        "explanation": "This creates a deadline that pressures you to act quickly without taking time to verify the request with others.",
         "confidence": 0.8
       }
     ],
@@ -2140,37 +2039,37 @@
   "Someone used your identity to rent a car that was later involved in a crime. Investigators will treat you as a suspect unless you cooperate. Transfer your savings to the protected account we provide while the case is open.": {
     "message": "Someone used your identity to rent a car that was later involved in a crime. Investigators will treat you as a suspect unless you cooperate. Transfer your savings to the protected account we provide while the case is open.",
     "is_suspicious": true,
-    "summary": "This message uses a frightening legal scenario and a demand for money to pressure you into acting quickly without thinking.",
+    "summary": "This message uses a frightening legal scenario and a sense of immediate danger to pressure you into moving your money.",
     "tactics": [
       {
         "label": "threat",
         "evidence": [
-          "Investigators will treat you as a suspect unless you cooperate."
+          "Investigators will treat you as a suspect"
         ],
-        "explanation": "This creates a sense of fear by suggesting legal consequences or criminal involvement to pressure you into complying with their demands.",
+        "explanation": "This creates a sense of legal peril and fear to pressure the reader into complying with the sender's demands to avoid being treated as a criminal.",
         "confidence": 0.9
       },
       {
         "label": "urgency",
         "evidence": [
-          "Transfer your savings to the protected account we provide while the case is open."
+          "while the case is open"
         ],
-        "explanation": "The instruction to move funds while a case is 'open' implies a time-sensitive situation where you must act immediately to avoid a negative outcome.",
+        "explanation": "This implies a limited window of time to act, pressuring the reader to make a quick decision without taking time to verify the claims.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "threat",
-        "text": "Investigators will treat you as a suspect unless you cooperate.",
+        "text": "Investigators will treat you as a suspect",
         "start": 77,
-        "end": 140
+        "end": 118
       },
       {
         "label": "urgency",
-        "text": "Transfer your savings to the protected account we provide while the case is open.",
-        "start": 141,
-        "end": 222
+        "text": "while the case is open",
+        "start": 199,
+        "end": 221
       }
     ],
     "rejected_quotes": [],
@@ -2182,14 +2081,14 @@
   "Your subscription box is stuck at the depot and the slot for redelivery closes at noon. A small rebooking charge applies, otherwise the box goes back to the warehouse and no refund is possible.": {
     "message": "Your subscription box is stuck at the depot and the slot for redelivery closes at noon. A small rebooking charge applies, otherwise the box goes back to the warehouse and no refund is possible.",
     "is_suspicious": true,
-    "summary": "The message uses a strict deadline and the threat of losing your items to pressure you into making a quick payment.",
+    "summary": "The message uses a strict deadline and the threat of losing your items to pressure you into making a quick decision.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "the slot for redelivery closes at noon"
         ],
-        "explanation": "By creating a specific, immediate deadline, the message pressures you to act quickly without taking time to verify the situation.",
+        "explanation": "By creating a specific, immediate deadline, the message tries to make you act quickly without taking time to verify the situation.",
         "confidence": 0.9
       },
       {
@@ -2197,7 +2096,7 @@
         "evidence": [
           "no refund is possible"
         ],
-        "explanation": "This warns of a permanent loss of money or goods to pressure you into complying with their request immediately.",
+        "explanation": "This warns of a permanent loss of money or goods to pressure you into paying the 'rebooking charge' immediately.",
         "confidence": 0.8
       }
     ],
@@ -2224,14 +2123,14 @@
   "This is Sergeant Lee, Metropolitan Police. We arrested a man with a cloned copy of your card. For the operation to work you must not contact your bank or anyone else about this. Withdraw the cash and hand it to our courier for fingerprinting.": {
     "message": "This is Sergeant Lee, Metropolitan Police. We arrested a man with a cloned copy of your card. For the operation to work you must not contact your bank or anyone else about this. Withdraw the cash and hand it to our courier for fingerprinting.",
     "is_suspicious": true,
-    "summary": "The message uses a fake police identity and instructions to keep the situation secret to pressure you into following their specific instructions.",
+    "summary": "The message uses a fake police identity and demands secrecy to pressure you into following instructions without seeking outside advice.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "This is Sergeant Lee, Metropolitan Police."
         ],
-        "explanation": "The sender claims to be a law enforcement officer to gain your trust and make their request seem like an official legal matter.",
+        "explanation": "The sender is pretending to be a law enforcement officer to gain your trust and make their request seem official.",
         "confidence": 1.0
       },
       {
@@ -2239,7 +2138,7 @@
         "evidence": [
           "you must not contact your bank or anyone else about this."
         ],
-        "explanation": "By telling you not to speak to your bank or others, the sender is trying to prevent you from getting outside advice or verification.",
+        "explanation": "This instruction is designed to stop you from verifying the situation with people who could tell you it is a scam.",
         "confidence": 1.0
       }
     ],
@@ -2263,10 +2162,34 @@
     "model": "gemma4:12b",
     "error": null
   },
+  "Hi Sam, running about 10 minutes late, can you grab me a flat white? Thanks!": {
+    "message": "Hi Sam, running about 10 minutes late, can you grab me a flat white? Thanks!",
+    "is_suspicious": false,
+    "summary": "This message appears to be a casual, personal request between acquaintances and contains no manipulative tactics.",
+    "tactics": [],
+    "spans": [],
+    "rejected_quotes": [],
+    "attempts": 1,
+    "provider": "ollama",
+    "model": "gemma4:12b",
+    "error": null
+  },
+  "Reminder: your dentist appointment is on Tuesday 14 Oct at 9:30am. Reply C to confirm or call us on 020 7946 0000 to reschedule.": {
+    "message": "Reminder: your dentist appointment is on Tuesday 14 Oct at 9:30am. Reply C to confirm or call us on 020 7946 0000 to reschedule.",
+    "is_suspicious": false,
+    "summary": "This message appears to be a standard appointment reminder and does not contain any manipulative tactics.",
+    "tactics": [],
+    "spans": [],
+    "rejected_quotes": [],
+    "attempts": 1,
+    "provider": "ollama",
+    "model": "gemma4:12b",
+    "error": null
+  },
   "Your Amazon order #112-4455667 has been dispatched and will arrive on Thursday. Track your package in the app.": {
     "message": "Your Amazon order #112-4455667 has been dispatched and will arrive on Thursday. Track your package in the app.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification regarding a package shipment and contains no manipulative tactics.",
+    "summary": "This message appears to be a standard transactional notification and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2290,7 +2213,7 @@
   "Team, the sprint retro is moved to 3pm Friday in Room 4B. Please add your notes to the board beforehand.": {
     "message": "Team, the sprint retro is moved to 3pm Friday in Room 4B. Please add your notes to the board beforehand.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard internal workplace communication regarding a meeting schedule and preparation.",
+    "summary": "This is a standard internal communication regarding a meeting schedule and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2302,7 +2225,7 @@
   "Your one-time passcode is 482913. It expires in 10 minutes. If you did not request this code, you can ignore this message.": {
     "message": "Your one-time passcode is 482913. It expires in 10 minutes. If you did not request this code, you can ignore this message.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard automated notification for a one-time passcode. It includes a time limit, but this is common for security codes to ensure they are used promptly.",
+    "summary": "This message appears to be a standard automated notification for a one-time passcode and does not contain manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2326,7 +2249,7 @@
   "Hey! Are we still on for football Sunday? I can drive if you want, let me know by tomorrow so I can book the pitch.": {
     "message": "Hey! Are we still on for football Sunday? I can drive if you want, let me know by tomorrow so I can book the pitch.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard personal communication about making plans for a sports game.",
+    "summary": "This message appears to be a standard personal communication about making plans and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2338,7 +2261,7 @@
   "Your electricity bill for September is £86.20 and will be collected by Direct Debit on 15 October. Log in to your account to view the statement.": {
     "message": "Your electricity bill for September is £86.20 and will be collected by Direct Debit on 15 October. Log in to your account to view the statement.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification regarding a utility bill and does not contain clear signs of manipulation.",
+    "summary": "This message appears to be a standard notification about a utility bill and does not contain any clear signs of manipulation or pressure.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2362,7 +2285,7 @@
   "School notice: Year 6 swimming lessons start next Monday. Please send swimwear and a towel in a named bag.": {
     "message": "School notice: Year 6 swimming lessons start next Monday. Please send swimwear and a towel in a named bag.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard informational notice from a school and contains no manipulative tactics.",
+    "summary": "This is a standard informational message about school activities and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2374,7 +2297,7 @@
   "Hi, this is Dr Patel's surgery. Your blood test results are back and are normal. No further action is needed.": {
     "message": "Hi, this is Dr Patel's surgery. Your blood test results are back and are normal. No further action is needed.",
     "is_suspicious": false,
-    "summary": "This message appears to be a routine medical notification and does not contain any manipulative tactics.",
+    "summary": "This message appears to be a standard notification from a medical professional and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2398,7 +2321,7 @@
   "Library reminder: 'The Overstory' is due back on 20 October. You can renew online if nobody else has reserved it.": {
     "message": "Library reminder: 'The Overstory' is due back on 20 October. You can renew online if nobody else has reserved it.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard, helpful notification regarding a library book return.",
+    "summary": "This message appears to be a standard, helpful notification regarding a library book and contains no manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2422,7 +2345,7 @@
   "Barclays: Did you attempt a payment of £249.99 to Currys today? Reply Y if yes or N if no. We will never ask you to move money or share your PIN.": {
     "message": "Barclays: Did you attempt a payment of £249.99 to Currys today? Reply Y if yes or N if no. We will never ask you to move money or share your PIN.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard automated verification check from a bank. It does not contain high-pressure tactics or suspicious demands.",
+    "summary": "This message appears to be a standard automated verification check and does not contain high-pressure manipulation tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2434,7 +2357,7 @@
   "Your one-time passcode is 731 904. Do not share this code with anyone, including bank staff. If you did not request it, call the number on the back of your card.": {
     "message": "Your one-time passcode is 731 904. Do not share this code with anyone, including bank staff. If you did not request it, call the number on the back of your card.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard automated security notification. It includes a warning about sharing codes, but it also provides a safe way to contact the bank if the code was unexpected.",
+    "summary": "This message contains standard security instructions and does not use manipulative tactics to pressure the reader.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2446,7 +2369,7 @@
   "DPD: Your parcel from ASOS is arriving today between 14:10 and 15:10. No action needed. If you're out, we'll leave it with a neighbour or in your safe place.": {
     "message": "DPD: Your parcel from ASOS is arriving today between 14:10 and 15:10. No action needed. If you're out, we'll leave it with a neighbour or in your safe place.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard delivery notification and does not contain any manipulative tactics or high-pressure language.",
+    "summary": "This message appears to be a standard delivery notification and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2458,7 +2381,7 @@
   "Hi, this is Maria from the letting agency. Your tenancy renewal paperwork is due back by 31 October. No rush, but let me know if you have any questions about the terms.": {
     "message": "Hi, this is Maria from the letting agency. Your tenancy renewal paperwork is due back by 31 October. No rush, but let me know if you have any questions about the terms.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard administrative notification regarding a tenancy renewal with no high-pressure tactics.",
+    "summary": "The message appears to be a standard administrative notification without any high-pressure tactics or suspicious elements.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2482,7 +2405,7 @@
   "Your council tax instalment of £142 was not collected because the Direct Debit was declined. You can pay online, by phone, or wait for the next scheduled collection. See your account for details.": {
     "message": "Your council tax instalment of £142 was not collected because the Direct Debit was declined. You can pay online, by phone, or wait for the next scheduled collection. See your account for details.",
     "is_suspicious": false,
-    "summary": "This message provides information about a failed payment and offers multiple ways to resolve it without using high-pressure tactics.",
+    "summary": "The message provides information about a failed payment and offers multiple ways to resolve it without using high-pressure tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2494,7 +2417,7 @@
   "NHS: Your flu vaccination is now available. Book at your GP practice or any participating pharmacy. There is no charge for eligible patients.": {
     "message": "NHS: Your flu vaccination is now available. Book at your GP practice or any participating pharmacy. There is no charge for eligible patients.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard public health notification with no clear signs of manipulation or pressure.",
+    "summary": "This message provides information about a public health service and does not use high-pressure tactics or suspicious requests.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2506,7 +2429,7 @@
   "Hey it's Tom, lost my phone on the train yesterday so texting from Jess's. Can you resend me the address for Saturday? Not urgent.": {
     "message": "Hey it's Tom, lost my phone on the train yesterday so texting from Jess's. Can you resend me the address for Saturday? Not urgent.",
     "is_suspicious": false,
-    "summary": "This message appears to be a personal communication without any clear signs of manipulation or pressure.",
+    "summary": "The message appears to be a personal communication without any clear signs of manipulation or pressure.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2518,7 +2441,7 @@
   "Cancer Research UK: Thank you for your monthly gift. Your support funds life-saving research. To change or cancel your donation at any time, visit your supporter account.": {
     "message": "Cancer Research UK: Thank you for your monthly gift. Your support funds life-saving research. To change or cancel your donation at any time, visit your supporter account.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification from a charity and does not contain manipulative tactics.",
+    "summary": "This message appears to be a standard transactional notification and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2530,7 +2453,7 @@
   "Monzo: We've blocked a card payment of £89 at a merchant in Lagos that looked unusual. If this was you, you can approve it in the app. If not, freeze your card in the app.": {
     "message": "Monzo: We've blocked a card payment of £89 at a merchant in Lagos that looked unusual. If this was you, you can approve it in the app. If not, freeze your card in the app.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification from a banking app. It provides clear instructions for the user to take action within their own official app.",
+    "summary": "This message appears to be a standard security notification from a bank. It provides clear instructions to use the official app rather than asking for sensitive information via the message.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2542,7 +2465,7 @@
   "Reminder from the HR team: open enrolment for health benefits closes on 30 November. Changes made after that date will take effect next year.": {
     "message": "Reminder from the HR team: open enrolment for health benefits closes on 30 November. Changes made after that date will take effect next year.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard internal corporate notification regarding a deadline for benefits enrollment.",
+    "summary": "This message appears to be a standard internal corporate notification regarding a deadline and does not contain manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2554,7 +2477,7 @@
   "This is a message from the Metropolitan Police. Your report (ref 4521/0923) has been received. An officer may contact you within 10 working days. You can check progress online.": {
     "message": "This is a message from the Metropolitan Police. Your report (ref 4521/0923) has been received. An officer may contact you within 10 working days. You can check progress online.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard informational update and does not contain high-pressure tactics or suspicious demands.",
+    "summary": "The message provides a standard status update and does not contain any high-pressure tactics or requests for sensitive information.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2566,7 +2489,7 @@
   "Your Netflix payment didn't go through. Update your payment method in the app at your convenience to keep watching. We'll try again in a few days.": {
     "message": "Your Netflix payment didn't go through. Update your payment method in the app at your convenience to keep watching. We'll try again in a few days.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard notification without high-pressure tactics or coercive language.",
+    "summary": "The message provides a standard notification about a payment issue without using high-pressure tactics or suspicious links.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2578,7 +2501,7 @@
   "Hi Dad, can you lend me £40 until payday on Friday? Rent came out early. I'll send it back as soon as I'm paid, promise.": {
     "message": "Hi Dad, can you lend me £40 until payday on Friday? Rent came out early. I'll send it back as soon as I'm paid, promise.",
     "is_suspicious": false,
-    "summary": "This message appears to be a personal request for money between family members without any clear signs of manipulation or pressure.",
+    "summary": "This message appears to be a personal request for money between family members and does not contain common manipulation tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2590,7 +2513,7 @@
   "HMRC: You have a new message in your Personal Tax Account. Sign in through GOV.UK to read it. We will never include a link in a text message.": {
     "message": "HMRC: You have a new message in your Personal Tax Account. Sign in through GOV.UK to read it. We will never include a link in a text message.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard notification that directs the user to an official government portal rather than asking for immediate action or personal details via text.",
+    "summary": "The message appears to be a standard notification that directs you to an official government portal rather than asking for personal information or immediate action.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -2602,14 +2525,14 @@
   "Hi, is this Rachel? Sorry, I think I have the wrong number. You seem nice though, how is your week going?": {
     "message": "Hi, is this Rachel? Sorry, I think I have the wrong number. You seem nice though, how is your week going?",
     "is_suspicious": true,
-    "summary": "This message uses a friendly, casual tone to establish a connection after a fake mistake, which is a common way to start a conversation with a stranger.",
+    "summary": "The message uses a friendly, casual tone to initiate a conversation after a fake mistake, which is a common way to build rapport for future manipulation.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "Hi, is this Rachel?"
         ],
-        "explanation": "The sender pretends to be looking for a specific person to create a sense of familiarity or to see if the number is active.",
+        "explanation": "The sender is pretending to know someone or looking for a specific person to establish a sense of familiarity or a personal connection.",
         "confidence": 0.8
       }
     ],
@@ -2630,14 +2553,14 @@
   "Thanks for applying. The role is fully remote and the pay is $38 an hour. There is a short training period during which we will send you a cheque to buy a laptop from our supplier; you keep the balance as a welcome bonus.": {
     "message": "Thanks for applying. The role is fully remote and the pay is $38 an hour. There is a short training period during which we will send you a cheque to buy a laptop from our supplier; you keep the balance as a welcome bonus.",
     "is_suspicious": true,
-    "summary": "The message uses a high-paying job offer and a 'bonus' to encourage you to participate in a scheme involving a fake check.",
+    "summary": "The message uses a high-paying job offer and a 'bonus' to make a request for a cheque seem like a legitimate business process.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "you keep the balance as a welcome bonus"
         ],
-        "explanation": "This offers a financial incentive to make the offer seem more attractive and encourage the reader to agree to the terms.",
+        "explanation": "This offers a financial incentive to make the reader more willing to participate in the process described.",
         "confidence": 0.9
       },
       {
@@ -2645,7 +2568,7 @@
         "evidence": [
           "The role is fully remote and the pay is $38 an hour."
         ],
-        "explanation": "The message mimics a professional job offer to establish a sense of legitimacy and authority.",
+        "explanation": "The message adopts the persona of a recruiter or employer to establish a sense of professional legitimacy for the request.",
         "confidence": 0.8
       }
     ],
@@ -2672,14 +2595,14 @@
   "I have been investing with a small fund for the past year and the results have been steady. I do not usually recommend things, but if you ever want to see my statements, I would be happy to share them. It has changed my life.": {
     "message": "I have been investing with a small fund for the past year and the results have been steady. I do not usually recommend things, but if you ever want to see my statements, I would be happy to share them. It has changed my life.",
     "is_suspicious": true,
-    "summary": "The message uses a personal success story and a subtle offer of proof to build trust and entice you into a potential investment opportunity.",
+    "summary": "The message uses a personal success story and a promise of life-changing results to build interest in a financial opportunity.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "It has changed my life."
         ],
-        "explanation": "This highlights a significant personal gain to make the opportunity seem highly attractive and life-changing.",
+        "explanation": "This phrase uses a high-value emotional outcome to make a financial opportunity seem more appealing and successful.",
         "confidence": 0.8
       }
     ],
@@ -2700,14 +2623,14 @@
   "Good morning. We are completing a routine review of your account and need to reconfirm a few details. There is no problem at this stage. Please reply with your full name, date of birth and the last four digits of your card so we can proceed.": {
     "message": "Good morning. We are completing a routine review of your account and need to reconfirm a few details. There is no problem at this stage. Please reply with your full name, date of birth and the last four digits of your card so we can proceed.",
     "is_suspicious": true,
-    "summary": "The message uses a professional tone to request sensitive personal information under the guise of a routine check.",
+    "summary": "The message uses a professional tone to request sensitive personal and financial information under the guise of a routine check.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "routine review of your account"
         ],
-        "explanation": "By claiming to perform a 'routine review,' the message tries to sound like an official representative of a bank or service provider to build trust.",
+        "explanation": "The message adopts the persona of a formal institution to make the request for personal data seem like a standard procedure.",
         "confidence": 0.8
       }
     ],
@@ -2728,20 +2651,20 @@
   "Hi love, I know we have not met in person yet, but I think about you every day. My contract here ends soon and I want to visit. The agency needs a small deposit for the flight paperwork. Would you be able to help with that?": {
     "message": "Hi love, I know we have not met in person yet, but I think about you every day. My contract here ends soon and I want to visit. The agency needs a small deposit for the flight paperwork. Would you be able to help with that?",
     "is_suspicious": true,
-    "summary": "The message uses a romantic persona to build a sense of intimacy and then asks for money for a specific, urgent-sounding reason.",
+    "summary": "The message uses a romantic persona to build a sense of intimacy and trust before asking for money for a specific 'problem' like travel fees.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "Hi love"
         ],
-        "explanation": "The message uses intimate language to pretend to be a romantic partner or someone the reader has a close personal connection with.",
+        "explanation": "The sender uses an intimate term of endearment to pretend to be a romantic partner or someone the reader has a close personal connection with.",
         "confidence": 0.9
       },
       {
         "label": "reward",
         "evidence": [
-          "I want to visit"
+          "I want to visit."
         ],
         "explanation": "The promise of a physical meeting or a romantic relationship is used as an incentive to get the reader to provide financial help.",
         "confidence": 0.8
@@ -2756,9 +2679,9 @@
       },
       {
         "label": "reward",
-        "text": "I want to visit",
+        "text": "I want to visit.",
         "start": 111,
-        "end": 126
+        "end": 127
       }
     ],
     "rejected_quotes": [],
@@ -2778,7 +2701,7 @@
           "pre-approved for a personal loan of up to £15,000",
           "regardless of credit history"
         ],
-        "explanation": "This offers a significant financial benefit and removes common barriers (like credit checks) to make the offer seem highly attractive and easy to obtain.",
+        "explanation": "This offers a significant financial benefit and suggests it is easy to obtain, making the offer seem very attractive to the reader.",
         "confidence": 0.9
       }
     ],
@@ -2805,14 +2728,14 @@
   "Hello, I am reaching out on behalf of a well-known publisher. We would like to feature your business in our next edition. The listing is complimentary; only a modest artwork fee applies.": {
     "message": "Hello, I am reaching out on behalf of a well-known publisher. We would like to feature your business in our next edition. The listing is complimentary; only a modest artwork fee applies.",
     "is_suspicious": true,
-    "summary": "The message uses a professional-sounding persona to offer a business opportunity that requires a small payment to 'unlock' a larger benefit.",
+    "summary": "The message uses a professional-sounding persona to offer a business opportunity that requires a small payment to 'unlock' a benefit.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "on behalf of a well-known publisher"
         ],
-        "explanation": "By claiming to represent a 'well-known' entity, the sender tries to build instant trust and authority to make their request seem more legitimate.",
+        "explanation": "The sender claims to represent a reputable organization to build trust and make the request seem more official.",
         "confidence": 0.8
       },
       {
@@ -2820,7 +2743,7 @@
         "evidence": [
           "The listing is complimentary; only a modest artwork fee applies."
         ],
-        "explanation": "This frames the interaction as a benefit (a free listing) while subtly nudging the reader to pay a small fee to participate in the offer.",
+        "explanation": "This frames the interaction as a benefit for the user, while subtly encouraging them to pay a small fee to receive the 'free' reward.",
         "confidence": 0.8
       }
     ],
@@ -2847,32 +2770,18 @@
   "I noticed we both follow the same crypto community. I run a small group where we share entries. Most members made back their first month's fee in a week or two. Happy to add you if you are interested, no pressure.": {
     "message": "I noticed we both follow the same crypto community. I run a small group where we share entries. Most members made back their first month's fee in a week or two. Happy to add you if you are interested, no pressure.",
     "is_suspicious": true,
-    "summary": "The message uses a common tactic of promising quick financial gains to entice you into joining a private group.",
+    "summary": "The message uses a promise of quick financial gains to entice you into joining a private group.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "Most members made back their first month's fee in a week or two."
         ],
-        "explanation": "This promises a quick return on investment to make the offer seem financially attractive and enticing.",
+        "explanation": "This promises a quick financial return to make the offer seem attractive and worth your time or money.",
         "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "I noticed we both follow the same crypto community."
-        ],
-        "explanation": "The sender claims a shared connection or common interest to build a false sense of trust and familiarity.",
-        "confidence": 0.8
       }
     ],
     "spans": [
-      {
-        "label": "impersonation",
-        "text": "I noticed we both follow the same crypto community.",
-        "start": 0,
-        "end": 51
-      },
       {
         "label": "reward",
         "text": "Most members made back their first month's fee in a week or two.",
@@ -2889,14 +2798,14 @@
   "Hi Grandad, it's Ollie. I'm okay but I've had a bit of trouble and I'd rather explain in person. Could you pop some money into this account for now? I'd prefer Mum didn't know yet.": {
     "message": "Hi Grandad, it's Ollie. I'm okay but I've had a bit of trouble and I'd rather explain in person. Could you pop some money into this account for now? I'd prefer Mum didn't know yet.",
     "is_suspicious": true,
-    "summary": "This message uses a familiar identity and a request for secrecy to create a sense of personal obligation and urgency.",
+    "summary": "The message uses a familiar identity and a request for secrecy to pressure you into sending money quickly without consulting others.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "Hi Grandad, it's Ollie."
         ],
-        "explanation": "The message pretends to be a family member to build immediate trust and lower the reader's defenses.",
+        "explanation": "The message pretends to be a family member to build trust and make the request for money seem like a personal favor.",
         "confidence": 0.9
       },
       {
@@ -2904,8 +2813,8 @@
         "evidence": [
           "I'd prefer Mum didn't know yet."
         ],
-        "explanation": "By asking the reader to keep the situation a secret from another family member, it discourages the reader from seeking a second opinion or outside help.",
-        "confidence": 0.9
+        "explanation": "This phrase encourages you to keep the transaction a secret from other family members, which prevents you from getting a second opinion.",
+        "confidence": 0.8
       }
     ],
     "spans": [
@@ -2931,36 +2840,43 @@
   "Dear homeowner, our records indicate you may be eligible for a government-backed insulation grant. Eligibility is limited to certain postcodes. A surveyor can visit this week to confirm; a refundable booking deposit secures the slot.": {
     "message": "Dear homeowner, our records indicate you may be eligible for a government-backed insulation grant. Eligibility is limited to certain postcodes. A surveyor can visit this week to confirm; a refundable booking deposit secures the slot.",
     "is_suspicious": true,
-    "summary": "This message uses the authority of a government program and a limited timeframe to encourage you to pay a deposit quickly.",
+    "summary": "The message uses a government-backed incentive to encourage you to pay a deposit for a service, creating a sense of limited availability.",
     "tactics": [
       {
-        "label": "impersonation",
+        "label": "reward",
         "evidence": [
-          "government-backed insulation grant"
+          "eligible for a government-backed insulation grant"
         ],
-        "explanation": "By claiming the offer is 'government-backed,' the message tries to build trust by associating the offer with an official authority.",
+        "explanation": "This uses the promise of a government grant as a positive incentive to make the offer seem official and beneficial.",
         "confidence": 0.9
       },
       {
         "label": "urgency",
         "evidence": [
-          "this week"
+          "Eligibility is limited to certain postcodes.",
+          "A surveyor can visit this week"
         ],
-        "explanation": "Setting a specific, short timeframe pressures the reader to act quickly without taking time to research the offer or verify the source.",
+        "explanation": "By suggesting that eligibility is limited and the timeframe is short, it pressures the reader to act quickly without taking time to verify the offer.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
-        "label": "impersonation",
-        "text": "government-backed insulation grant",
-        "start": 63,
+        "label": "reward",
+        "text": "eligible for a government-backed insulation grant",
+        "start": 48,
         "end": 97
       },
       {
         "label": "urgency",
-        "text": "this week",
-        "start": 165,
+        "text": "Eligibility is limited to certain postcodes.",
+        "start": 99,
+        "end": 143
+      },
+      {
+        "label": "urgency",
+        "text": "A surveyor can visit this week",
+        "start": 144,
         "end": 174
       }
     ],
@@ -2973,14 +2889,14 @@
   "Your recent review of the Harbour Hotel was appreciated. As a thank you we would like to offer a complimentary two-night stay. A small booking fee is required to hold the room and is refunded on arrival.": {
     "message": "Your recent review of the Harbour Hotel was appreciated. As a thank you we would like to offer a complimentary two-night stay. A small booking fee is required to hold the room and is refunded on arrival.",
     "is_suspicious": true,
-    "summary": "The message uses a reward to entice you into paying a small fee, which is a common way to gather payment information or initiate a fraudulent transaction.",
+    "summary": "The message uses a reward to entice you into paying a small fee, which is a common tactic to gain access to your payment details.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "offer a complimentary two-night stay"
         ],
-        "explanation": "This offers a high-value prize to motivate the reader to engage with the sender and provide payment details.",
+        "explanation": "This offers a high-value prize to motivate the reader to engage with the offer and provide payment information.",
         "confidence": 0.9
       }
     ],
@@ -3001,14 +2917,14 @@
   "We are a recovery firm that specialises in retrieving funds lost to online fraud. Our records show you may be eligible to recover a previous loss. There is no upfront charge beyond a small case registration fee.": {
     "message": "We are a recovery firm that specialises in retrieving funds lost to online fraud. Our records show you may be eligible to recover a previous loss. There is no upfront charge beyond a small case registration fee.",
     "is_suspicious": true,
-    "summary": "The message uses the promise of recovering lost money to entice you into paying a small initial fee.",
+    "summary": "The message uses the promise of recovering lost money to entice you into paying a 'registration fee'.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "you may be eligible to recover a previous loss"
         ],
-        "explanation": "This targets the reader's desire to get money back, creating a positive incentive to engage with the sender.",
+        "explanation": "This offers a positive outcome (getting money back) to motivate the reader to engage with the sender.",
         "confidence": 0.9
       }
     ],
@@ -3029,14 +2945,14 @@
   "Hi, this is the delivery driver. I've got a package for you but the address label is smudged. Can you confirm your full address and the card you paid with so I can match it to the order?": {
     "message": "Hi, this is the delivery driver. I've got a package for you but the address label is smudged. Can you confirm your full address and the card you paid with so I can match it to the order?",
     "is_suspicious": true,
-    "summary": "The message uses a common delivery persona to request sensitive personal and financial information under the guise of a logistical problem.",
+    "summary": "The message uses a common delivery persona to request sensitive financial information under the guise of a logistical problem.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "this is the delivery driver"
         ],
-        "explanation": "The sender is pretending to be a delivery worker to build trust and make the request for information seem like a routine part of a delivery process.",
+        "explanation": "The sender is pretending to be a delivery worker to create a sense of legitimacy for their request.",
         "confidence": 0.9
       }
     ],
@@ -3057,20 +2973,20 @@
   "I saw your post about the flat. I'm currently abroad for work so I can't do a viewing, but I'm happy to pay the deposit and first month today to secure it. Could you send your bank details?": {
     "message": "I saw your post about the flat. I'm currently abroad for work so I can't do a viewing, but I'm happy to pay the deposit and first month today to secure it. Could you send your bank details?",
     "is_suspicious": true,
-    "summary": "The message uses a common tactic of creating a sense of urgency to bypass standard procedures like in-person viewings.",
+    "summary": "The message uses a common tactic where a person claims to be unable to visit in person but offers to send money immediately to secure a deal.",
     "tactics": [
       {
-        "label": "urgency",
+        "label": "reward",
         "evidence": [
           "happy to pay the deposit and first month today to secure it"
         ],
-        "explanation": "By offering to pay immediately to 'secure' the property, the sender pressures the recipient to skip standard verification steps and act quickly.",
-        "confidence": 0.85
+        "explanation": "By offering an immediate payment, the sender tries to create a sense of a guaranteed win or a 'sure thing' to make the recipient more likely to bypass normal safety checks.",
+        "confidence": 0.8
       }
     ],
     "spans": [
       {
-        "label": "urgency",
+        "label": "reward",
         "text": "happy to pay the deposit and first month today to secure it",
         "start": 95,
         "end": 154
@@ -3092,7 +3008,7 @@
         "evidence": [
           "you qualify for our loyalty cashback programme"
         ],
-        "explanation": "This offers a financial benefit to make the reader feel they are gaining something for free, which can encourage them to share personal details.",
+        "explanation": "This offers a financial benefit to make the reader more likely to engage with the message and provide their details.",
         "confidence": 0.9
       }
     ],
@@ -3113,14 +3029,14 @@
   "FedEx: We attempted to deliver your package but the address is incomplete. Confirm your details within 24 hours at fedex-track-update.com or the package will be returned.": {
     "message": "FedEx: We attempted to deliver your package but the address is incomplete. Confirm your details within 24 hours at fedex-track-update.com or the package will be returned.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and a fake official identity to pressure you into clicking a link to 'fix' a delivery issue.",
+    "summary": "The message uses a fake delivery issue and a short deadline to pressure you into clicking a link and providing your information.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
-          "FedEx"
+          "FedEx:"
         ],
-        "explanation": "The message pretends to be from a well-known, trusted delivery company to make the request seem official and legitimate.",
+        "explanation": "The message claims to be from a well-known delivery company to make the request for your personal information seem official.",
         "confidence": 0.9
       },
       {
@@ -3128,7 +3044,7 @@
         "evidence": [
           "Confirm your details within 24 hours"
         ],
-        "explanation": "By setting a short deadline, the message tries to make you act quickly without taking time to verify the claim.",
+        "explanation": "By creating a short deadline, the message tries to make you act quickly without taking time to verify the claim.",
         "confidence": 0.9
       },
       {
@@ -3136,16 +3052,16 @@
         "evidence": [
           "the package will be returned"
         ],
-        "explanation": "This warns of a negative consequence (losing the package) if you do not follow the instructions immediately.",
+        "explanation": "The message uses the threat of losing your item to pressure you into following their instructions.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "FedEx",
+        "text": "FedEx:",
         "start": 0,
-        "end": 5
+        "end": 6
       },
       {
         "label": "urgency",
@@ -3169,23 +3085,22 @@
   "Your Facebook Page has violated our community standards and will be permanently deleted in 24 hours. Appeal now at facebook-page-appeal.com to keep your account.": {
     "message": "Your Facebook Page has violated our community standards and will be permanently deleted in 24 hours. Appeal now at facebook-page-appeal.com to keep your account.",
     "is_suspicious": true,
-    "summary": "This message uses a fake deadline and a threat of account loss to pressure you into clicking a link quickly.",
+    "summary": "This message uses a deadline and a threat of account loss to pressure you into clicking a link quickly.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "will be permanently deleted in 24 hours"
         ],
-        "explanation": "By creating a very short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
+        "explanation": "By creating a short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
         "confidence": 1.0
       },
       {
         "label": "impersonation",
         "evidence": [
-          "Your Facebook Page",
-          "Appeal now at facebook-page-appeal.com"
+          "Your Facebook Page"
         ],
-        "explanation": "The message pretends to be from a well-known platform (Facebook) to gain your trust and direct you to a look-alike website.",
+        "explanation": "The message claims to be from a well-known platform to gain your trust and make the request seem official.",
         "confidence": 0.9
       },
       {
@@ -3194,7 +3109,7 @@
           "will be permanently deleted",
           "to keep your account"
         ],
-        "explanation": "The message uses the fear of losing your account or content to pressure you into following their instructions.",
+        "explanation": "The message warns of a severe consequence (losing your account) to pressure you into following their instructions.",
         "confidence": 0.9
       }
     ],
@@ -3218,12 +3133,6 @@
         "end": 99
       },
       {
-        "label": "impersonation",
-        "text": "Appeal now at facebook-page-appeal.com",
-        "start": 101,
-        "end": 139
-      },
-      {
         "label": "threat",
         "text": "to keep your account",
         "start": 140,
@@ -3239,37 +3148,37 @@
   "Wells Fargo: A Zelle payment of $750 to JASON M is pending on your account. If you did not authorize this, call 1-844-555-0170 immediately to cancel it.": {
     "message": "Wells Fargo: A Zelle payment of $750 to JASON M is pending on your account. If you did not authorize this, call 1-844-555-0170 immediately to cancel it.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and impersonates a well-known bank to pressure you into calling a specific number quickly.",
+    "summary": "The message uses a sense of urgency and a fake bank identity to pressure you into calling a specific number to 'stop' a fraudulent transaction.",
     "tactics": [
-      {
-        "label": "urgency",
-        "evidence": [
-          "call 1-844-555-0170 immediately to cancel it"
-        ],
-        "explanation": "The word 'immediately' creates a sense of panic, aiming to make you act quickly without taking time to verify the claim.",
-        "confidence": 0.9
-      },
       {
         "label": "impersonation",
         "evidence": [
-          "Wells Fargo"
+          "Wells Fargo:"
         ],
-        "explanation": "The message claims to be from a major financial institution to gain your trust and make the request seem official.",
+        "explanation": "The message claims to be from a well-known financial institution to gain your trust and make the request seem official.",
         "confidence": 0.9
+      },
+      {
+        "label": "urgency",
+        "evidence": [
+          "immediately"
+        ],
+        "explanation": "The use of 'immediately' is designed to make you act quickly without taking time to verify the claim or think about the situation.",
+        "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Wells Fargo",
+        "text": "Wells Fargo:",
         "start": 0,
-        "end": 11
+        "end": 12
       },
       {
         "label": "urgency",
-        "text": "call 1-844-555-0170 immediately to cancel it",
-        "start": 107,
-        "end": 151
+        "text": "immediately",
+        "start": 127,
+        "end": 138
       }
     ],
     "rejected_quotes": [],
@@ -3281,39 +3190,39 @@
   "Energy Australia: Your electricity will be disconnected today at 5pm due to an unpaid bill of $212.40. Pay now using the link to avoid disconnection: energyaus-pay.net": {
     "message": "Energy Australia: Your electricity will be disconnected today at 5pm due to an unpaid bill of $212.40. Pay now using the link to avoid disconnection: energyaus-pay.net",
     "is_suspicious": true,
-    "summary": "This message uses a high-pressure deadline and pretends to be a utility company to pressure you into making a payment immediately.",
+    "summary": "This message uses a sense of immediate crisis and a fake official identity to pressure you into clicking a link and making a payment.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "disconnected today at 5pm"
         ],
-        "explanation": "By creating a very short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
+        "explanation": "By setting a very short deadline, the message tries to make you panic and act quickly without taking time to verify the claim.",
         "confidence": 1.0
       },
       {
         "label": "impersonation",
         "evidence": [
-          "Energy Australia"
+          "Energy Australia:"
         ],
-        "explanation": "The message claims to be from a known utility company to gain your trust and make the request seem official.",
-        "confidence": 0.9
+        "explanation": "The message claims to be from a known utility company to make the demand for payment seem like an official requirement.",
+        "confidence": 1.0
       },
       {
         "label": "threat",
         "evidence": [
           "Your electricity will be disconnected"
         ],
-        "explanation": "The message uses the threat of losing an essential service to pressure you into complying with their demand.",
-        "confidence": 0.9
+        "explanation": "The message uses the threat of losing an essential service to pressure you into complying with their request immediately.",
+        "confidence": 1.0
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Energy Australia",
+        "text": "Energy Australia:",
         "start": 0,
-        "end": 16
+        "end": 17
       },
       {
         "label": "threat",
@@ -3344,7 +3253,7 @@
         "evidence": [
           "this is Costco!"
         ],
-        "explanation": "The message claims to be from a well-known, trusted brand to make the offer seem official.",
+        "explanation": "The message claims to be from a well-known company to build trust and make the offer seem official.",
         "confidence": 0.9
       },
       {
@@ -3352,7 +3261,7 @@
         "evidence": [
           "selected for a $500 shopping voucher"
         ],
-        "explanation": "It offers a significant financial reward to entice you to engage with the message.",
+        "explanation": "The promise of a significant monetary reward is used to entice the reader to engage with the message.",
         "confidence": 0.9
       },
       {
@@ -3360,7 +3269,7 @@
         "evidence": [
           "Only 20 vouchers remain, claim yours now"
         ],
-        "explanation": "By claiming there is a very limited supply, it pressures you to act immediately without taking time to verify the claim.",
+        "explanation": "By claiming there is a very limited supply, the message pressures you to act immediately without taking time to verify the link.",
         "confidence": 0.9
       }
     ],
@@ -3393,7 +3302,7 @@
   "Saw your profile and you're exactly the kind of analyst our client needs. The role pays well above market and interviews are being skipped for referred candidates. They're finalising the shortlist by end of play, so send over your passport scan and I'll put you forward.": {
     "message": "Saw your profile and you're exactly the kind of analyst our client needs. The role pays well above market and interviews are being skipped for referred candidates. They're finalising the shortlist by end of play, so send over your passport scan and I'll put you forward.",
     "is_suspicious": true,
-    "summary": "This message uses a high-paying job offer and a fast deadline to pressure you into sharing sensitive personal documents quickly.",
+    "summary": "The message uses a high-paying job offer and a fast deadline to pressure you into sharing sensitive personal documents quickly.",
     "tactics": [
       {
         "label": "reward",
@@ -3408,7 +3317,7 @@
         "evidence": [
           "They're finalising the shortlist by end of play"
         ],
-        "explanation": "By creating a deadline for the 'end of play,' the message pressures you to act immediately without taking time to verify the offer.",
+        "explanation": "By creating a deadline for the 'end of play', the message pressures you to act immediately without taking time to verify the offer.",
         "confidence": 0.9
       }
     ],
@@ -3435,14 +3344,14 @@
   "This is a message regarding your visa file. Discrepancies were found in your application and your status may be cancelled. Return this call today to speak with the case officer before the file is forwarded to enforcement.": {
     "message": "This is a message regarding your visa file. Discrepancies were found in your application and your status may be cancelled. Return this call today to speak with the case officer before the file is forwarded to enforcement.",
     "is_suspicious": true,
-    "summary": "The message uses a sense of urgency and a threat of legal consequences to pressure you into taking immediate action regarding a government-related matter.",
+    "summary": "The message uses a sense of legal danger and a strict deadline to pressure you into making an immediate phone call.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "Return this call today"
         ],
-        "explanation": "This creates a deadline that pressures you to act immediately without taking time to verify the information.",
+        "explanation": "This creates a time-sensitive demand, pressuring you to act immediately without taking time to verify the claim.",
         "confidence": 0.9
       },
       {
@@ -3451,7 +3360,7 @@
           "regarding your visa file",
           "speak with the case officer"
         ],
-        "explanation": "The message mimics the authority of a government immigration office to make the request seem official and legitimate.",
+        "explanation": "The message claims to come from a government or official immigration authority to make the request seem legitimate.",
         "confidence": 0.8
       },
       {
@@ -3460,7 +3369,7 @@
           "your status may be cancelled",
           "before the file is forwarded to enforcement"
         ],
-        "explanation": "The message uses the fear of losing legal status or facing law enforcement to pressure you into complying with their request.",
+        "explanation": "The message uses the threat of losing legal status or facing law enforcement to create fear and force a quick response.",
         "confidence": 0.9
       }
     ],
@@ -3505,7 +3414,7 @@
   "Following last night's floods we're collecting for families who lost everything. The relief account closes at midnight so donations can be released first thing. Transfer what you can to the account below, no amount too small.": {
     "message": "Following last night's floods we're collecting for families who lost everything. The relief account closes at midnight so donations can be released first thing. Transfer what you can to the account below, no amount too small.",
     "is_suspicious": true,
-    "summary": "The message uses a sense of time pressure and a charitable cause to encourage immediate action.",
+    "summary": "The message uses a sense of time pressure and a charitable cause to encourage immediate donations.",
     "tactics": [
       {
         "label": "urgency",
@@ -3533,14 +3442,14 @@
   "A support agent will walk you through securing your wallet. For your safety, keep this chat window open and do not close it or message anyone else until the process is finished, otherwise your assets could be drained.": {
     "message": "A support agent will walk you through securing your wallet. For your safety, keep this chat window open and do not close it or message anyone else until the process is finished, otherwise your assets could be drained.",
     "is_suspicious": true,
-    "summary": "The message uses fear of loss and instructions to keep you isolated from others to pressure you into following their specific instructions.",
+    "summary": "The message uses a sense of danger and a demand for secrecy to keep you focused only on their instructions.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
-          "otherwise your assets could be drained"
+          "otherwise your assets could be drained."
         ],
-        "explanation": "This creates a sense of immediate danger to your funds, aiming to make you act quickly out of fear rather than taking time to verify the situation.",
+        "explanation": "This creates a fear of immediate loss to pressure you into following the instructions without questioning them.",
         "confidence": 0.9
       },
       {
@@ -3548,7 +3457,7 @@
         "evidence": [
           "do not close it or message anyone else until the process is finished"
         ],
-        "explanation": "This instructs you to cut off communication with others, preventing you from seeking outside advice or a second opinion while the 'process' is happening.",
+        "explanation": "This discourages you from seeking outside advice or help from others while you are interacting with the sender.",
         "confidence": 0.9
       }
     ],
@@ -3561,9 +3470,9 @@
       },
       {
         "label": "urgency",
-        "text": "otherwise your assets could be drained",
+        "text": "otherwise your assets could be drained.",
         "start": 178,
-        "end": 216
+        "end": 217
       }
     ],
     "rejected_quotes": [],
@@ -3575,22 +3484,22 @@
   "Nan, don't be cross. I had a prang in a mate's car and the solicitor says it stays off the record if the damages are paid before the hearing tomorrow. Can you do a transfer? Please don't ring Mum, she'll only worry.": {
     "message": "Nan, don't be cross. I had a prang in a mate's car and the solicitor says it stays off the record if the damages are paid before the hearing tomorrow. Can you do a transfer? Please don't ring Mum, she'll only worry.",
     "is_suspicious": true,
-    "summary": "This message uses a personal relationship and a legal deadline to pressure you into making a quick payment while asking you to keep it a secret.",
+    "summary": "This message uses a personal relationship and a sense of urgency to pressure you into making a quick payment while asking you to keep it a secret.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "before the hearing tomorrow"
         ],
-        "explanation": "This creates a very short deadline, pressuring you to act quickly without taking time to think or verify the situation.",
+        "explanation": "This creates a deadline to pressure you into making a quick decision without taking time to think or verify the situation.",
         "confidence": 0.9
       },
       {
         "label": "impersonation",
         "evidence": [
-          "Nan, don't be cross."
+          "Nan"
         ],
-        "explanation": "The message pretends to be from someone you know personally (a family member or friend) to build trust and lower your guard.",
+        "explanation": "The message uses a familiar name or nickname to pretend to be someone you know and trust.",
         "confidence": 0.8
       },
       {
@@ -3598,16 +3507,16 @@
         "evidence": [
           "Please don't ring Mum, she'll only worry."
         ],
-        "explanation": "This discourages you from contacting another person who might be able to provide a second opinion or notice the inconsistency.",
+        "explanation": "This discourages you from contacting another family member who might be able to provide a second opinion or verify the story.",
         "confidence": 0.9
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Nan, don't be cross.",
+        "text": "Nan",
         "start": 0,
-        "end": 20
+        "end": 3
       },
       {
         "label": "urgency",
@@ -3631,14 +3540,14 @@
   "Honestly I only told you because you're different. My uncle works at the exchange and gets the listing dates early. Put in what you're comfortable with and we'll take the profit out before the announcement. Just don't post about it anywhere.": {
     "message": "Honestly I only told you because you're different. My uncle works at the exchange and gets the listing dates early. Put in what you're comfortable with and we'll take the profit out before the announcement. Just don't post about it anywhere.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of exclusive insider knowledge and a request for secrecy to encourage you to act on a 'guaranteed' profit.",
+    "summary": "This message uses a sense of exclusivity and a request for secrecy to encourage you to participate in a high-risk investment opportunity.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "we'll take the profit out before the announcement"
         ],
-        "explanation": "This promises a financial gain based on 'insider' information, which is a common way to entice people into making a quick investment.",
+        "explanation": "This suggests a guaranteed financial gain from 'insider' information, which is a common way to entice people into risky schemes.",
         "confidence": 0.9
       },
       {
@@ -3646,25 +3555,11 @@
         "evidence": [
           "Just don't post about it anywhere."
         ],
-        "explanation": "By asking you to keep the information secret, the sender tries to prevent you from seeking outside advice or second opinions from others.",
+        "explanation": "By asking you to keep the information private, the sender is trying to prevent you from seeking outside advice or second opinions from others.",
         "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "My uncle works at the exchange"
-        ],
-        "explanation": "The sender claims a personal connection to a trusted authority (the exchange) to make the 'insider' information seem more credible.",
-        "confidence": 0.8
       }
     ],
     "spans": [
-      {
-        "label": "impersonation",
-        "text": "My uncle works at the exchange",
-        "start": 51,
-        "end": 81
-      },
       {
         "label": "reward",
         "text": "we'll take the profit out before the announcement",
@@ -3687,44 +3582,44 @@
   "Your fibre line is scheduled for permanent disconnection as part of the copper switch-off. Engineers finish in your street on Wednesday, after which reconnection costs 180. Book a free migration slot now by confirming your account password.": {
     "message": "Your fibre line is scheduled for permanent disconnection as part of the copper switch-off. Engineers finish in your street on Wednesday, after which reconnection costs 180. Book a free migration slot now by confirming your account password.",
     "is_suspicious": true,
-    "summary": "This message uses a sense of urgency and a threat of service loss to pressure you into providing sensitive login information.",
+    "summary": "This message uses a deadline and a potential fine to pressure you into providing sensitive login information.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "scheduled for permanent disconnection",
-          "Book a free migration slot now"
+          "after which reconnection costs 180"
         ],
-        "explanation": "The message creates a deadline and a sense of immediate loss to pressure you into acting quickly without checking the facts.",
+        "explanation": "By suggesting that a service will be cut off and a fee will be charged if you don't act now, the message tries to make you act quickly without checking the facts.",
         "confidence": 0.9
       },
       {
-        "label": "threat",
+        "label": "impersonation",
         "evidence": [
-          "scheduled for permanent disconnection"
+          "Your fibre line"
         ],
-        "explanation": "By mentioning a permanent loss of service, the message tries to make you feel anxious enough to comply with their request.",
+        "explanation": "The message pretends to be from your service provider to gain your trust and request your account credentials.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
+        "label": "impersonation",
+        "text": "Your fibre line",
+        "start": 0,
+        "end": 15
+      },
+      {
         "label": "urgency",
         "text": "scheduled for permanent disconnection",
         "start": 19,
         "end": 56
       },
       {
-        "label": "threat",
-        "text": "scheduled for permanent disconnection",
-        "start": 19,
-        "end": 56
-      },
-      {
         "label": "urgency",
-        "text": "Book a free migration slot now",
-        "start": 173,
-        "end": 203
+        "text": "after which reconnection costs 180",
+        "start": 137,
+        "end": 171
       }
     ],
     "rejected_quotes": [],
@@ -3736,14 +3631,14 @@
   "The draw office has been trying to reach the holder of ticket ending 4471 for three weeks. The prize sits in escrow and is released once identity is verified. We are a licensed claims agent acting for the lottery board.": {
     "message": "The draw office has been trying to reach the holder of ticket ending 4471 for three weeks. The prize sits in escrow and is released once identity is verified. We are a licensed claims agent acting for the lottery board.",
     "is_suspicious": true,
-    "summary": "The message uses a large prize as a hook and claims to represent an official organization to build trust.",
+    "summary": "The message uses a claim of a large prize and a professional-sounding role to encourage you to provide personal information for 'verification'.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "The prize sits in escrow and is released once identity is verified."
         ],
-        "explanation": "This promises a significant financial gain to motivate the reader to engage with the sender and provide personal information.",
+        "explanation": "This uses the promise of a financial reward to motivate the reader to engage with the sender and provide personal details.",
         "confidence": 0.9
       },
       {
@@ -3751,7 +3646,7 @@
         "evidence": [
           "We are a licensed claims agent acting for the lottery board."
         ],
-        "explanation": "The sender claims to be an official representative of a formal organization to make the request seem legitimate and authoritative.",
+        "explanation": "The sender claims to have an official role or authority to make their request seem more legitimate and trustworthy.",
         "confidence": 0.8
       }
     ],
@@ -3778,14 +3673,14 @@
   "Your router has been flagged by our network team for sending malicious traffic. We can clean it remotely but the line will be cut off at the exchange this afternoon if we don't. Install the remote tool from the link and we'll start.": {
     "message": "Your router has been flagged by our network team for sending malicious traffic. We can clean it remotely but the line will be cut off at the exchange this afternoon if we don't. Install the remote tool from the link and we'll start.",
     "is_suspicious": true,
-    "summary": "The message uses a sense of immediate danger and a deadline to pressure you into installing software quickly.",
+    "summary": "The message uses a sense of immediate crisis and a threat of service loss to pressure you into installing software.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
           "the line will be cut off at the exchange this afternoon if we don't."
         ],
-        "explanation": "By setting a deadline of 'this afternoon,' the message tries to make you panic and act quickly without taking time to verify the claim.",
+        "explanation": "This creates a deadline of 'this afternoon' to make you act quickly without taking time to verify the claim.",
         "confidence": 0.9
       },
       {
@@ -3793,8 +3688,16 @@
         "evidence": [
           "our network team"
         ],
-        "explanation": "The message claims to come from a technical authority (a 'network team') to make the request for a remote tool seem like a legitimate service request.",
+        "explanation": "The message claims to come from a technical authority (a network team) to make the request for a 'remote tool' seem like a standard procedure.",
         "confidence": 0.8
+      },
+      {
+        "label": "threat",
+        "evidence": [
+          "the line will be cut off at the exchange"
+        ],
+        "explanation": "This warns of a specific negative consequence (losing your internet connection) if you do not comply with their instructions.",
+        "confidence": 0.9
       }
     ],
     "spans": [
@@ -3803,6 +3706,12 @@
         "text": "our network team",
         "start": 32,
         "end": 48
+      },
+      {
+        "label": "threat",
+        "text": "the line will be cut off at the exchange",
+        "start": 109,
+        "end": 149
       },
       {
         "label": "urgency",
@@ -3835,7 +3744,7 @@
         "evidence": [
           "Mrs Hale"
         ],
-        "explanation": "The message adopts the persona of a school official to build trust and make the request seem like a legitimate administrative task.",
+        "explanation": "The sender is adopting the persona of a school official or coach to make the request for a direct payment seem legitimate.",
         "confidence": 0.8
       }
     ],
@@ -3862,22 +3771,14 @@
   "The flat is still available. I'm the owner and I manage it myself, so no agency fees. I'm overseas at the moment but I can post the keys once the holding deposit arrives. Happy to answer any questions.": {
     "message": "The flat is still available. I'm the owner and I manage it myself, so no agency fees. I'm overseas at the moment but I can post the keys once the holding deposit arrives. Happy to answer any questions.",
     "is_suspicious": true,
-    "summary": "The message uses a common 'remote landlord' persona to create a situation where you are asked to send money before seeing the property.",
+    "summary": "The message uses a common 'out of reach' narrative to justify why a payment must be made before a physical meeting or verification can occur.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "I'm the owner and I manage it myself"
         ],
-        "explanation": "By claiming to be the owner directly, the sender tries to build trust and bypass the standard protections of a professional agency.",
-        "confidence": 0.8
-      },
-      {
-        "label": "reward",
-        "evidence": [
-          "no agency fees"
-        ],
-        "explanation": "This offers a financial incentive to choose this specific deal over others, making the offer seem more attractive.",
+        "explanation": "The sender claims to be the owner to establish authority and build trust, making the request for a deposit seem like a direct transaction with a landlord.",
         "confidence": 0.8
       }
     ],
@@ -3887,12 +3788,6 @@
         "text": "I'm the owner and I manage it myself",
         "start": 29,
         "end": 65
-      },
-      {
-        "label": "reward",
-        "text": "no agency fees",
-        "start": 70,
-        "end": 84
       }
     ],
     "rejected_quotes": [],
@@ -3904,16 +3799,15 @@
   "Thank you for your interest in our puppies. Bella is ready to go to her new home. We only ask for the shipping crate fee upfront, which is refundable once she arrives safely. She has been waiting for the right family.": {
     "message": "Thank you for your interest in our puppies. Bella is ready to go to her new home. We only ask for the shipping crate fee upfront, which is refundable once she arrives safely. She has been waiting for the right family.",
     "is_suspicious": true,
-    "summary": "The message uses an emotional appeal and a request for upfront payment to create a sense of obligation.",
+    "summary": "The message uses an emotional appeal regarding a pet to justify an upfront payment for a service.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "Bella is ready to go to her new home.",
-          "She has been waiting for the right family.",
-          "We only ask for the shipping crate fee upfront"
+          "She has been waiting for the right family."
         ],
-        "explanation": "By framing the puppy as a 'reward' for the 'right family,' the message uses emotional appeal to make the reader feel special and more likely to overlook the request for upfront payment.",
+        "explanation": "The message uses the emotional appeal of a pet in need of a home to make the reader feel more willing to engage and pay a fee.",
         "confidence": 0.8
       }
     ],
@@ -3923,12 +3817,6 @@
         "text": "Bella is ready to go to her new home.",
         "start": 44,
         "end": 81
-      },
-      {
-        "label": "reward",
-        "text": "We only ask for the shipping crate fee upfront",
-        "start": 82,
-        "end": 128
       },
       {
         "label": "reward",
@@ -3946,37 +3834,30 @@
   "We handle rebate claims for people who have paid tax on PPI payouts and most are unaware they are owed anything. There is no fee unless we recover money for you. To check your eligibility we just need your National Insurance number and a signature.": {
     "message": "We handle rebate claims for people who have paid tax on PPI payouts and most are unaware they are owed anything. There is no fee unless we recover money for you. To check your eligibility we just need your National Insurance number and a signature.",
     "is_suspicious": true,
-    "summary": "The message uses a 'too good to be true' offer to entice you into providing sensitive personal information.",
+    "summary": "The message uses a potential financial gain to entice you into providing sensitive personal identification details.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
-          "most are unaware they are owed anything"
+          "most are unaware they are owed anything.",
+          "There is no fee unless we recover money for you."
         ],
-        "explanation": "This suggests there is 'hidden' money waiting for the user, creating an incentive to engage with the sender.",
+        "explanation": "This frames the interaction as a way to gain 'free' money, making the offer more appealing to the reader.",
         "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "We handle rebate claims"
-        ],
-        "explanation": "The sender claims to provide a professional financial service to establish a sense of legitimacy and authority.",
-        "confidence": 0.7
       }
     ],
     "spans": [
       {
-        "label": "impersonation",
-        "text": "We handle rebate claims",
-        "start": 0,
-        "end": 23
+        "label": "reward",
+        "text": "most are unaware they are owed anything.",
+        "start": 72,
+        "end": 112
       },
       {
         "label": "reward",
-        "text": "most are unaware they are owed anything",
-        "start": 72,
-        "end": 111
+        "text": "There is no fee unless we recover money for you.",
+        "start": 113,
+        "end": 161
       }
     ],
     "rejected_quotes": [],
@@ -3988,14 +3869,14 @@
   "Hello, I'm calling from the security team. Nothing to worry about, we are just updating our records after the system migration. Could you confirm the long number on the front of your card and the expiry date so I can match the file?": {
     "message": "Hello, I'm calling from the security team. Nothing to worry about, we are just updating our records after the system migration. Could you confirm the long number on the front of your card and the expiry date so I can match the file?",
     "is_suspicious": true,
-    "summary": "The message uses a professional-sounding persona to request sensitive financial information under the guise of a routine update.",
+    "summary": "The message uses a professional-sounding persona to request sensitive financial information like your card details.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "I'm calling from the security team"
         ],
-        "explanation": "By claiming to be from a 'security team,' the sender tries to build trust and authority to make their request for private data seem official.",
+        "explanation": "The sender claims to be from a 'security team' to build trust and make the request for your card details seem like a standard procedure.",
         "confidence": 0.9
       }
     ],
@@ -4021,18 +3902,18 @@
       {
         "label": "isolation",
         "evidence": [
-          "I would rather keep us private until you can meet my family properly."
+          "I would rather keep us private"
         ],
-        "explanation": "This phrase encourages the recipient to keep the interaction private and limit communication with others, which can make it harder for the person to get outside perspectives.",
-        "confidence": 0.85
+        "explanation": "This phrase encourages the reader to keep the interaction private and potentially limit their communication with others.",
+        "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "isolation",
-        "text": "I would rather keep us private until you can meet my family properly.",
+        "text": "I would rather keep us private",
         "start": 106,
-        "end": 175
+        "end": 136
       }
     ],
     "rejected_quotes": [],
@@ -4049,8 +3930,8 @@
       {
         "label": "reward",
         "evidence": [
-          "Each completed batch pays commission straight into your wallet",
-          "upgrade to the premium tier in their first week to unlock the higher-paying tasks"
+          "pays commission straight into your wallet",
+          "unlock the higher-paying tasks"
         ],
         "explanation": "This highlights financial rewards and 'premium' status to make the opportunity seem lucrative and motivating.",
         "confidence": 0.9
@@ -4059,14 +3940,14 @@
     "spans": [
       {
         "label": "reward",
-        "text": "Each completed batch pays commission straight into your wallet",
-        "start": 50,
+        "text": "pays commission straight into your wallet",
+        "start": 71,
         "end": 112
       },
       {
         "label": "reward",
-        "text": "upgrade to the premium tier in their first week to unlock the higher-paying tasks",
-        "start": 135,
+        "text": "unlock the higher-paying tasks",
+        "start": 186,
         "end": 216
       }
     ],
@@ -4079,14 +3960,14 @@
   "Please note our remittance details have changed with immediate effect following a change of bank. Updated details are attached. Kindly use these for the outstanding invoice and all future payments. Regards, Accounts Payable": {
     "message": "Please note our remittance details have changed with immediate effect following a change of bank. Updated details are attached. Kindly use these for the outstanding invoice and all future payments. Regards, Accounts Payable",
     "is_suspicious": true,
-    "summary": "The message uses a professional persona and a sense of immediacy to request that you change where you send money.",
+    "summary": "The message uses a professional persona to request that you change where you send payments, which is a common way to redirect funds to an unauthorized account.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
           "Regards, Accounts Payable"
         ],
-        "explanation": "The message adopts the persona of a corporate department to create a sense of legitimacy and authority.",
+        "explanation": "The message adopts the persona of a corporate department to create a sense of legitimacy and authority when requesting a change in payment procedures.",
         "confidence": 0.8
       },
       {
@@ -4094,7 +3975,7 @@
         "evidence": [
           "with immediate effect"
         ],
-        "explanation": "This phrase pressures the reader to act quickly on the new instructions without taking time to verify the change.",
+        "explanation": "This phrase pressures the reader to act quickly on the new instructions without taking time to verify the change with the company directly.",
         "confidence": 0.8
       }
     ],
@@ -4121,7 +4002,7 @@
   "Parking payment: the machine on this street is out of order. Scan the code on the sign or use the link below to pay by card. Fines are issued by the council for unpaid stays.": {
     "message": "Parking payment: the machine on this street is out of order. Scan the code on the sign or use the link below to pay by card. Fines are issued by the council for unpaid stays.",
     "is_suspicious": false,
-    "summary": "This message provides information about a broken machine and offers an alternative payment method, without using high-pressure tactics.",
+    "summary": "The message provides information about a broken machine and offers alternative payment methods without using high-pressure tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4133,14 +4014,14 @@
   "We'd love your feedback on your recent visit. The survey takes two minutes and everyone who completes it receives a 50 voucher as a thank you. A card is needed on file to activate the voucher.": {
     "message": "We'd love your feedback on your recent visit. The survey takes two minutes and everyone who completes it receives a 50 voucher as a thank you. A card is needed on file to activate the voucher.",
     "is_suspicious": true,
-    "summary": "The message uses a small reward to encourage you to provide your payment information.",
+    "summary": "The message uses a reward to encourage you to engage, but then asks for sensitive financial information to 'activate' that reward.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "everyone who completes it receives a 50 voucher as a thank you"
         ],
-        "explanation": "This offers a financial incentive to motivate the reader to engage with the survey and provide their details.",
+        "explanation": "This offers a financial incentive to motivate the reader to complete the survey and engage with the sender.",
         "confidence": 0.9
       }
     ],
@@ -4166,7 +4047,8 @@
       {
         "label": "reward",
         "evidence": [
-          "we're giving away samples to new followers this month. Could I send you one?"
+          "we're giving away samples to new followers this month",
+          "Could I send you one?"
         ],
         "explanation": "This offers a free gift or incentive to encourage you to engage with the sender and potentially share your contact information.",
         "confidence": 0.9
@@ -4175,8 +4057,14 @@
     "spans": [
       {
         "label": "reward",
-        "text": "we're giving away samples to new followers this month. Could I send you one?",
+        "text": "we're giving away samples to new followers this month",
         "start": 70,
+        "end": 123
+      },
+      {
+        "label": "reward",
+        "text": "Could I send you one?",
+        "start": 125,
         "end": 146
       }
     ],
@@ -4189,36 +4077,22 @@
   "Your antivirus licence renewed successfully for 349.99. No action is needed. If you did not intend to renew, our refund desk can reverse the charge; call the number below within the refund window.": {
     "message": "Your antivirus licence renewed successfully for 349.99. No action is needed. If you did not intend to renew, our refund desk can reverse the charge; call the number below within the refund window.",
     "is_suspicious": true,
-    "summary": "This message uses a high-cost transaction to create a sense of alarm and pressure you to call a specific number quickly.",
+    "summary": "This message uses a high-cost transaction to create a sense of alarm, prompting you to call a specific number to 'fix' a problem.",
     "tactics": [
       {
         "label": "urgency",
         "evidence": [
-          "call the number below within the refund window"
+          "within the refund window"
         ],
-        "explanation": "By mentioning a specific 'window' for a refund, it pressures you to act quickly before you have time to think or verify the charge with your bank.",
-        "confidence": 0.9
-      },
-      {
-        "label": "impersonation",
-        "evidence": [
-          "Your antivirus licence"
-        ],
-        "explanation": "The message pretends to be from a trusted security provider to make the unexpected charge seem like a legitimate service issue.",
+        "explanation": "This creates a time-sensitive pressure, suggesting that if you don't act quickly, you will lose the opportunity to get your money back.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
-        "label": "impersonation",
-        "text": "Your antivirus licence",
-        "start": 0,
-        "end": 22
-      },
-      {
         "label": "urgency",
-        "text": "call the number below within the refund window",
-        "start": 149,
+        "text": "within the refund window",
+        "start": 171,
         "end": 195
       }
     ],
@@ -4231,14 +4105,14 @@
   "The villa is available for your dates. Booking sites take a big cut, so we prefer to arrange it directly with guests. If you send the deposit by bank transfer we can skip the platform fees and keep the price as quoted.": {
     "message": "The villa is available for your dates. Booking sites take a big cut, so we prefer to arrange it directly with guests. If you send the deposit by bank transfer we can skip the platform fees and keep the price as quoted.",
     "is_suspicious": true,
-    "summary": "The message encourages you to bypass a secure platform and pay the host directly, which removes your protection from the booking site.",
+    "summary": "The message encourages you to bypass a secure booking platform in favor of a direct bank transfer, which removes the protections provided by the official site.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
           "we can skip the platform fees and keep the price as quoted"
         ],
-        "explanation": "This frames the request as a way for you to save money, making the offer of a direct payment more appealing.",
+        "explanation": "This frames the request as a way for the customer to save money, making the request to bypass the official system seem like a benefit to you.",
         "confidence": 0.8
       }
     ],
@@ -4259,15 +4133,14 @@
   "Hi, it's the pharmacy. Your repeat prescription is ready. We've moved to a new app for collections, so please install it from the link and sign in with your NHS login to confirm you want it delivered.": {
     "message": "Hi, it's the pharmacy. Your repeat prescription is ready. We've moved to a new app for collections, so please install it from the link and sign in with your NHS login to confirm you want it delivered.",
     "is_suspicious": true,
-    "summary": "The message uses a trusted healthcare context to encourage you to download an app and provide sensitive login credentials.",
+    "summary": "The message uses a trusted medical authority to encourage you to download an app and provide sensitive login credentials.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
-          "it's the pharmacy",
-          "NHS login"
+          "it's the pharmacy"
         ],
-        "explanation": "The message claims to be from a medical provider and references a national health service to build trust and make the request seem official.",
+        "explanation": "The message claims to be from a trusted healthcare provider to make the request for your personal information seem legitimate.",
         "confidence": 0.9
       }
     ],
@@ -4277,12 +4150,6 @@
         "text": "it's the pharmacy",
         "start": 4,
         "end": 21
-      },
-      {
-        "label": "impersonation",
-        "text": "NHS login",
-        "start": 157,
-        "end": 166
       }
     ],
     "rejected_quotes": [],
@@ -4294,30 +4161,23 @@
   "I'm not here to sell anything. I just help people understand where their money is sitting. If you send a screenshot of your current holdings I can tell you honestly whether you are being charged too much.": {
     "message": "I'm not here to sell anything. I just help people understand where their money is sitting. If you send a screenshot of your current holdings I can tell you honestly whether you are being charged too much.",
     "is_suspicious": true,
-    "summary": "The message uses a friendly, helpful tone to build trust while asking for sensitive financial information.",
+    "summary": "The message uses a helpful persona to encourage you to share private financial information and account details.",
     "tactics": [
       {
-        "label": "reward",
+        "label": "impersonation",
         "evidence": [
-          "I just help people understand where their money is sitting.",
-          "I can tell you honestly whether you are being charged too much."
+          "I just help people understand where their money is sitting"
         ],
-        "explanation": "The message offers a helpful service and potential savings to entice the user to share their private financial data.",
+        "explanation": "The sender is adopting the persona of a helpful advisor or expert to build trust and make their request for your financial data seem like a helpful service.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
-        "label": "reward",
-        "text": "I just help people understand where their money is sitting.",
+        "label": "impersonation",
+        "text": "I just help people understand where their money is sitting",
         "start": 31,
-        "end": 90
-      },
-      {
-        "label": "reward",
-        "text": "I can tell you honestly whether you are being charged too much.",
-        "start": 141,
-        "end": 204
+        "end": 89
       }
     ],
     "rejected_quotes": [],
@@ -4329,23 +4189,16 @@
   "Thank you for supporting us last year. Because of your generosity, your name has been entered into our patrons' draw. Winners are notified by this number, so please keep it saved. To confirm your entry, reply with your postcode and date of birth.": {
     "message": "Thank you for supporting us last year. Because of your generosity, your name has been entered into our patrons' draw. Winners are notified by this number, so please keep it saved. To confirm your entry, reply with your postcode and date of birth.",
     "is_suspicious": true,
-    "summary": "The message uses a reward to encourage you to share personal information, while also asking you to keep the communication private to a specific channel.",
+    "summary": "The message uses a reward to encourage you to share personal information like your date of birth and location.",
     "tactics": [
       {
         "label": "reward",
         "evidence": [
-          "your name has been entered into our patrons' draw."
+          "your name has been entered into our patrons' draw.",
+          "Winners are notified by this number"
         ],
-        "explanation": "This uses the promise of a prize or winning to motivate the reader to engage with the message and provide information.",
+        "explanation": "This uses the promise of a prize or winning a draw to motivate the reader to engage with the message.",
         "confidence": 0.9
-      },
-      {
-        "label": "isolation",
-        "evidence": [
-          "Winners are notified by this number, so please keep it saved."
-        ],
-        "explanation": "By instructing you to only use a specific number and keep it saved, it encourages you to stay within their controlled channel rather than seeking outside verification.",
-        "confidence": 0.8
       }
     ],
     "spans": [
@@ -4356,10 +4209,10 @@
         "end": 117
       },
       {
-        "label": "isolation",
-        "text": "Winners are notified by this number, so please keep it saved.",
+        "label": "reward",
+        "text": "Winners are notified by this number",
         "start": 118,
-        "end": 179
+        "end": 153
       }
     ],
     "rejected_quotes": [],
@@ -4383,7 +4236,7 @@
   "Your Grab is arriving now. Look for a white Toyota Vios, plate SKV 2231 R. Driver: Ahmad.": {
     "message": "Your Grab is arriving now. Look for a white Toyota Vios, plate SKV 2231 R. Driver: Ahmad.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification providing logistical details for a ride-hailing service.",
+    "summary": "This message appears to be a standard transactional notification providing delivery or ride-hailing details.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4395,7 +4248,7 @@
   "Hi Priya, the slides for Thursday's client review are in the shared drive. Let me know if you want to change the order of the sections.": {
     "message": "Hi Priya, the slides for Thursday's client review are in the shared drive. Let me know if you want to change the order of the sections.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard professional communication with no signs of manipulation or pressure.",
+    "summary": "This message appears to be a standard internal work communication with no signs of manipulation or pressure.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4407,7 +4260,7 @@
   "Weather alert: Yellow warning for wind in your area from 06:00 to 18:00 tomorrow. Secure loose objects and allow extra time for travel.": {
     "message": "Weather alert: Yellow warning for wind in your area from 06:00 to 18:00 tomorrow. Secure loose objects and allow extra time for travel.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard public service announcement regarding weather conditions and does not contain manipulative tactics.",
+    "summary": "This message provides a standard public service announcement regarding weather conditions and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4443,7 +4296,7 @@
   "Coach Dan here. Training cancelled tonight because the pitch is waterlogged. Back to normal on Thursday.": {
     "message": "Coach Dan here. Training cancelled tonight because the pitch is waterlogged. Back to normal on Thursday.",
     "is_suspicious": false,
-    "summary": "This message appears to be a routine logistical update about a sports practice and contains no manipulative tactics.",
+    "summary": "This message appears to be a routine logistical update and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4455,7 +4308,7 @@
   "Good news, the vet says Biscuit's blood work is all normal. Keep up the same food and we'll see him for his booster in March.": {
     "message": "Good news, the vet says Biscuit's blood work is all normal. Keep up the same food and we'll see him for his booster in March.",
     "is_suspicious": false,
-    "summary": "This message appears to be a routine update from a veterinary clinic regarding a pet's health and follow-up care.",
+    "summary": "This message appears to be a routine update from a veterinary clinic regarding a pet's health and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4491,7 +4344,7 @@
   "Air New Zealand: Check-in is open for flight NZ5 to Los Angeles. Your gate will be shown 90 minutes before departure.": {
     "message": "Air New Zealand: Check-in is open for flight NZ5 to Los Angeles. Your gate will be shown 90 minutes before departure.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification regarding a flight check-in process.",
+    "summary": "This message appears to be a standard transactional notification regarding a flight check-in and does not contain manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4539,7 +4392,7 @@
   "Grandpa, I passed my driving test!! First try! Mum's taking me for lunch to celebrate, call you tonight.": {
     "message": "Grandpa, I passed my driving test!! First try! Mum's taking me for lunch to celebrate, call you tonight.",
     "is_suspicious": false,
-    "summary": "This message appears to be a personal update from a family member and contains no manipulative tactics.",
+    "summary": "This message appears to be a personal update from a family member and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4551,14 +4404,14 @@
   "Chase: We declined a $1,240.00 purchase at BestBuy.com because it didn't match your usual spending. If this was you, reply YES and try again. If not, reply NO and we'll cancel your card.": {
     "message": "Chase: We declined a $1,240.00 purchase at BestBuy.com because it didn't match your usual spending. If this was you, reply YES and try again. If not, reply NO and we'll cancel your card.",
     "is_suspicious": true,
-    "summary": "The message uses a sense of urgency and impersonates a well-known bank to pressure you into making a quick decision about your account security.",
+    "summary": "The message uses a sense of urgency and a threat of account closure to pressure you into making a quick decision about your bank card.",
     "tactics": [
       {
         "label": "impersonation",
         "evidence": [
-          "Chase"
+          "Chase:"
         ],
-        "explanation": "The message claims to be from a major financial institution to gain your trust and make the request seem official.",
+        "explanation": "The message claims to be from a well-known financial institution to gain your trust and make the request seem official.",
         "confidence": 0.9
       },
       {
@@ -4566,16 +4419,16 @@
         "evidence": [
           "If not, reply NO and we'll cancel your card."
         ],
-        "explanation": "By suggesting your card will be cancelled immediately unless you act, it pressures you to respond quickly without verifying the message's source.",
+        "explanation": "This creates a high-pressure situation where you feel you must act immediately to prevent your card from being deactivated.",
         "confidence": 0.8
       }
     ],
     "spans": [
       {
         "label": "impersonation",
-        "text": "Chase",
+        "text": "Chase:",
         "start": 0,
-        "end": 5
+        "end": 6
       },
       {
         "label": "urgency",
@@ -4593,7 +4446,7 @@
   "USPS: Your package is at the Oak Street post office and will be held for 15 days before being returned to sender. Bring ID to collect it. No fee is due.": {
     "message": "USPS: Your package is at the Oak Street post office and will be held for 15 days before being returned to sender. Bring ID to collect it. No fee is due.",
     "is_suspicious": false,
-    "summary": "This message provides information about a package and a deadline, but it does not use high-pressure tactics or suspicious requests.",
+    "summary": "The message provides information about a package and does not use high-pressure tactics or suspicious requests.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4605,7 +4458,7 @@
   "ATO: Your 2025 tax return has been processed. A refund of $412.00 will be paid into your nominated bank account within 5 business days. No action is required.": {
     "message": "ATO: Your 2025 tax return has been processed. A refund of $412.00 will be paid into your nominated bank account within 5 business days. No action is required.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard notification regarding a tax refund and does not contain high-pressure tactics or demands for immediate action.",
+    "summary": "The message provides a status update on a tax refund and explicitly states that no action is required from the user.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4617,7 +4470,7 @@
   "Final reminder: your car insurance renewal is due on 31 October. If you do nothing, your policy will auto-renew at the quoted price. You can change or cancel in your online account.": {
     "message": "Final reminder: your car insurance renewal is due on 31 October. If you do nothing, your policy will auto-renew at the quoted price. You can change or cancel in your online account.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard administrative notification regarding a service renewal and does not contain high-pressure manipulation tactics.",
+    "summary": "This message appears to be a standard administrative notification regarding a policy renewal and does not contain high-pressure tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4629,7 +4482,7 @@
   "Hi, it's Lena from Dr Osei's office. We need to reschedule your appointment on Monday as the doctor is unwell. Please call us on 03 9123 4567 when convenient.": {
     "message": "Hi, it's Lena from Dr Osei's office. We need to reschedule your appointment on Monday as the doctor is unwell. Please call us on 03 9123 4567 when convenient.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard administrative notification regarding a medical appointment and does not contain high-pressure manipulation tactics.",
+    "summary": "This message appears to be a standard administrative notification and does not contain clear signs of manipulation or pressure.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4641,7 +4494,7 @@
   "Your Gmail password was changed just now from a new device in Manchester. If this was you, no action is needed. If not, secure your account at myaccount.google.com.": {
     "message": "Your Gmail password was changed just now from a new device in Manchester. If this was you, no action is needed. If not, secure your account at myaccount.google.com.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard automated security notification. It provides a clear action for the user to take if they suspect an issue, without using high-pressure tactics.",
+    "summary": "This message appears to be a standard automated security notification. It provides a clear action for the user to take if they recognize the activity, without using high-pressure tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4653,7 +4506,7 @@
   "Reminder from the IRS: the deadline to file your extended 2025 return is 15 October. File through your tax software or IRS.gov. The IRS does not request payment by gift card.": {
     "message": "Reminder from the IRS: the deadline to file your extended 2025 return is 15 October. File through your tax software or IRS.gov. The IRS does not request payment by gift card.",
     "is_suspicious": false,
-    "summary": "This message provides standard information about a tax deadline and includes a helpful warning about common payment methods.",
+    "summary": "This message provides standard information about a tax deadline and directs the user to official channels.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4665,7 +4518,7 @@
   "PayPal: You received $35.00 from Jordan Lee for 'concert tickets'. The money is in your balance. View the transaction in the app.": {
     "message": "PayPal: You received $35.00 from Jordan Lee for 'concert tickets'. The money is in your balance. View the transaction in the app.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification and does not contain clear signs of manipulation or pressure.",
+    "summary": "This message appears to be a standard transactional notification and does not contain clear signs of manipulation.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4677,7 +4530,7 @@
   "Hi, it's your neighbour at number 12. Your front door was open when I walked past at lunchtime, I pushed it closed but you might want to check nothing's wrong.": {
     "message": "Hi, it's your neighbour at number 12. Your front door was open when I walked past at lunchtime, I pushed it closed but you might want to check nothing's wrong.",
     "is_suspicious": false,
-    "summary": "This message appears to be a neighborly notification about a physical situation and does not contain clear patterns of manipulation or pressure.",
+    "summary": "This message appears to be a neighborly notification and does not contain clear patterns of manipulation or pressure.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4689,7 +4542,7 @@
   "Payment reminder: your Zipcar membership fee of £6 is overdue. Please update your card in the app to keep your membership active. No late fee applies this month.": {
     "message": "Payment reminder: your Zipcar membership fee of £6 is overdue. Please update your card in the app to keep your membership active. No late fee applies this month.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification regarding a membership fee and does not contain high-pressure manipulation tactics.",
+    "summary": "This message appears to be a standard service notification and does not contain high-pressure manipulation tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4700,40 +4553,10 @@
   },
   "Microsoft: Your security code is 548 221. Use it to sign in. If you did not request a code, someone may have your password; change it at account.microsoft.com.": {
     "message": "Microsoft: Your security code is 548 221. Use it to sign in. If you did not request a code, someone may have your password; change it at account.microsoft.com.",
-    "is_suspicious": true,
-    "summary": "This message uses the name of a well-known technology company to create a sense of concern regarding your account security.",
-    "tactics": [
-      {
-        "label": "impersonation",
-        "evidence": [
-          "Microsoft"
-        ],
-        "explanation": "The message uses the name of a major global brand to make the communication appear official and trustworthy.",
-        "confidence": 0.9
-      },
-      {
-        "label": "urgency",
-        "evidence": [
-          "someone may have your password; change it at account.microsoft.com"
-        ],
-        "explanation": "By suggesting that your account is currently compromised, it pressures you to act quickly to secure your information.",
-        "confidence": 0.8
-      }
-    ],
-    "spans": [
-      {
-        "label": "impersonation",
-        "text": "Microsoft",
-        "start": 0,
-        "end": 9
-      },
-      {
-        "label": "urgency",
-        "text": "someone may have your password; change it at account.microsoft.com",
-        "start": 92,
-        "end": 158
-      }
-    ],
+    "is_suspicious": false,
+    "summary": "This message appears to be a standard automated security notification. It does not contain high-pressure tactics or requests for private information.",
+    "tactics": [],
+    "spans": [],
     "rejected_quotes": [],
     "attempts": 1,
     "provider": "ollama",
@@ -4743,7 +4566,7 @@
   "Hi Gran, it's Ella on Mum's phone, mine's out of battery. Still okay for me to come round Sunday? I'll bring the photos from the holiday.": {
     "message": "Hi Gran, it's Ella on Mum's phone, mine's out of battery. Still okay for me to come round Sunday? I'll bring the photos from the holiday.",
     "is_suspicious": false,
-    "summary": "This message appears to be a normal personal communication between family members with no signs of manipulation.",
+    "summary": "This message appears to be a personal communication between family members and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4755,7 +4578,7 @@
   "Airtel: We've noticed higher than usual data use on your number. If you've been roaming, charges may apply on your next bill. Check your usage in the Airtel Thanks app.": {
     "message": "Airtel: We've noticed higher than usual data use on your number. If you've been roaming, charges may apply on your next bill. Check your usage in the Airtel Thanks app.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard service notification regarding data usage and does not contain high-pressure manipulation tactics.",
+    "summary": "This message appears to be a standard service notification and does not contain high-pressure tactics or requests for sensitive information.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4767,7 +4590,7 @@
   "Your Ticketmaster refund of $186.50 for the cancelled show has been issued to your original payment method. Allow up to 10 days for it to appear.": {
     "message": "Your Ticketmaster refund of $186.50 for the cancelled show has been issued to your original payment method. Allow up to 10 days for it to appear.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard transactional notification regarding a refund and does not contain clear manipulative tactics.",
+    "summary": "This message appears to be a standard transactional notification regarding a refund and does not contain any manipulative tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
@@ -4779,7 +4602,7 @@
   "Court Service reminder: you are summoned for jury service on 3 November at Leeds Combined Court. Report to the jury assembly area at 9:00am. Expenses can be claimed online.": {
     "message": "Court Service reminder: you are summoned for jury service on 3 November at Leeds Combined Court. Report to the jury assembly area at 9:00am. Expenses can be claimed online.",
     "is_suspicious": false,
-    "summary": "This message appears to be a standard administrative notification regarding jury duty and does not contain clear signs of manipulation.",
+    "summary": "This message appears to be a standard notification regarding a legal obligation and does not contain common manipulation tactics.",
     "tactics": [],
     "spans": [],
     "rejected_quotes": [],
