@@ -185,6 +185,20 @@ python evaluate.py --category hard_benign                 # one subset only
 
 Per-label F1: urgency 0.922 · impersonation 0.876 · isolation 0.919 · reward 0.955 · threat 0.898. Mean attempts 1.00; about 1.4 s per message on one H200 once the model is loaded.
 
+### Three Ollama models on the 150-message set
+
+All three local models that were pulled on the test machine, run back to back on a single H200 (GPU 0) with `--no-cache`. `qwen3.8:27b-q4_K_M` and `qwen3.8:latest` are the same 27B Q4_K_M weights under two tags, which the near-identical numbers confirm.
+
+| Model | Detection acc. | FPR on hard_benign | Macro F1 | Micro F1 | Grounding | Span F1 | Time per message |
+|---|---|---|---|---|---|---|---|
+| gemma4:12b | 0.960 | 0.067 | 0.914 | 0.911 | 1.000 | 0.758 | 1.4 s |
+| qwen3.8:27b-q4_K_M | 0.960 | 0.067 | 0.847 | 0.846 | 0.995 | 0.735 | 2.7 s |
+| qwen3.8:latest | 0.960 | 0.067 | 0.844 | 0.842 | 0.996 | 0.729 | 2.1 s |
+
+Per-label F1, gemma4 then qwen3.8:27b: urgency 0.922 / 0.844 · impersonation 0.876 / 0.821 · isolation 0.919 / 0.850 · reward 0.955 / 0.925 · threat 0.898 / 0.792.
+
+The 12B Gemma beats the 27B Qwen on every label and is twice as fast. Both flag exactly two legitimate messages, but not the same two: gemma4 reads the Chase decline and the Microsoft code as impersonation, Qwen reads the Chase decline the same way and additionally labels the genuine OTP warning "Do not share this code with anyone, including bank staff" as isolation. Qwen also produced the only non-verbatim quote across the three runs, paraphrasing "do not close it or message anyone else" as "do not message anyone else"; the validator rejected it and the retry fixed it, which is the mechanism working as intended. Reports: `results/eval_ollama_gemma4-12b.txt`, `results/eval_ollama_qwen3.8-27b-q4_K_M.txt`, `results/eval_ollama_qwen3.8-latest.txt`.
+
 ### Second model: `Qwen/Qwen2.5-7B-Instruct` via SGLang
 
 Same pipeline, same prompt, different model and server. Full report in `results/eval_sglang_qwen2.5-7b.txt`. The Qwen run predates the dataset expansion and covers the original 90 messages, so the gemma4 row below is from the same 90-message set for a like-for-like comparison.
