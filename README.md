@@ -34,9 +34,7 @@ Paste a suspicious text and ScamantiQ names the manipulation tactics it uses, qu
 | **Grounds** | every tactic in a verbatim quote from the message, checked by code, not by the model |
 | **Explains** | each tactic for a non-expert, with practical advice on what to do next |
 
-The LLM is pluggable: a local Ollama, SGLang or vLLM server (free, nothing leaves the machine) or a cloud API (Groq, Gemini, OpenRouter, DeepSeek, OpenAI, Anthropic). Every backend is asked for schema-constrained JSON so labels and fields stay well-formed, and the same validator checks every quote whichever model produced it.
-
-What it does **not** do: decide whether a message is fraudulent, check who sent it, follow links, or replace advice from your bank or the police.
+It does **not** decide whether a message is fraudulent, check who sent it, follow links, or replace advice from your bank or the police. No model is trained and no GPU is required: the LLM is a configuration choice, local or cloud (see [Choosing an LLM backend](#choosing-an-llm-backend)).
 
 ## Quick start
 
@@ -63,7 +61,7 @@ SCAMANTIQ_PROVIDER=groq GROQ_API_KEY=... python app.py  # cloud API
 3. **Verify.** Python checks that every quote is a verbatim substring of the message. Quotes that are not are rejected and the model is asked once to correct them. A tactic with no surviving evidence is dropped, and a message with no verified evidence is never flagged. Case, whitespace and curly-quote differences are tolerated when *locating* a quote, but the text shown to the user is always the exact source span.
 4. **Explain.** Each verified tactic is shown with its evidence, a plain-language explanation and the model's self-reported confidence, bucketed as high, medium or low.
 
-No model is trained and no GPU is required; the LLM is a configuration choice.
+Every backend is asked for schema-constrained JSON so labels and fields stay well-formed, and the same validator checks every quote whichever model produced it.
 
 ## The five tactics
 
@@ -77,9 +75,9 @@ No model is trained and no GPU is required; the LLM is a configuration choice.
 | `reward` | Reward / incentive | prizes, refunds, jobs, guaranteed returns | Exploits *need and greed*; the "there's a prize" half of the "problem or prize" sign. |
 | `threat` | Threat / penalty | arrest, fines, account closure, exposure | Exploits fear; the "there's a problem" half of "problem or prize" and the coercive counterpart of reward. |
 
-**Why five, and why these?** The taxonomy is small and fixed so that outputs are comparable across messages and models, and so that each label has an operational definition a non-expert can check against the quoted evidence. The five labels cover the warning signs published by consumer-protection agencies such as the US FTC (impersonation, problem or prize, pressure to act, unusual payment). Reward and threat are kept apart because they need different explanations; isolation is added because it is the tactic that most directly removes the user's ability to seek help. The "unusual payment method" sign is about the requested action rather than the wording, so it is handled by the safety disclaimer instead of a label.
+**Why five, and why these?** A small fixed taxonomy keeps outputs comparable across messages and models, and gives each label an operational definition a non-expert can check against the quoted evidence. The five map onto the warning signs consumer-protection agencies such as the US FTC publish (last column above). Reward and threat are kept apart because they need different explanations; isolation is included because it most directly removes the user's ability to seek help. The FTC's "unusual payment method" sign is about the requested action rather than the wording, so the safety disclaimer covers it instead of a label.
 
-Two boundary rules in the prompt keep legitimate messages unflagged: an organisation naming itself is only impersonation when the borrowed identity is used to ask for a payment, details, a code, a call or a visit to an unofficial link; and a genuine "do not share this code with anyone" warning is security advice, not isolation. See [What the prompt rules changed](#what-the-prompt-rules-changed) for their measured effect.
+Two boundary rules in the prompt keep legitimate messages unflagged: a sender naming itself is only impersonation when the borrowed identity is used to ask for something, and a genuine "do not share this code" warning is security advice, not isolation. The [annotation examples](#how-the-benchmark-was-built) show where the line falls; [What the prompt rules changed](#what-the-prompt-rules-changed) measures their effect.
 
 Definitions, examples, colours and advice text live in `scamantiq/taxonomy.py`; the rules live in `scamantiq/prompt.py`. Both are injected into the system prompt.
 
@@ -102,7 +100,7 @@ All backends implement the same two-method interface (`complete_json`, `healthch
 | `anthropic` | Anthropic Messages API | `ANTHROPIC_API_KEY` | `claude-haiku-5-5`; schema-constrained; `claude-sonnet-5-5` / `claude-opus-5-5` via `SCAMANTIQ_MODEL` |
 | `mock` | cached demo answers only | none | offline tests and demos |
 
-`SCAMANTIQ_MODEL` and `SCAMANTIQ_BASE_URL` override the preset, and `SCAMANTIQ_API_KEY` overrides every per-provider key. Any OpenAI-compatible endpoint works through the `openai` preset, for example:
+`SCAMANTIQ_MODEL` and `SCAMANTIQ_BASE_URL` override the preset and `SCAMANTIQ_API_KEY` overrides every per-provider key, so any OpenAI-compatible endpoint works through the `openai` preset:
 
 ```ini
 SCAMANTIQ_PROVIDER=openai
@@ -111,12 +109,21 @@ SCAMANTIQ_MODEL=qwen-plus
 SCAMANTIQ_API_KEY=sk-...
 ```
 
-The OpenAI-compatible provider asks `GET /v1/models` for the served model when `SCAMANTIQ_MODEL` is empty, and requests structured output in the strongest form the server accepts (`json_schema`, then `json_object`, then none), remembering what worked. Other knobs: `SCAMANTIQ_MAX_RETRIES` (default 1), `SCAMANTIQ_TEMPERATURE` (default 0; ignored by models that think), `SCAMANTIQ_EFFORT` (reasoning effort `low`/`medium`/`high`/`max` for DeepSeek V4 and Claude 5.5, default: the provider's own), `SCAMANTIQ_TIMEOUT` (default 120 s), `SCAMANTIQ_USE_CACHE` (default on), `SCAMANTIQ_HOST`, `SCAMANTIQ_PORT`. Cloud adapters retry HTTP 429 and 5xx responses up to four times with backoff.
+The OpenAI-compatible provider reads the served model from `GET /v1/models` when `SCAMANTIQ_MODEL` is empty, and requests structured output in the strongest form the server accepts (`json_schema`, then `json_object`, then none), remembering what worked. The cloud adapters retry HTTP 429 and 5xx responses up to four times with backoff. Other settings, all optional:
 
-**Ollama vs SGLang/vLLM.** Ollama runs quantised GGUF models and is the easiest to set up. SGLang and vLLM serve original HuggingFace weights with continuous batching, which is better for GPU machines and for running the evaluation quickly. All three support schema-constrained JSON.
+| Variable | Default | Effect |
+|---|---|---|
+| `SCAMANTIQ_EFFORT` | provider default | reasoning effort (`low`, `medium`, `high`, `max`) for models that think: DeepSeek V4, Claude 5.5 |
+| `SCAMANTIQ_TEMPERATURE` | `0` | sampling temperature; ignored by models that think |
+| `SCAMANTIQ_MAX_RETRIES` | `1` | corrections requested after a failed evidence check |
+| `SCAMANTIQ_TIMEOUT` | `120` | seconds per request |
+| `SCAMANTIQ_USE_CACHE` | `1` | serve `data/demo_cache.json` before calling the model, and when the backend is down |
+| `SCAMANTIQ_HOST`, `SCAMANTIQ_PORT` | `127.0.0.1`, `7860` | where the app listens |
 
 <details>
-<summary>Running SGLang or vLLM</summary>
+<summary>Local SGLang or vLLM instead of Ollama</summary>
+
+Ollama runs quantised GGUF models and is the easiest to set up. SGLang and vLLM serve the original HuggingFace weights with continuous batching, which is faster on a GPU machine and for running the evaluation. All three support schema-constrained JSON.
 
 ```bash
 conda create -n sglang python=3.12 && conda activate sglang
@@ -126,7 +133,7 @@ python -m sglang.launch_server --model-path <hf-model> --port 30000
 SCAMANTIQ_PROVIDER=sglang python app.py
 ```
 
-SGLang compiles some kernels at start-up and needs a CUDA toolkit of 12.9 or newer on `PATH`. If the system `nvcc` is older (symptoms: `NVCC version must be at least 12.9` or `Value 'c++20' is not defined for option 'std'`), install one into the SGLang environment and disable the FP8 DeepGEMM path, which bf16 models do not use anyway:
+SGLang needs CUDA 12.9 or newer on `PATH` (otherwise: `NVCC version must be at least 12.9` or `Value 'c++20' is not defined for option 'std'`). Install one into its environment and skip the FP8 DeepGEMM path, which bf16 models do not use:
 
 ```bash
 conda install -c nvidia "cuda-nvcc=13.0" "cuda-cudart-dev=13.0" "cuda-crt-dev_linux-64=13.0"
@@ -134,10 +141,10 @@ export CUDA_HOME=$CONDA_PREFIX PATH=$CONDA_PREFIX/bin:$PATH
 SGLANG_ENABLE_JIT_DEEPGEMM=false python -m sglang.launch_server --model-path <hf-model> --port 30000
 ```
 
-vLLM is the same with `python -m vllm.entrypoints.openai.api_server --model <hf-model> --port 8000` and `SCAMANTIQ_PROVIDER=vllm`.
+vLLM: `python -m vllm.entrypoints.openai.api_server --model <hf-model> --port 8000`, then `SCAMANTIQ_PROVIDER=vllm`.
 </details>
 
-**Offline cache.** `data/demo_cache.json` holds precomputed results for every built-in example and every test-set message. It is served when the backend is down and is all the `mock` provider has. Rebuild it after changing the prompt, the taxonomy or the default model:
+**Offline cache.** `data/demo_cache.json` holds precomputed results for every built-in example and every test-set message. It is served when the backend is down and is all the `mock` provider has. Rebuild it after changing the prompt, the taxonomy, the test set or the default model:
 
 ```bash
 python scripts/build_demo_cache.py --all --force
@@ -145,19 +152,53 @@ python scripts/build_demo_cache.py --all --force
 
 ## Evaluation
 
-### Test set
+### How the benchmark was built
 
-`data/test_set.jsonl` contains 150 messages, 30 per category, each annotated with gold tactic labels and gold evidence spans. The first 90 were written by the project team; the remaining 60 were drafted with an LLM assistant to balance the categories and then reviewed and annotated by hand.
+`data/test_set.jsonl` holds 150 short English messages (76 to 270 characters), 30 per category, each with gold tactic labels and gold evidence spans. It grew in three rounds, each committed together with the evaluation run that motivated it:
+
+| Round | Added | Why |
+|---|---|---|
+| Initial prototype | 25 `familiar`, 20 `paraphrased`, 15 `benign`, written by the project team | fix the record format and get a first baseline |
+| After review | 15 `hard_benign`, 15 `subtle_scam`, written by the team | the first set only tested the easy direction: it needed legitimate messages that look like scams, and scams with few cues |
+| Expansion to 150 | 5 / 10 / 15 / 15 / 15 across the five categories, drafted with an LLM assistant, then reviewed and annotated by hand | balance every category at 30 and cover more channels (text, chat, email), domains (banking, delivery, jobs, rentals, crypto, romance, charity, utilities) and English-speaking regions |
 
 | Category | n | Purpose |
 |---|---|---|
 | `familiar` | 30 | Classic scam templates: bank lock-out, prize, tax warrant, parcel fee, courier redelivery, utility disconnection… |
-| `paraphrased` | 30 | Scams with unseen wording and different scenarios, to measure generalisation |
-| `subtle_scam` | 30 | Low-cue scams: wrong-number openers, slow-burn investment and romance grooming, politely worded advance-fee offers, task and pet scams, invoice redirection. Three (`ss01`, `ss14`, `ss29`) contain no taxonomy tactic in the text and are labelled empty on purpose. |
+| `paraphrased` | 30 | The same tactics in scenarios the templates do not cover (tenants asked to text their door codes, a towed car, a visa file, a flood appeal), so recognising the template does not score |
+| `subtle_scam` | 30 | Low-cue scams: wrong-number openers, slow-burn investment and romance grooming, politely worded advance-fee offers, task and pet scams, invoice redirection. Three (`ss01`, `ss14`, `ss29`) are labelled empty on purpose, see below. |
 | `benign` | 30 | Ordinary personal, commercial and institutional messages |
 | `hard_benign` | 30 | Legitimate messages that *look* like scams: real fraud alerts, OTP warnings, payment reminders with deadlines, genuine refunds and jury summons, a real "lost my phone" text |
 
-The loader rejects the file if an id repeats, a label is unknown, or a gold span is not a verbatim substring of its message.
+Each record is one JSON object per line. `labels` may be empty; `evidence` maps each label to one or more verbatim spans:
+
+```json
+{"id": "f02", "category": "familiar",
+ "message": "Congratulations! You have been selected as our lucky winner of a $1,000 Walmart gift card. Reply YES to claim your prize before midnight tonight.",
+ "labels": ["reward", "urgency"],
+ "evidence": {"reward": ["lucky winner of a $1,000 Walmart gift card"], "urgency": ["before midnight tonight"]}}
+```
+
+Three rules were applied when annotating:
+
+- **Every label needs a quotable phrase.** A tactic is annotated only when a specific span carries it, and that span becomes the gold evidence: 184 spans, typically two to eight words. The validator holds the model to the same standard, so the gold evidence doubles as the target for span F1.
+- **Labels describe wording, not the sender's intent.** `benign` and `hard_benign` are always empty, and the `hard_benign` messages were picked *because* they share wording with scams. In the other direction, a scam whose text contains no tactic stays empty: the three empty `subtle_scam` items are a wrong-number opener, an overseas tenant offering a deposit sight unseen, and an offer to review a screenshot of the reader's investments. The harm would come later in the conversation; a model that flags them is reacting to resemblance, not evidence.
+- **Boundary cases are decided by the request, not the name.** A sender naming itself is impersonation only when the identity is used to ask for something; a warning not to share a code is advice, not isolation. The two prompt rules encode the same decisions.
+
+Where the line falls, by example:
+
+| Message (abridged) | Gold labels | Decision |
+|---|---|---|
+| `f06` "Netflix: We were unable to process your payment. Update your billing details within 24 hours to avoid suspension of your account: netflix-billing-update.com" | impersonation, urgency, threat | The borrowed name is used to ask for billing details on an unofficial link, so `Netflix:` itself is the impersonation evidence. |
+| `hb10` "Monzo: We've blocked a card payment of £89 at a merchant in Lagos that looked unusual. If this was you, you can approve it in the app. If not, freeze your card in the app." | none | A bank naming itself and pointing to its own app asks for nothing, so it is not impersonation; a blocked payment is not a threat. |
+| `hb02` "Your one-time passcode is 731 904. Do not share this code with anyone, including bank staff. If you did not request it, call the number on the back of your card." | none | "Do not share" protects the reader: security advice, not isolation. |
+| `f03` "Hi Mum, it's me. I dropped my phone in the sink so this is my new number. I need to pay a bill today … could you transfer £850 … Please don't tell Dad" | impersonation, urgency, isolation | A claimed identity plus a money request, a same-day deadline, and a line that cuts off the one person who would check. |
+| `hb08` "Hey it's Tom, lost my phone on the train yesterday so texting from Jess's. Can you resend me the address for Saturday? Not urgent." | none | Same opener as the "Hi Mum" scam, but nothing is asked for except an address. |
+| `p24` "A support agent will walk you through securing your wallet. … do not close it or message anyone else until the process is finished, otherwise your assets could be drained." | isolation, threat | "Do not … message anyone else" blocks a second opinion on the sender's own request, which is what separates it from the OTP warning above. |
+| `ss08` "I run a small group where we share entries. Most members made back their first month's fee in a week or two. Happy to add you if you are interested, no pressure." | reward | Only the implied return is in the text; no deadline and no threat, so one label. |
+| `ss01` "Hi, is this Rachel? Sorry, I think I have the wrong number. You seem nice though, how is your week going?" | none | A wrong-number opener: the text contains no tactic, whatever the conversation would become. |
+
+The loader (`check_dataset`, run by `evaluate.py` and the test suite) rejects the file if an id repeats, a label is outside the taxonomy, evidence is given for a label the message does not carry, or a gold span is not a verbatim substring of its message. To add messages, append lines in the same format, run `python -m pytest tests/test_evaluation.py -q`, re-run the evaluation, and rebuild the demo cache so the offline demo covers the new messages.
 
 ### Metrics
 
@@ -165,11 +206,13 @@ Reported overall and per category by `evaluate.py`:
 
 | Metric | Measures |
 |---|---|
-| Detection accuracy / F1, false-positive rate | whether the message is flagged at all |
+| Detection accuracy / F1, false-positive rate | whether the message is flagged at all; a message counts as flagged only if at least one tactic survived verification |
 | Macro F1, micro F1, per-label F1 | multi-label tactic classification over the five labels |
 | Grounding rate | share of the model's *raw* quotes that occur exactly in the source, counted before the validator repairs or rejects anything |
-| Span F1 | token-level overlap between predicted and gold evidence spans, per label |
+| Span F1 | token-level overlap between predicted and gold evidence for each gold label, averaged |
 | Mean attempts | how often the retry was needed |
+
+Exact label-set matches in the tables below are counted from the per-message predictions in the JSON report.
 
 ```bash
 python evaluate.py --no-cache                             # current provider, every answer from the model
@@ -179,7 +222,7 @@ python evaluate.py --category hard_benign --limit 5       # one subset
 
 ### Results
 
-Four models, all with `--no-cache` and the current prompt: two local models served by Ollama on one H200, and two cloud APIs run with their default thinking settings (DeepSeek V4.1-Flash thinks at `high` effort unless told otherwise; Claude Opus 5.5 uses adaptive thinking at `medium`). Per-message times are wall-clock: a shared GPU for the local models, network plus thinking time for the APIs. They vary between runs.
+Four models, all with `--no-cache` and the current prompt: two local models served by Ollama on one H200, and two cloud APIs with their default thinking settings (DeepSeek V4.1-Flash thinks at `high` effort unless told otherwise; Claude Opus 5.5 uses adaptive thinking at `medium`). Times are wall-clock per message and vary between runs: a shared GPU for the local models, network plus thinking time for the APIs.
 
 | Model | Detection acc. | FPR on hard_benign | Macro F1 | Micro F1 | Grounding | Span F1 | Time per message |
 |---|---|---|---|---|---|---|---|
@@ -213,7 +256,7 @@ By category, detection accuracy with micro F1 after the slash for the scam categ
 
 ### What the prompt rules changed
 
-The first run on the expanded set flagged two genuine `hard_benign` messages: a Chase card-decline text and a Microsoft sign-in code, both with the brand name itself quoted as impersonation evidence; the Qwen model also read a genuine OTP warning ("Do not share this code with anyone, including bank staff") as isolation. Two rules were added to the system prompt in response, and gemma4 was re-run on the full set:
+The first run on the expanded set flagged two genuine `hard_benign` messages, a Chase card-decline text and a Microsoft sign-in code, with the brand name itself quoted as impersonation evidence; Qwen also read a genuine OTP warning as isolation. The two boundary rules were added to the system prompt in response:
 
 | gemma4:12b | Before the rules | After |
 |---|---|---|
@@ -224,24 +267,21 @@ The first run on the expanded set flagged two genuine `hard_benign` messages: a 
 | Macro F1 | 0.914 | 0.919 |
 | Span F1 | 0.758 | 0.744 |
 
-Both models gained from the rules. gemma4's one remaining false positive is the Chase decline text, which it still reads as impersonation plus urgency because of the "reply NO and we'll cancel your card" line. An earlier wording that called card-freezing a protective step removed that too, but cost threat recall on two real scams, so it was dropped. Span F1 slipped slightly because the rule's examples ("Netflix:") nudge the model toward quoting just the name rather than the whole claim. For qwen3.8:27b the rules removed both of its false positives (the Chase decline and the OTP warning), lifted macro F1 from 0.847 to 0.894 and isolation F1 from 0.850 to 0.947, and raised exact label-set matches from 106 to 115. The rules were tuned on these failures, so see the caveat under Limitations.
+For qwen3.8:27b the rules removed both false positives, lifted macro F1 from 0.847 to 0.894 and isolation F1 from 0.850 to 0.947, and raised exact matches from 106 to 115. gemma4 still reads the Chase text as impersonation plus urgency because of its "reply NO and we'll cancel your card" line; a stricter wording fixed that too but cost threat recall on two real scams, so it was dropped. Span F1 slipped slightly because the rule's example quotes (`Netflix:`) nudge the model toward the name alone. The rules were tuned on these failures, so see the caveat under [Limitations](#limitations).
 
 ### Reading the numbers
 
-Every quote all four models produced was verbatim and no retry was needed, so the validator had nothing to repair in these runs; its value shows on weaker models and in earlier runs, where paraphrased quotes were caught and corrected. No model flagged any of the 30 `benign` messages. On `hard_benign`, Opus 5.5 and Qwen are clean, gemma4 still flags the Chase decline text, and DeepSeek flags the genuine "lost my phone, texting from Jess's" message as impersonation, which is a defensible reading of a text that matches the "Hi Mum" pattern.
+Every quote all four models produced was verbatim and no retry was needed, so the validator had nothing to repair in these runs; its value shows on weaker models and in earlier runs, where paraphrased quotes were caught and corrected. No model flagged a `benign` message. On `hard_benign`, Opus 5.5 and Qwen are clean, gemma4 still flags the Chase decline text, and DeepSeek flags `hb08`, the genuine "lost my phone" text above, as impersonation.
 
-Detection and labelling pull apart. Claude Opus 5.5 has the best detection numbers (no scam missed, nothing benign flagged) but a lower macro F1 than gemma4 and DeepSeek and the lowest span F1: it labels `impersonation` on seven `subtle_scam` messages whose gold labels do not include it, and it quotes almost two passages per message, longer than the annotators' spans. gemma4:12b, the smallest model, still has the highest macro F1 and the most exact label-set matches, with DeepSeek V4.1-Flash close behind on labels and slightly ahead on detection. A larger or more expensive model is therefore not automatically better for this task; the prompt and the validator do much of the work.
-
-`subtle_scam` remains the hardest category. The three deliberately empty-labelled messages are read differently by each model: gemma4 flags all three, Qwen and Opus two, DeepSeek only the overseas tenant who offers to pay a deposit sight unseen. Outright misses are rare: Opus misses none, gemma4 and DeepSeek one each (the parking-fine notice and the soft investment recommendation), Qwen four. Several of these readings are defensible, which is the kind of annotation disagreement a small benchmark cannot settle. Per-message predictions are in `results/`.
+Detection and labelling pull apart. Claude Opus 5.5 misses no scam and flags nothing benign, yet has a lower macro F1 than gemma4 and DeepSeek and the lowest span F1: it adds `impersonation` to seven `subtle_scam` messages whose gold labels lack it, and quotes almost two passages per message, longer than the annotators' spans. gemma4:12b, the smallest model, has the highest macro F1 and the most exact label-set matches, with DeepSeek close behind on labels and slightly ahead on detection; a larger model is not automatically better here, because the prompt and the validator do much of the work. `subtle_scam` stays the hardest category: the three empty messages are flagged by gemma4 (all three), Qwen and Opus (two) and DeepSeek (the overseas tenant only), and outright misses are rare (Opus none, gemma4 and DeepSeek one each, Qwen four). Several of these readings are defensible, the kind of disagreement a small benchmark cannot settle. Per-message predictions are in `results/`.
 
 ## Limitations
 
-- **Small prototype benchmark.** 150 messages are enough to compare configurations and catch regressions, not to make claims about real-world performance. Messages are English and short; most are UK/US/AU-centric with a few from Canada, Singapore, India and New Zealand. 60 of them were drafted with an LLM assistant, which may favour phrasing that language models find easy. There is no inter-annotator agreement study; gold labels reflect the team's reading.
+- **Small prototype benchmark.** 150 messages are enough to compare configurations and catch regressions, not to make claims about real-world performance. Messages are English and short; most are UK/US/AU-centric with a few from Canada, Singapore, India and New Zealand. 60 were drafted with an LLM assistant, which may favour phrasing that language models find easy. There is no inter-annotator agreement study; gold labels reflect the team's reading.
 - **The prompt rules were written after looking at this benchmark's failures**, so the `hard_benign` numbers after the rules are optimistic. A fresh set of legitimate alerts is the only honest test of them.
-- **The taxonomy is not exhaustive.** Flattery, reciprocity, social proof and deception without pressure have no label. Some scams, such as the wrong-number opener, contain no tactic in the message text and will correctly produce "no strong tactic detected" even though the follow-up conversation would be a scam.
-- **Tactics are not verdicts.** Legitimate fraud alerts, OTP messages and payment reminders share wording with scams. ScamantiQ only sees wording; it knows nothing about the sender, the link destination or the recipient's real account.
-- **LLM dependence.** Labels, explanations and confidence scores come from a general-purpose model and vary between models and runs. The validator guarantees that quoted evidence is real; it does not guarantee that the label or explanation is right.
-- **Confidence is self-reported** by the model and not a calibrated probability; the UI shows it as high, medium or low for that reason.
+- **The taxonomy is not exhaustive.** Flattery, reciprocity, social proof and deception without pressure have no label, and a scam whose text contains no tactic correctly produces "no strong tactic detected".
+- **Tactics are not verdicts.** Legitimate fraud alerts, OTP messages and payment reminders share wording with scams, and ScamantiQ only sees wording: nothing about the sender, the link destination or the recipient's real account.
+- **LLM dependence.** Labels, explanations and confidence scores come from a general-purpose model and vary between models and runs. The validator guarantees that quoted evidence is real; it does not guarantee that the label or explanation is right. Confidence is self-reported, not a calibrated probability, which is why the UI shows it as high, medium or low.
 - **Text only.** No image or OCR input in this version.
 
 ## Project layout
@@ -258,7 +298,7 @@ scamantiq/
   providers/                 ollama, openai-compatible (sglang, vllm, cloud APIs), anthropic, gemini, mock
   config.py                  settings and provider presets
   cache.py                   offline demo cache
-  evaluation.py              metrics (scikit-learn)
+  evaluation.py              dataset checks and metrics (scikit-learn)
 data/test_set.jsonl          150 annotated messages, 30 per category
 data/demo_cache.json         cached results for every example and test-set message
 results/                     evaluation reports (one .txt and one .json per model)
