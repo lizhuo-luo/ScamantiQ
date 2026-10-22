@@ -6,7 +6,7 @@ Provider selection (SCAMANTIQ_PROVIDER):
   vllm        - local vLLM server (OpenAI-compatible)
   openai      - OpenAI-compatible chat completions; also Groq, OpenRouter, DeepSeek, Together
                 via SCAMANTIQ_BASE_URL
-  anthropic   - Anthropic Messages API
+  anthropic   - Anthropic Messages API (Claude 4.6+: structured outputs, no prefill, no temperature)
   gemini      - Google Gemini generateContent API (free tier available)
   mock        - cached demonstration answers only, no network
 """
@@ -32,8 +32,9 @@ PRESETS: dict[str, dict[str, str]] = {
     "openai": {"provider": "openai", "base_url": "https://api.openai.com/v1", "model": "gpt-4o-mini", "key_env": "OPENAI_API_KEY"},
     "groq": {"provider": "openai", "base_url": "https://api.groq.com/openai/v1", "model": "llama-3.3-70b-versatile", "key_env": "GROQ_API_KEY"},
     "openrouter": {"provider": "openai", "base_url": "https://openrouter.ai/api/v1", "model": "meta-llama/llama-3.3-70b-instruct:free", "key_env": "OPENROUTER_API_KEY"},
-    "deepseek": {"provider": "openai", "base_url": "https://api.deepseek.com/v1", "model": "deepseek-chat", "key_env": "DEEPSEEK_API_KEY"},
-    "anthropic": {"provider": "anthropic", "base_url": "https://api.anthropic.com", "model": "claude-haiku-4-5-20251001", "key_env": "ANTHROPIC_API_KEY"},
+    # deepseek-chat / deepseek-reasoner were retired on 2026-07-24; deepseek-flash is V4.1-Flash (thinking on by default).
+    "deepseek": {"provider": "openai", "base_url": "https://api.deepseek.com/v1", "model": "deepseek-flash", "key_env": "DEEPSEEK_API_KEY"},
+    "anthropic": {"provider": "anthropic", "base_url": "https://api.anthropic.com", "model": "claude-haiku-5-5", "key_env": "ANTHROPIC_API_KEY"},
     "gemini": {"provider": "gemini", "base_url": "https://generativelanguage.googleapis.com", "model": "gemini-2.0-flash", "key_env": "GEMINI_API_KEY"},
     "mock": {"provider": "mock", "base_url": "", "model": "cached-demo", "key_env": ""},
 }
@@ -49,6 +50,7 @@ class Settings:
     timeout: float = 120.0
     max_retries: int = 1  # regeneration attempts after a failed evidence check
     temperature: float = 0.0
+    effort: str = ""  # reasoning effort for models that think (low/medium/high/max); empty = provider default
     cache_path: str = "data/demo_cache.json"
     use_cache: bool = True
 
@@ -73,6 +75,7 @@ def load_settings(**overrides) -> Settings:
         timeout=float(os.getenv("SCAMANTIQ_TIMEOUT", "120")),
         max_retries=int(os.getenv("SCAMANTIQ_MAX_RETRIES", "1")),
         temperature=float(os.getenv("SCAMANTIQ_TEMPERATURE", "0")),
+        effort=os.getenv("SCAMANTIQ_EFFORT", "").strip().lower(),
         cache_path=os.getenv("SCAMANTIQ_CACHE", "data/demo_cache.json"),
         use_cache=os.getenv("SCAMANTIQ_USE_CACHE", "1") not in ("0", "false", "False"),
     )

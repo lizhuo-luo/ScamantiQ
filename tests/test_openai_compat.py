@@ -24,8 +24,9 @@ ANSWER = {
 class FakeServer:
     """Minimal /v1/models + /v1/chat/completions server with configurable schema support."""
 
-    def __init__(self, served_model="Qwen/Qwen2.5-7B-Instruct", supports_schema=True, supports_json_object=True):
+    def __init__(self, served_model="Qwen/Qwen2.5-7B-Instruct", supports_schema=True, supports_json_object=True, fail_first=None):
         self.served_model = served_model
+        self.fail_first = fail_first  # HTTP status to return on the first POST only
         self.supports_schema = supports_schema
         self.supports_json_object = supports_json_object
         self.requests: list[dict] = []
@@ -53,6 +54,9 @@ class FakeServer:
                 n = int(self.headers.get("Content-Length", 0))
                 payload = json.loads(self.rfile.read(n))
                 outer.requests.append(payload)
+                if outer.fail_first and len(outer.requests) == 1:
+                    self._send(outer.fail_first, {"error": {"message": "rate limited"}})
+                    return
                 fmt = payload.get("response_format", {}).get("type")
                 if fmt == "json_schema" and not outer.supports_schema:
                     self._send(400, {"error": {"message": "response_format type json_schema is not supported"}})
@@ -143,3 +147,23 @@ def test_analyzer_end_to_end_through_fake_sglang():
         res = Analyzer(_settings(srv.base_url)).analyze(MSG)
         assert res.error is None and res.labels == ["urgency"]
         assert res.model == "Qwen/Qwen2.5-7B-Instruct" and res.provider == "openai"
+
+
+def test_reasoning_effort_sent_only_when_configured():
+    with FakeServer() as srv:
+        s = _settings(srv.base_url, model="deepseek-flash")
+        OpenAICompatProvider(s).complete_json("s", "u", {"type": "object"})
+        assert "reasoning_effort" not in srv.requests[-1]
+        s.effort = "low"
+        OpenAICompatProvider(s).complete_json("s", "u", {"type": "object"})
+        assert srv.requests[-1]["reasoning_effort"] == "low"
+
+
+def test_retries_on_429_then_succeeds(monkeypatch):
+    import scamantiq.providers.base as base
+
+    monkeypatch.setattr(base.time, "sleep", lambda s: None)
+    with FakeServer(fail_first=429) as srv:
+        out = OpenAICompatProvider(_settings(srv.base_url, model="m")).complete_json("s", "u", {"type": "object"})
+        assert json.loads(out)["is_suspicious"] is True
+        assert len(srv.requests) == 2

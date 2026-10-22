@@ -97,9 +97,9 @@ All backends implement the same two-method interface (`complete_json`, `healthch
 | `groq` | Groq (OpenAI-compatible) | `GROQ_API_KEY` | `llama-3.3-70b-versatile`; free tier, very fast |
 | `gemini` | Google Gemini | `GEMINI_API_KEY` | `gemini-2.0-flash`; free tier, schema-constrained |
 | `openrouter` | OpenRouter (OpenAI-compatible) | `OPENROUTER_API_KEY` | `llama-3.3-70b-instruct:free` |
-| `deepseek` | DeepSeek (OpenAI-compatible) | `DEEPSEEK_API_KEY` | `deepseek-chat`; low cost |
+| `deepseek` | DeepSeek (OpenAI-compatible) | `DEEPSEEK_API_KEY` | `deepseek-flash` (V4.1-Flash, thinking on by default); very low cost |
 | `openai` | OpenAI chat completions | `OPENAI_API_KEY` | `gpt-4o-mini` |
-| `anthropic` | Anthropic Messages API | `ANTHROPIC_API_KEY` | `claude-haiku-4-5` |
+| `anthropic` | Anthropic Messages API | `ANTHROPIC_API_KEY` | `claude-haiku-5-5`; schema-constrained; `claude-sonnet-5-5` / `claude-opus-5-5` via `SCAMANTIQ_MODEL` |
 | `mock` | cached demo answers only | none | offline tests and demos |
 
 `SCAMANTIQ_MODEL` and `SCAMANTIQ_BASE_URL` override the preset, and `SCAMANTIQ_API_KEY` overrides every per-provider key. Any OpenAI-compatible endpoint works through the `openai` preset, for example:
@@ -111,7 +111,7 @@ SCAMANTIQ_MODEL=qwen-plus
 SCAMANTIQ_API_KEY=sk-...
 ```
 
-The OpenAI-compatible provider asks `GET /v1/models` for the served model when `SCAMANTIQ_MODEL` is empty, and requests structured output in the strongest form the server accepts (`json_schema`, then `json_object`, then none), remembering what worked. Other knobs: `SCAMANTIQ_MAX_RETRIES` (default 1), `SCAMANTIQ_TEMPERATURE` (default 0), `SCAMANTIQ_TIMEOUT` (default 120 s), `SCAMANTIQ_USE_CACHE` (default on), `SCAMANTIQ_HOST`, `SCAMANTIQ_PORT`.
+The OpenAI-compatible provider asks `GET /v1/models` for the served model when `SCAMANTIQ_MODEL` is empty, and requests structured output in the strongest form the server accepts (`json_schema`, then `json_object`, then none), remembering what worked. Other knobs: `SCAMANTIQ_MAX_RETRIES` (default 1), `SCAMANTIQ_TEMPERATURE` (default 0; ignored by models that think), `SCAMANTIQ_EFFORT` (reasoning effort `low`/`medium`/`high`/`max` for DeepSeek V4 and Claude 5.5, default: the provider's own), `SCAMANTIQ_TIMEOUT` (default 120 s), `SCAMANTIQ_USE_CACHE` (default on), `SCAMANTIQ_HOST`, `SCAMANTIQ_PORT`. Cloud adapters retry HTTP 429 and 5xx responses up to four times with backoff.
 
 **Ollama vs SGLang/vLLM.** Ollama runs quantised GGUF models and is the easiest to set up. SGLang and vLLM serve original HuggingFace weights with continuous batching, which is better for GPU machines and for running the evaluation quickly. All three support schema-constrained JSON.
 
@@ -179,25 +179,37 @@ python evaluate.py --category hard_benign --limit 5       # one subset
 
 ### Results
 
-Both local models that were pulled on the test machine, run on one H200 with `--no-cache` and the current prompt. Per-message times are wall-clock on a shared GPU and vary between runs.
+Four models, all with `--no-cache` and the current prompt: two local models served by Ollama on one H200, and two cloud APIs run with their default thinking settings (DeepSeek V4.1-Flash thinks at `high` effort unless told otherwise; Claude Opus 5.5 uses adaptive thinking at `medium`). Per-message times are wall-clock: a shared GPU for the local models, network plus thinking time for the APIs. They vary between runs.
 
 | Model | Detection acc. | FPR on hard_benign | Macro F1 | Micro F1 | Grounding | Span F1 | Time per message |
 |---|---|---|---|---|---|---|---|
-| gemma4:12b | 0.967 | 0.033 | 0.919 | 0.916 | 1.000 | 0.744 | 1.5 s |
-| qwen3.8:27b-q4_K_M | 0.960 | 0.000 | 0.894 | 0.890 | 1.000 | 0.725 | 2.7 s |
+| gemma4:12b (Ollama) | 0.967 | 0.033 | 0.919 | 0.916 | 1.000 | 0.744 | 1.5 s |
+| qwen3.8:27b-q4_K_M (Ollama) | 0.960 | 0.000 | 0.894 | 0.890 | 1.000 | 0.725 | 2.7 s |
+| deepseek-flash (DeepSeek V4.1-Flash-1017) | 0.980 | 0.033 | 0.916 | 0.914 | 1.000 | 0.712 | 3.6 s |
+| claude-opus-5-5 (Anthropic) | 0.987 | 0.000 | 0.905 | 0.901 | 1.000 | 0.678 | 4.8 s |
 
-Per-label F1, gemma4 then qwen3.8: urgency 0.929 / 0.885 · impersonation 0.887 / 0.875 · isolation 0.944 / 0.947 · reward 0.941 / 0.923 · threat 0.894 / 0.840. (`qwen3.8:latest` is the same 27B Q4_K_M weights under another tag and scored within 0.003 of this run.)
+Per-label F1 and exact label-set matches:
 
-gemma4:12b by category:
+| | gemma4:12b | qwen3.8:27b | deepseek-flash | claude-opus-5-5 |
+|---|---|---|---|---|
+| urgency | 0.929 | 0.885 | 0.939 | 0.911 |
+| impersonation | 0.887 | 0.875 | 0.891 | 0.860 |
+| isolation | 0.944 | 0.947 | 0.944 | 0.900 |
+| reward | 0.941 | 0.923 | 0.928 | 0.957 |
+| threat | 0.894 | 0.840 | 0.877 | 0.897 |
+| exact label-set matches (of 150) | 130 | 115 | 126 | 120 |
 
-| Category | n | Detection acc. | Macro F1 | Micro F1 | Grounding | Span F1 |
-|---|---|---|---|---|---|---|
-| all | 150 | 0.967 | 0.919 | 0.916 | 1.000 | 0.744 |
-| familiar | 30 | 1.000 | 0.965 | 0.962 | 1.000 | 0.815 |
-| paraphrased | 30 | 1.000 | 0.945 | 0.943 | 1.000 | 0.676 |
-| subtle_scam | 30 | 0.867 | 0.556 | 0.788 | 1.000 | 0.703 |
-| benign | 30 | 1.000 | – | – | 1.000 | – |
-| hard_benign | 30 | 0.967 | – | – | 1.000 | – |
+By category, detection accuracy with micro F1 after the slash for the scam categories:
+
+| Category | gemma4:12b | qwen3.8:27b | deepseek-flash | claude-opus-5-5 |
+|---|---|---|---|---|
+| familiar | 1.000 / 0.962 | 1.000 / 0.947 | 1.000 / 0.962 | 1.000 / 0.951 |
+| paraphrased | 1.000 / 0.943 | 1.000 / 0.945 | 1.000 / 0.917 | 1.000 / 0.899 |
+| subtle_scam | 0.867 / 0.788 | 0.800 / 0.676 | 0.933 / 0.812 | 0.933 / 0.800 |
+| benign | 1.000 | 1.000 | 1.000 | 1.000 |
+| hard_benign | 0.967 | 1.000 | 0.967 | 1.000 |
+
+`qwen3.8:latest` is the same 27B Q4_K_M weights under another tag and scored within 0.003 of the run above.
 
 ### What the prompt rules changed
 
@@ -216,7 +228,11 @@ Both models gained from the rules. gemma4's one remaining false positive is the 
 
 ### Reading the numbers
 
-Every quote both models produced was verbatim and no retry was needed, so the validator had nothing to repair in this run; its value shows on weaker models and in earlier runs, where paraphrased quotes were caught and corrected. All 30 `benign` messages were left unflagged, and `hard_benign` is down to one false positive for gemma4 and none for Qwen. The 12B Gemma still beats the 27B Qwen on four of the five labels (Qwen edges it on isolation) and is nearly twice as fast, so a bigger model is not automatically better for this task. The weak spot for both is `subtle_scam` (macro F1 around 0.5): gemma4 flags all three deliberately empty-labelled messages and Qwen two of them, both often add `impersonation` to messages whose gold label is only `reward`, and both miss the parking-fine notice. Several of those readings are defensible, which is the kind of annotation disagreement a small benchmark cannot settle. Per-message predictions are in `results/eval_ollama_<model>.json`.
+Every quote all four models produced was verbatim and no retry was needed, so the validator had nothing to repair in these runs; its value shows on weaker models and in earlier runs, where paraphrased quotes were caught and corrected. No model flagged any of the 30 `benign` messages. On `hard_benign`, Opus 5.5 and Qwen are clean, gemma4 still flags the Chase decline text, and DeepSeek flags the genuine "lost my phone, texting from Jess's" message as impersonation, which is a defensible reading of a text that matches the "Hi Mum" pattern.
+
+Detection and labelling pull apart. Claude Opus 5.5 has the best detection numbers (no scam missed, nothing benign flagged) but a lower macro F1 than gemma4 and DeepSeek and the lowest span F1: it labels `impersonation` on seven `subtle_scam` messages whose gold labels do not include it, and it quotes almost two passages per message, longer than the annotators' spans. gemma4:12b, the smallest model, still has the highest macro F1 and the most exact label-set matches, with DeepSeek V4.1-Flash close behind on labels and slightly ahead on detection. A larger or more expensive model is therefore not automatically better for this task; the prompt and the validator do much of the work.
+
+`subtle_scam` remains the hardest category. The three deliberately empty-labelled messages are read differently by each model: gemma4 flags all three, Qwen and Opus two, DeepSeek only the overseas tenant who offers to pay a deposit sight unseen. Outright misses are rare: Opus misses none, gemma4 and DeepSeek one each (the parking-fine notice and the soft investment recommendation), Qwen four. Several of these readings are defensible, which is the kind of annotation disagreement a small benchmark cannot settle. Per-message predictions are in `results/`.
 
 ## Limitations
 
@@ -255,7 +271,7 @@ tests/                       pytest suite, no network required
 ## Development
 
 ```bash
-python -m pytest -q                                             # 52 tests, offline, about 5 s
+python -m pytest -q                                             # 63 tests, offline, about 10 s
 SCAMANTIQ_PROVIDER=mock python scripts/ui_preview.py 0 7862    # UI with example 0 pre-rendered, for styling and screenshots
 ```
 

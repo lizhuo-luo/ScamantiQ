@@ -1,10 +1,19 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
+import time
 from abc import ABC, abstractmethod
 
+import requests
+
 from ..config import Settings
+
+log = logging.getLogger(__name__)
+
+RETRY_STATUSES = frozenset({429, 500, 502, 503, 529})
+MAX_ATTEMPTS = 4
 
 
 class ProviderError(RuntimeError):
@@ -27,6 +36,37 @@ class LLMProvider(ABC):
 
     def healthcheck(self) -> tuple[bool, str]:
         return True, "not checked"
+
+
+def post_with_retry(name: str, url: str, payload: dict, headers: dict, timeout: float) -> requests.Response:
+    """POST JSON, retrying rate-limit and server errors with exponential backoff.
+
+    Honours a `Retry-After` header when present. Returns the final response; non-retryable
+    statuses are returned as-is so callers can inspect them. Raises ProviderError only when the
+    request itself fails (connection error, timeout).
+    """
+    delay = 2.0
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        try:
+            r = requests.post(url, json=payload, headers=headers, timeout=timeout)
+        except requests.RequestException as e:
+            raise ProviderError(f"{name} request failed: {e}") from e
+        if r.status_code not in RETRY_STATUSES or attempt == MAX_ATTEMPTS:
+            return r
+        wait = _retry_after(r)
+        if wait is None:
+            wait, delay = delay, min(delay * 2, 30.0)
+        log.warning("%s HTTP %s, retrying in %.1fs (attempt %d/%d)", name, r.status_code, wait, attempt, MAX_ATTEMPTS)
+        time.sleep(wait)
+    raise AssertionError("unreachable")
+
+
+def _retry_after(r: requests.Response) -> float | None:
+    try:
+        v = float(r.headers.get("retry-after", ""))
+    except ValueError:
+        return None
+    return max(0.0, min(v, 60.0))
 
 
 _FENCE = re.compile(r"^```(?:json)?\s*|\s*```$", re.MULTILINE)

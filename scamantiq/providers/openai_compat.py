@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 import requests
 
-from .base import LLMProvider, ProviderError
+from .base import LLMProvider, ProviderError, post_with_retry
 
 
 def _is_local(url: str) -> bool:
@@ -85,6 +85,8 @@ class OpenAICompatProvider(LLMProvider):
                 {"role": "user", "content": user},
             ],
         }
+        if self.settings.effort:
+            base_payload["reasoning_effort"] = self.settings.effort  # DeepSeek V4, OpenAI reasoning models
         modes = ["schema", "object", "none"]
         if self._mode:
             modes = modes[modes.index(self._mode) :]
@@ -110,10 +112,7 @@ class OpenAICompatProvider(LLMProvider):
             raise ProviderError(f"unexpected response shape: {str(data)[:300]}") from e
 
     def _post(self, url, payload):
-        try:
-            return requests.post(url, json=payload, headers=self._headers(), timeout=self.settings.timeout)
-        except requests.RequestException as e:
-            raise ProviderError(f"{self.name} request failed: {e}") from e
+        return post_with_retry(self.name, url, payload, self._headers(), self.settings.timeout)
 
     # -- health ---------------------------------------------------------------------------
     def healthcheck(self) -> tuple[bool, str]:

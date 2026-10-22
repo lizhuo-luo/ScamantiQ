@@ -1,0 +1,173 @@
+provider: openai configured (https://api.deepseek.com/v1, deepseek-flash)
+[ 1/150] f01   5.9s gold=['urgency', 'impersonation', 'isolation', 'threat'] pred=['urgency', 'impersonation', 'isolation', 'threat']
+[ 2/150] f02   2.4s gold=['reward', 'urgency'] pred=['reward', 'urgency']
+[ 3/150] f03   5.3s gold=['impersonation', 'urgency', 'isolation'] pred=['impersonation', 'urgency', 'isolation']
+[ 4/150] f04  17.1s gold=['impersonation', 'threat', 'urgency'] pred=['urgency', 'impersonation', 'threat']
+[ 5/150] f05   4.8s gold=['urgency', 'threat', 'impersonation'] pred=['urgency', 'impersonation', 'threat']
+[ 6/150] f06   3.1s gold=['impersonation', 'urgency', 'threat'] pred=['impersonation', 'urgency', 'threat']
+[ 7/150] f07   5.1s gold=['impersonation', 'threat', 'urgency'] pred=['impersonation', 'urgency', 'threat']
+[ 8/150] f08   4.8s gold=['reward', 'isolation', 'impersonation'] pred=['impersonation', 'reward', 'isolation']
+[ 9/150] f09   3.3s gold=['threat', 'urgency'] pred=['threat', 'urgency']
+[10/150] f10   5.3s gold=['impersonation', 'urgency'] pred=['urgency', 'impersonation']
+[11/150] f11   2.6s gold=['reward', 'urgency'] pred=['reward', 'urgency']
+[12/150] f12   3.7s gold=['impersonation', 'threat', 'urgency'] pred=['impersonation', 'urgency', 'threat']
+[13/150] f13   6.9s gold=['impersonation', 'isolation'] pred=['impersonation', 'threat', 'isolation']  <- mismatch
+[14/150] f14   4.5s gold=['reward', 'impersonation', 'urgency'] pred=['urgency', 'impersonation', 'reward']
+[15/150] f15   3.1s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency']
+[16/150] f16   6.9s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency', 'threat']  <- mismatch
+[17/150] f17   2.6s gold=['reward', 'urgency'] pred=['reward', 'urgency']
+[18/150] f18   8.5s gold=['isolation', 'urgency'] pred=['impersonation', 'isolation']  <- mismatch
+[19/150] f19   4.2s gold=['impersonation', 'threat', 'urgency'] pred=['urgency', 'impersonation', 'threat']
+[20/150] f20   4.6s gold=['impersonation', 'threat', 'urgency'] pred=['impersonation', 'threat', 'urgency']
+[21/150] f21   3.7s gold=['impersonation', 'reward'] pred=['impersonation', 'reward']
+[22/150] f22   8.2s gold=['impersonation', 'urgency', 'threat'] pred=['urgency', 'impersonation', 'threat']
+[23/150] f23   2.3s gold=['reward'] pred=['reward']
+[24/150] f24   8.8s gold=['impersonation', 'urgency', 'isolation'] pred=['impersonation', 'urgency', 'threat', 'isolation']  <- mismatch
+[25/150] f25   4.8s gold=['threat', 'urgency', 'impersonation'] pred=['urgency', 'threat']  <- mismatch
+[26/150] p01   4.6s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency', 'threat']  <- mismatch
+[27/150] p02  13.9s gold=['urgency', 'isolation'] pred=['urgency', 'isolation']
+[28/150] p03   3.9s gold=['reward', 'urgency'] pred=['reward', 'urgency']
+[29/150] p04   3.3s gold=['impersonation', 'threat', 'urgency'] pred=['impersonation', 'threat', 'urgency']
+[30/150] p05   3.3s gold=['threat', 'urgency'] pred=['threat', 'urgency']
+[31/150] p06   3.7s gold=['impersonation', 'isolation'] pred=['impersonation', 'isolation']
+[32/150] p07   4.2s gold=['reward', 'urgency'] pred=['reward', 'urgency']
+[33/150] p08   6.6s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency']
+[34/150] p09   4.7s gold=['urgency', 'threat'] pred=['urgency', 'threat']
+[35/150] p10   5.7s gold=['reward', 'isolation'] pred=['impersonation', 'reward', 'isolation']  <- mismatch
+[36/150] p11   6.4s gold=['impersonation'] pred=['impersonation', 'threat']  <- mismatch
+[37/150] p12   6.1s gold=['threat', 'urgency'] pred=['urgency', 'impersonation', 'reward', 'threat']  <- mismatch
+[38/150] p13   4.2s gold=['reward', 'urgency'] pred=['reward', 'urgency']
+[39/150] p14   2.8s gold=['impersonation', 'isolation'] pred=['impersonation', 'isolation']
+[40/150] p15   4.1s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency']
+[41/150] p16   3.6s gold=['reward', 'isolation'] pred=['reward', 'isolation']
+[42/150] p17   3.4s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency']
+[43/150] p18   8.6s gold=['threat'] pred=['impersonation', 'threat', 'urgency']  <- mismatch
+[44/150] p19   3.2s gold=['urgency', 'threat'] pred=['urgency', 'threat']
+[45/150] p20   3.4s gold=['impersonation', 'isolation'] pred=['impersonation', 'isolation']
+[46/150] b01   1.3s gold=[] pred=[]
+[47/150] b02   1.6s gold=[] pred=[]
+[48/150] b03   1.5s gold=[] pred=[]
+[49/150] b04   1.5s gold=[] pred=[]
+[50/150] b05   1.2s gold=[] pred=[]
+[51/150] b06   2.0s gold=[] pred=[]
+[52/150] b07   1.2s gold=[] pred=[]
+[53/150] b08   1.1s gold=[] pred=[]
+[54/150] b09   1.1s gold=[] pred=[]
+[55/150] b10   1.1s gold=[] pred=[]
+[56/150] b11   0.9s gold=[] pred=[]
+[57/150] b12   1.3s gold=[] pred=[]
+[58/150] b13   1.1s gold=[] pred=[]
+[59/150] b14   1.4s gold=[] pred=[]
+[60/150] b15   1.1s gold=[] pred=[]
+[61/150] hb01   1.4s gold=[] pred=[]
+[62/150] hb02   1.3s gold=[] pred=[]
+[63/150] hb03   1.2s gold=[] pred=[]
+[64/150] hb04   1.6s gold=[] pred=[]
+[65/150] hb05   1.3s gold=[] pred=[]
+[66/150] hb06   1.4s gold=[] pred=[]
+[67/150] hb07   1.6s gold=[] pred=[]
+[68/150] hb08   3.5s gold=[] pred=['impersonation']  <- mismatch
+[69/150] hb09   1.1s gold=[] pred=[]
+[70/150] hb10   1.5s gold=[] pred=[]
+[71/150] hb11   1.0s gold=[] pred=[]
+[72/150] hb12   1.7s gold=[] pred=[]
+[73/150] hb13   1.6s gold=[] pred=[]
+[74/150] hb14   1.3s gold=[] pred=[]
+[75/150] hb15   1.8s gold=[] pred=[]
+[76/150] ss01   1.4s gold=[] pred=[]
+[77/150] ss02   5.2s gold=['reward'] pred=['reward']
+[78/150] ss03   1.4s gold=['reward'] pred=[]  <- mismatch
+[79/150] ss04   5.1s gold=['impersonation'] pred=['impersonation']
+[80/150] ss05   9.5s gold=['isolation'] pred=['impersonation', 'reward', 'urgency']  <- mismatch
+[81/150] ss06   2.8s gold=['reward'] pred=['reward']
+[82/150] ss07   6.6s gold=['reward', 'impersonation'] pred=['impersonation', 'reward']
+[83/150] ss08   2.6s gold=['reward'] pred=['reward']
+[84/150] ss09   4.8s gold=['impersonation', 'isolation'] pred=['impersonation', 'isolation']
+[85/150] ss10   6.8s gold=['impersonation', 'reward'] pred=['urgency', 'impersonation', 'reward']  <- mismatch
+[86/150] ss11   7.3s gold=['reward'] pred=['reward']
+[87/150] ss12   4.5s gold=['reward'] pred=['reward']
+[88/150] ss13   2.6s gold=['impersonation'] pred=['impersonation']
+[89/150] ss14   7.9s gold=[] pred=['reward']  <- mismatch
+[90/150] ss15   3.5s gold=['reward'] pred=['reward']
+[91/150] f26   3.9s gold=['impersonation', 'urgency', 'threat'] pred=['impersonation', 'urgency', 'threat']
+[92/150] f27   3.4s gold=['impersonation', 'threat', 'urgency'] pred=['impersonation', 'urgency', 'threat']
+[93/150] f28   3.3s gold=['impersonation', 'urgency'] pred=['impersonation', 'urgency']
+[94/150] f29   4.9s gold=['impersonation', 'threat', 'urgency'] pred=['impersonation', 'urgency', 'threat']
+[95/150] f30   4.5s gold=['impersonation', 'reward', 'urgency'] pred=['impersonation', 'reward', 'urgency']
+[96/150] p21   5.2s gold=['reward', 'urgency'] pred=['urgency', 'reward']
+[97/150] p22   5.8s gold=['impersonation', 'threat', 'urgency'] pred=['urgency', 'impersonation', 'threat']
+[98/150] p23   3.9s gold=['urgency'] pred=['urgency']
+[99/150] p24   6.9s gold=['isolation', 'threat'] pred=['isolation', 'urgency', 'threat']  <- mismatch
+[100/150] p25   8.6s gold=['impersonation', 'urgency', 'isolation'] pred=['impersonation', 'urgency', 'isolation', 'threat']  <- mismatch
+[101/150] p26   7.5s gold=['reward', 'isolation'] pred=['impersonation', 'reward', 'isolation']  <- mismatch
+[102/150] p27   6.5s gold=['threat', 'urgency'] pred=['urgency', 'threat']
+[103/150] p28   5.7s gold=['reward', 'impersonation'] pred=['reward', 'impersonation']
+[104/150] p29   6.6s gold=['impersonation', 'threat', 'urgency'] pred=['urgency', 'impersonation', 'threat']
+[105/150] p30  11.1s gold=['impersonation', 'threat', 'urgency'] pred=['urgency', 'impersonation']  <- mismatch
+[106/150] ss16   6.5s gold=['reward'] pred=['impersonation', 'reward']  <- mismatch
+[107/150] ss17   4.9s gold=['reward'] pred=['reward']
+[108/150] ss18   4.0s gold=['reward'] pred=['reward']
+[109/150] ss19   4.0s gold=['impersonation'] pred=['impersonation']
+[110/150] ss20   8.4s gold=['isolation'] pred=['isolation']
+[111/150] ss21   4.1s gold=['reward'] pred=['reward']
+[112/150] ss22   4.1s gold=['impersonation'] pred=['urgency', 'impersonation']  <- mismatch
+[113/150] ss23   7.7s gold=['threat'] pred=['impersonation', 'threat']  <- mismatch
+[114/150] ss24   3.3s gold=['reward'] pred=['reward']
+[115/150] ss25   3.2s gold=['reward'] pred=['reward']
+[116/150] ss26   5.4s gold=['urgency'] pred=['impersonation', 'urgency', 'reward']  <- mismatch
+[117/150] ss27   4.7s gold=['isolation', 'reward'] pred=['reward']  <- mismatch
+[118/150] ss28   3.6s gold=['impersonation'] pred=['impersonation']
+[119/150] ss29   6.9s gold=[] pred=[]
+[120/150] ss30   5.8s gold=['reward'] pred=['reward']
+[121/150] b16   1.2s gold=[] pred=[]
+[122/150] b17   1.3s gold=[] pred=[]
+[123/150] b18   0.9s gold=[] pred=[]
+[124/150] b19   1.1s gold=[] pred=[]
+[125/150] b20   0.9s gold=[] pred=[]
+[126/150] b21   1.5s gold=[] pred=[]
+[127/150] b22   0.9s gold=[] pred=[]
+[128/150] b23   0.7s gold=[] pred=[]
+[129/150] b24   0.9s gold=[] pred=[]
+[130/150] b25   1.2s gold=[] pred=[]
+[131/150] b26   0.8s gold=[] pred=[]
+[132/150] b27   0.7s gold=[] pred=[]
+[133/150] b28   1.5s gold=[] pred=[]
+[134/150] b29   0.9s gold=[] pred=[]
+[135/150] b30   0.8s gold=[] pred=[]
+[136/150] hb16   1.0s gold=[] pred=[]
+[137/150] hb17   2.0s gold=[] pred=[]
+[138/150] hb18   1.0s gold=[] pred=[]
+[139/150] hb19   1.1s gold=[] pred=[]
+[140/150] hb20   0.8s gold=[] pred=[]
+[141/150] hb21   1.8s gold=[] pred=[]
+[142/150] hb22   1.5s gold=[] pred=[]
+[143/150] hb23   1.4s gold=[] pred=[]
+[144/150] hb24   1.2s gold=[] pred=[]
+[145/150] hb25   2.7s gold=[] pred=[]
+[146/150] hb26   1.7s gold=[] pred=[]
+[147/150] hb27   1.1s gold=[] pred=[]
+[148/150] hb28   1.2s gold=[] pred=[]
+[149/150] hb29   1.3s gold=[] pred=[]
+[150/150] hb30   1.1s gold=[] pred=[]
+
+metric                           all        benign      familiar   hard_benign   paraphrased   subtle_scam
+n                                150            30            30            30            30            30
+detection_accuracy             0.980         1.000         1.000         0.967         1.000         0.933
+detection_f1                   0.983         0.000         1.000         0.000         1.000         0.963
+false_positive_rate            0.032         0.000         0.000         0.033         0.000         0.333
+macro_f1                       0.916             -         0.968             -         0.920         0.751
+micro_f1                       0.914             -         0.962             -         0.917         0.812
+grounding_rate                 1.000         1.000         1.000         1.000         1.000         1.000
+span_f1                        0.712         0.000         0.752         0.000         0.678         0.679
+mean_attempts                  1.000         1.000         1.000         1.000         1.000         1.000
+errors                             0             0             0             0             0             0
+
+per-label F1 (all):
+  urgency        0.939
+  impersonation  0.891
+  isolation      0.944
+  reward         0.928
+  threat         0.877
+
+model: deepseek:deepseek-flash   total time: 546.9s   avg: 3.6s/msg
+wrote results/eval_deepseek_flash.json
